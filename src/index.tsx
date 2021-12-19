@@ -7,9 +7,15 @@ import {
   JsView,
   LocalState,
   StateContext,
-} from "@wcrichto/nota-editor";
+} from "@nota-lang/nota-editor";
 
+import "../static/index.html";
+
+import "@nota-lang/nota-components/dist/nota-components.css";
+import "@nota-lang/nota-editor/dist/nota-editor.css";
 import "../css/app.scss";
+
+import "../node_modules/@nota-lang/nota-editor/dist/*.wasm";
 
 let contents = `
 @strong{Nota} is a language for writing documents.

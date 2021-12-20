@@ -11,33 +11,30 @@ import {
 
 import "../static/index.html";
 
+import "katex/dist/katex.min.css";
 import "@nota-lang/nota-components/dist/nota-components.css";
 import "@nota-lang/nota-editor/dist/nota-editor.css";
 import "../css/app.scss";
-
-import "../node_modules/@nota-lang/nota-editor/dist/*.wasm";
 
 let contents = `
 @strong{Nota} is a language for writing documents.
 `.trim();
 
 let App = observer(() => {
-  let [state] = useState(() => {
-    let state = new LocalState();
-    state.contents = contents;
-    return state;
-  });
+  let [state] = useState(() => new LocalState(contents));
 
   return (
     <div>
-      <h1>Nota: A Document Language for the Browser</h1>
+      <header>
+        <h1>Nota: A Document Language for the Browser</h1>
+      </header>
       <div>
         <StateContext.Provider value={state}>
           {state.ready ? (
-            <>
+            <div class="row">
               <Editor />
               <OutputView result={state.translation} />
-            </>
+            </div>
           ) : (
             "Loading..."
           )}

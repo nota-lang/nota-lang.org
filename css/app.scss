@@ -1,4 +1,4 @@
-body {
+body, .document {
   font: 24px 'EB Garamond';
   
   margin: 0;
@@ -6,6 +6,21 @@ body {
   // ok 
 }
 
+#container {
+  padding: 10px 20px;    
+}
+
 h1 {
   margin: 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  
+  > div {
+    width: 50%;
+    height: 100%;
+  }
 }

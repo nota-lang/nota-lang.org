@@ -1947,10 +1947,11 @@ body,
 }
 h1 {
   margin: 0;
+  text-align: center;
 }
 @media (max-width: 799px) {
   h1 {
-    font-size: 2rem;
+    font-size: 30px;
     line-height: 1.2;
   }
 }
@@ -1969,6 +1970,12 @@ h1 {
     padding: 0.5rem 0.75rem;
   }
 }
+.row .editor,
+.row .document,
+.row .js-view {
+  max-height: 575px;
+  overflow-y: auto;
+}
 .row > .editor {
   flex: 55%;
 }
@@ -1981,6 +1988,7 @@ h1 {
     border-right: 3px solid #eee;
     padding-right: 2rem;
     margin-right: 1rem;
+    width: 45%;
   }
 }
 @media (max-width: 799px) {
@@ -1989,6 +1997,11 @@ h1 {
     padding-bottom: 2rem;
     margin-bottom: 1rem;
   }
+}
+.row > .output .toggle-output {
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
 }
 .rest {
   font-size: 22px;

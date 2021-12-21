@@ -1940,8 +1940,19 @@ body,
 #container {
   padding: 1rem 2rem;
 }
+@media (max-width: 799px) {
+  #container {
+    padding: 0.5rem 1rem;
+  }
+}
 h1 {
   margin: 0;
+}
+@media (max-width: 799px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
 }
 .row {
   display: flex;
@@ -1955,6 +1966,7 @@ h1 {
 @media (max-width: 799px) {
   .row {
     flex-direction: column;
+    padding: 0.5rem 0.75rem;
   }
 }
 .row > .editor {

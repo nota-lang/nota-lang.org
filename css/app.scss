@@ -56,9 +56,11 @@ h1 {
     padding: 0.5rem 0.75rem;
   }
 
-  .editor, .document, .js-view {
-    max-height: 575px;
-    overflow-y: auto;    
+  @include monitor {
+    .editor, .document, .js-view {
+      max-height: 575px;
+      overflow-y: auto;    
+    }  
   }
 
   > .editor {
@@ -84,8 +86,16 @@ h1 {
 
     .toggle-output {
       position: absolute;
-      bottom: 0;
-      right: 1rem;
+
+      @include mobile {
+        right: 0;
+        bottom: 1rem;
+      }
+
+      @include monitor {
+        bottom: 0;
+        right: 1rem;
+      }     
     }
   }
 }

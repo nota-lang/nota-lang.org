@@ -243,9 +243,9 @@
     katex "^0.15.1"
 
 "@nota-lang/nota-editor@^0.2.1":
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/@nota-lang/nota-editor/-/nota-editor-0.2.6.tgz#6c3e11eda1ca713c218d0abb244109c658364422"
-  integrity sha512-LkD3PWokoMgAoqkHqPX9bq3qcMceW+xzWXnKLpnxHlpIuVLK9CjERNNKL1KqXYqyY4XonC/HfY0aWUBkhs2p0A==
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/@nota-lang/nota-editor/-/nota-editor-0.2.7.tgz#882b4b51703ab1589564c6622c22285cf7481dfd"
+  integrity sha512-sYo9EFBORLuu6wCV/203z/RU3TdncWqiBzObOXD7gLSHsnaFSPxo8NRVmlT1jiAsrShTw0GC8ljmxmAuXAbcKA==
   dependencies:
     "@babel/standalone" "^7.16.4"
     "@nota-lang/nota-components" "^0.2.6"

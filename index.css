@@ -1908,12 +1908,12 @@ h2.document .section-title {
   top: 2px;
 }
 .translate-error {
-  position: sticky;
+  position: absolute;
   z-index: 1000;
-  top: 5px;
-  right: 10px;
+  bottom: 0;
+  left: 0;
   margin: 0;
-  padding: 10px;
+  padding: 5px 10px;
   border: 1px solid #ccc;
   border-radius: 2px;
   color: red;
@@ -1922,6 +1922,8 @@ h2.document .section-title {
   max-width: 100%;
   height: min-content;
   white-space: pre-wrap;
+  font-size: 85%;
+  overflow-x: auto;
 }
 
 /* sass-plugin-0:/home/runner/work/nota-lang.org/nota-lang.org/css/app.scss */
@@ -1944,7 +1946,6 @@ h1 {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  position: relative;
   border: 3px solid #ccc;
   border-radius: 4px;
   padding: 1rem;
@@ -1960,6 +1961,7 @@ h1 {
 }
 .row > .output {
   flex: 45%;
+  position: relative;
 }
 @media (min-width: 800px) {
   .row > .output {

@@ -1603,6 +1603,7 @@ h2.document .section-title {
   box-shadow: 2px 2px 4px #0003;
   max-width: 600px;
   width: max-content;
+  z-index: 1000;
 }
 .document .tooltip .arrow {
   visibility: hidden;
@@ -1919,17 +1920,22 @@ h2.document .section-title {
   background: white;
   box-shadow: 1px 2px 3px #0003;
   max-width: 100%;
+  height: min-content;
+  white-space: pre-wrap;
 }
 
 /* sass-plugin-0:/home/runner/work/nota-lang.org/nota-lang.org/css/app.scss */
 body,
 .document {
-  font: 24px "EB Garamond";
+  font: 20px "EB Garamond", serif;
   margin: 0;
   padding: 0;
 }
+.document ul {
+  margin: 0.5rem;
+}
 #container {
-  padding: 10px 20px;
+  padding: 1rem 2rem;
 }
 h1 {
   margin: 0;
@@ -1937,10 +1943,52 @@ h1 {
 .row {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  flex-direction: row;
+  position: relative;
+  border: 3px solid #ccc;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 1rem 0;
 }
-.row > div {
-  width: 50%;
-  height: 100%;
+@media (max-width: 799px) {
+  .row {
+    flex-direction: column;
+  }
+}
+.row > .editor {
+  flex: 55%;
+}
+.row > .output {
+  flex: 45%;
+}
+@media (min-width: 800px) {
+  .row > .output {
+    border-right: 3px solid #eee;
+    padding-right: 2rem;
+    margin-right: 1rem;
+  }
+}
+@media (max-width: 799px) {
+  .row > .output {
+    border-bottom: 3px solid #eee;
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+.rest {
+  font-size: 22px;
+}
+@media (min-width: 800px) {
+  .rest {
+    width: 800px;
+    margin: 0 auto;
+  }
+}
+.cm-editor {
+  font-size: 85%;
+}
+.cm-editor .nota-text {
+  font-family: "EB Garamond", serif;
+  font-size: 108%;
 }
 /*# sourceMappingURL=index.css.map */

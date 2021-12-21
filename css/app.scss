@@ -26,10 +26,19 @@ body, .document {
 
 #container {
   padding: 1rem 2rem;    
+
+  @include mobile {
+    padding: 0.5rem 1rem;
+  }
 }
 
 h1 {
   margin: 0;
+
+  @include mobile {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
 }
 
 .row {
@@ -43,6 +52,7 @@ h1 {
 
   @include mobile {
     flex-direction: column;
+    padding: 0.5rem 0.75rem;
   }
 
   > .editor {

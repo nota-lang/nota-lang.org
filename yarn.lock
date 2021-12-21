@@ -234,21 +234,21 @@
     glob-promise "^4.2.2"
     yargs "^17.3.0"
 
-"@nota-lang/nota-components@^0.2.1", "@nota-lang/nota-components@^0.2.6":
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/@nota-lang/nota-components/-/nota-components-0.2.6.tgz#a60ee1ed6fe398475c95d9eed0e80b0bd1e2fc61"
-  integrity sha512-qD9TI8lSUeGssAtUxN9cVHVtoF9Vlgy9cZZkj2I8Xvfi+DLI2RRJFZ3rgWHmINwzs7My8nF0mYTXuNnojb8xhg==
+"@nota-lang/nota-components@^0.2.1", "@nota-lang/nota-components@^0.2.8":
+  version "0.2.8"
+  resolved "https://registry.yarnpkg.com/@nota-lang/nota-components/-/nota-components-0.2.8.tgz#277ded6fbaa3ceb6a5baa9ab617afa9c6a099cc5"
+  integrity sha512-udQFS5vHxo9UOIAPh2QAmyA8D56EfbKM5KguEgxJJ8OF+4alGQZ6jk74FnhFLn2Cf/mdsygwPkTYW+RyfWNCPg==
   dependencies:
     "@popperjs/core" "^2.9.2"
     katex "^0.15.1"
 
 "@nota-lang/nota-editor@^0.2.1":
-  version "0.2.7"
-  resolved "https://registry.yarnpkg.com/@nota-lang/nota-editor/-/nota-editor-0.2.7.tgz#882b4b51703ab1589564c6622c22285cf7481dfd"
-  integrity sha512-sYo9EFBORLuu6wCV/203z/RU3TdncWqiBzObOXD7gLSHsnaFSPxo8NRVmlT1jiAsrShTw0GC8ljmxmAuXAbcKA==
+  version "0.2.8"
+  resolved "https://registry.yarnpkg.com/@nota-lang/nota-editor/-/nota-editor-0.2.8.tgz#8fbd8316ce3520eea4e2189933f626060a60c6bd"
+  integrity sha512-xW9mectzp28h8cTZaIp/F/uHXi/7B3LuAIuVIXKziEF8F5BHyRSGFauL7YTo/DwMyowGWhNvrFjZ1/3mGN3BIw==
   dependencies:
     "@babel/standalone" "^7.16.4"
-    "@nota-lang/nota-components" "^0.2.6"
+    "@nota-lang/nota-components" "^0.2.8"
     "@nota-lang/nota-syntax" "^0.2.6"
     prettier "^2.5.1"
 

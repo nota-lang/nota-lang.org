@@ -38,6 +38,7 @@ A @Ref{nota} document compiles to a JavaScript program, meaning it's easy to:
 
 let App = observer(() => {
   let [state] = useState(() => new LocalState(contents));
+  let [show_js, set_show_js] = useState(false);
 
   return (
     <div>
@@ -47,7 +48,12 @@ let App = observer(() => {
       <StateContext.Provider value={state}>
         <div className="row">
           <div className="output">
-            <OutputView result={state.translation} />
+            {show_js 
+              ? <JsView result={state.translation} />
+              :  <OutputView result={state.translation} />}           
+            <button className="toggle-output" onClick={() => set_show_js(!show_js)}>
+              {show_js ? "Show Nota" : "Show JS"}
+            </button>
           </div>
           <div className="editor">
             <Editor />
@@ -55,9 +61,20 @@ let App = observer(() => {
         </div>
       </StateContext.Provider>
       <div className="rest">
-        <p>Nota is under active development. The core language design is being settled, and a public release with documentation will come shortly after. Check out our progress on <a href="https://github.com/nota-lang/nota">Github</a> or follow @wcrichton on <a href="https://twitter.com/wcrichton">Twitter</a>.</p>
+        <p>
+          Nota is under active development. The core language design is being
+          settled, and a public release with documentation will come shortly
+          after. Check out our progress on{" "}
+          <a href="https://github.com/nota-lang/nota">Github</a> or follow
+          @wcrichton on <a href="https://twitter.com/wcrichton">Twitter</a>.
+        </p>
 
-        <p>If you are interested in contributing, please DM @wcrichton on Twitter or email <a href="mailto:wcrichto@cs.stanford.edu">wcrichto@cs.stanford.edu</a>.</p>
+        <p>
+          If you are interested in contributing, please DM @wcrichton on Twitter
+          or email{" "}
+          <a href="mailto:wcrichto@cs.stanford.edu">wcrichto@cs.stanford.edu</a>
+          .
+        </p>
       </div>
     </div>
   );

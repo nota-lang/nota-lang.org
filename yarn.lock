@@ -243,19 +243,19 @@
     katex "^0.15.1"
 
 "@nota-lang/nota-editor@^0.2.1":
-  version "0.2.8"
-  resolved "https://registry.yarnpkg.com/@nota-lang/nota-editor/-/nota-editor-0.2.8.tgz#8fbd8316ce3520eea4e2189933f626060a60c6bd"
-  integrity sha512-xW9mectzp28h8cTZaIp/F/uHXi/7B3LuAIuVIXKziEF8F5BHyRSGFauL7YTo/DwMyowGWhNvrFjZ1/3mGN3BIw==
+  version "0.2.9"
+  resolved "https://registry.yarnpkg.com/@nota-lang/nota-editor/-/nota-editor-0.2.9.tgz#0c6e7eab92446158f3b0da70f2c3b87c3d524a2c"
+  integrity sha512-DwEsXe2jAOSrFEp79CqNbNJn+PKiaa/+Y/y1ASgiJk5UAtJW0G0UMOLiJSC/3b1Tu17wvBcWDo9UzAM9SLVp2A==
   dependencies:
     "@babel/standalone" "^7.16.4"
     "@nota-lang/nota-components" "^0.2.8"
-    "@nota-lang/nota-syntax" "^0.2.6"
+    "@nota-lang/nota-syntax" "^0.2.9"
     prettier "^2.5.1"
 
-"@nota-lang/nota-syntax@^0.2.6":
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/@nota-lang/nota-syntax/-/nota-syntax-0.2.6.tgz#017bd13a8ce6f3acf5a63c6a7a0a2c767ce4acfd"
-  integrity sha512-rkm39foGU+SXoUbFLKcXUXUKkgtJnkAsGvCWOOyrPc9paYYyeu3gYD8bLku9DYTOcvJ9VU8u3JW3zfTorijYIw==
+"@nota-lang/nota-syntax@^0.2.9":
+  version "0.2.9"
+  resolved "https://registry.yarnpkg.com/@nota-lang/nota-syntax/-/nota-syntax-0.2.9.tgz#603b7ef201172f058f9b125e42660ca0043d0ccf"
+  integrity sha512-blaLWbiMBEClPkQK70stYCIpORzuMabuOch6Yl9ssJwuxSosBvbB6UNR+3uofW30WD/ug/5ZUbLud0GD9OxlvA==
   dependencies:
     "@babel/standalone" "^7.16.4"
 

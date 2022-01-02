@@ -1,109 +1,5 @@
 @charset "UTF-8";
 
-/* sass-plugin-0:/home/runner/work/nota-lang.org/nota-lang.org/css/app.scss */
-.nota-document {
-  font: 20px "EB Garamond", serif;
-  margin: 0;
-  padding: 0;
-}
-.nota-document .document ul {
-  margin: 0.5rem;
-}
-.nota-document #container {
-  padding: 1rem 2rem;
-}
-@media (max-width: 799px) {
-  .nota-document #container {
-    padding: 0.5rem 1rem;
-  }
-}
-.nota-document h1 {
-  margin: 0;
-  text-align: center;
-}
-@media (max-width: 799px) {
-  .nota-document h1 {
-    font-size: 30px;
-    line-height: 1.2;
-  }
-}
-.nota-document .row {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  border: 3px solid #ccc;
-  border-radius: 4px;
-  padding: 1rem;
-  margin: 1rem 0;
-}
-@media (max-width: 799px) {
-  .nota-document .row {
-    flex-direction: column;
-    padding: 0.5rem 0.75rem;
-  }
-}
-@media (min-width: 800px) {
-  .nota-document .row .editor,
-  .nota-document .row .document,
-  .nota-document .row .js-view {
-    max-height: 575px;
-    overflow-y: auto;
-  }
-}
-.nota-document .row > .editor {
-  flex: 55%;
-}
-.nota-document .row > .output {
-  flex: 45%;
-  position: relative;
-}
-@media (min-width: 800px) {
-  .nota-document .row > .output {
-    border-right: 3px solid #eee;
-    padding-right: 2rem;
-    margin-right: 1rem;
-    width: 45%;
-  }
-}
-@media (max-width: 799px) {
-  .nota-document .row > .output {
-    border-bottom: 3px solid #eee;
-    padding-bottom: 2rem;
-    margin-bottom: 1rem;
-  }
-}
-.nota-document .row > .output .toggle-output {
-  position: absolute;
-}
-@media (max-width: 799px) {
-  .nota-document .row > .output .toggle-output {
-    right: 0;
-    bottom: 1rem;
-  }
-}
-@media (min-width: 800px) {
-  .nota-document .row > .output .toggle-output {
-    bottom: 0;
-    right: 1rem;
-  }
-}
-.nota-document .rest {
-  font-size: 22px;
-}
-@media (min-width: 800px) {
-  .nota-document .rest {
-    width: 800px;
-    margin: 0 auto;
-  }
-}
-.nota-document .cm-editor {
-  font-size: 85%;
-}
-.nota-document .cm-editor .nota-text {
-  font-family: "EB Garamond", serif;
-  font-size: 108%;
-}
-
 /* sass-plugin-0:/home/runner/work/nota-lang.org/nota-lang.org/node_modules/@nota-lang/nota-components/dist/nota-components.css */
 .react-spinner-loader-swing div {
   border-radius: 50%;
@@ -855,5 +751,109 @@
   white-space: pre-wrap;
   font-size: 85%;
   overflow-x: auto;
+}
+
+/* sass-plugin-0:/home/runner/work/nota-lang.org/nota-lang.org/css/app.scss */
+body.no-edit {
+  padding: 1rem 2rem;
+}
+@media (max-width: 799px) {
+  body.no-edit {
+    padding: 0.5rem 1rem;
+  }
+}
+.nota-document {
+  font: 20px "EB Garamond", serif;
+  margin: 0;
+  padding: 0;
+}
+.nota-document ul {
+  margin: 0.5rem;
+}
+.nota-document h1 {
+  margin: 0;
+  text-align: center;
+}
+@media (max-width: 799px) {
+  .nota-document h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+}
+.nota-document .row {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border: 3px solid #ccc;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+@media (max-width: 799px) {
+  .nota-document .row {
+    flex-direction: column;
+    padding: 0.5rem 0.75rem;
+  }
+}
+@media (min-width: 800px) {
+  .nota-document .row .editor,
+  .nota-document .row .document,
+  .nota-document .row .js-view {
+    max-height: 575px;
+    overflow-y: auto;
+  }
+}
+.nota-document .row > .editor {
+  flex: 55%;
+}
+.nota-document .row > .output {
+  flex: 45%;
+  position: relative;
+}
+@media (min-width: 800px) {
+  .nota-document .row > .output {
+    border-right: 3px solid #eee;
+    padding-right: 2rem;
+    margin-right: 1rem;
+    width: 45%;
+  }
+}
+@media (max-width: 799px) {
+  .nota-document .row > .output {
+    border-bottom: 3px solid #eee;
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+.nota-document .row > .output .toggle-output {
+  position: absolute;
+}
+@media (max-width: 799px) {
+  .nota-document .row > .output .toggle-output {
+    right: 0;
+    bottom: 1rem;
+  }
+}
+@media (min-width: 800px) {
+  .nota-document .row > .output .toggle-output {
+    bottom: 0;
+    right: 1rem;
+  }
+}
+.nota-document .rest {
+  font-size: 22px;
+}
+@media (min-width: 800px) {
+  .nota-document .rest {
+    width: 800px;
+    margin: 0 auto;
+  }
+}
+.nota-document .cm-editor {
+  font-size: 85%;
+}
+.nota-document .cm-editor .nota-text {
+  font-family: "EB Garamond", serif;
+  font-size: 108%;
 }
 /*# sourceMappingURL=index.css.map */

@@ -1,118 +1,117 @@
-$cutoff: 800px;
-
-
-@mixin mobile {
-  @media (max-width: ($cutoff - 1)) { @content; }
-}
-
-@mixin monitor {
-  @media (min-width: $cutoff) { @content; }
-}
-
-$serif: 'EB Garamond', serif;
-
-body, .document {
+.nota-document {
+  $serif: 'EB Garamond', serif;
   font: 20px $serif;
-  
+    
   margin: 0;
   padding: 0;
-}
+    
+  $cutoff: 800px;
 
-.document {
-  ul {
-    margin: 0.5rem;
+  @mixin mobile {
+    @media (max-width: ($cutoff - 1)) { @content; }
   }
-}
-
-#container {
-  padding: 1rem 2rem;    
-
-  @include mobile {
-    padding: 0.5rem 1rem;
+  
+  @mixin monitor {
+    @media (min-width: $cutoff) { @content; }
   }
-}
-
-h1 {
-  margin: 0;
-  text-align: center;
-
-  @include mobile {
-    font-size: 30px;
-    line-height: 1.2;
-  }
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  border: 3px solid #ccc;
-  border-radius: 4px;
-  padding: 1rem;
-  margin: 1rem 0;
-
-  @include mobile {
-    flex-direction: column;
-    padding: 0.5rem 0.75rem;
-  }
-
-  @include monitor {
-    .editor, .document, .js-view {
-      max-height: 575px;
-      overflow-y: auto;    
-    }  
-  }
-
-  > .editor {
-    flex: 55%; 
-  }
-
-  > .output {
-    flex: 45%;
-    position: relative;
-
-    @include monitor {
-      border-right: 3px solid #eee;
-      padding-right: 2rem;
-      margin-right: 1rem;
-      width: 45%;
+  
+  
+  .document {
+    ul {
+      margin: 0.5rem;
     }
-
+  }
+  
+  #container {
+    padding: 1rem 2rem;    
+  
     @include mobile {
-      border-bottom: 3px solid #eee;
-      padding-bottom: 2rem;
-      margin-bottom: 1rem;
+      padding: 0.5rem 1rem;
     }
-
-    .toggle-output {
-      position: absolute;
-
-      @include mobile {
-        right: 0;
-        bottom: 1rem;
-      }
-
+  }
+  
+  h1 {
+    margin: 0;
+    text-align: center;
+  
+    @include mobile {
+      font-size: 30px;
+      line-height: 1.2;
+    }
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border: 3px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1rem 0;
+  
+    @include mobile {
+      flex-direction: column;
+      padding: 0.5rem 0.75rem;
+    }
+  
+    @include monitor {
+      .editor, .document, .js-view {
+        max-height: 575px;
+        overflow-y: auto;    
+      }  
+    }
+  
+    > .editor {
+      flex: 55%; 
+    }
+  
+    > .output {
+      flex: 45%;
+      position: relative;
+  
       @include monitor {
-        bottom: 0;
-        right: 1rem;
-      }     
+        border-right: 3px solid #eee;
+        padding-right: 2rem;
+        margin-right: 1rem;
+        width: 45%;
+      }
+  
+      @include mobile {
+        border-bottom: 3px solid #eee;
+        padding-bottom: 2rem;
+        margin-bottom: 1rem;
+      }
+  
+      .toggle-output {
+        position: absolute;
+  
+        @include mobile {
+          right: 0;
+          bottom: 1rem;
+        }
+  
+        @include monitor {
+          bottom: 0;
+          right: 1rem;
+        }     
+      }
     }
   }
-}
-
-.rest {
-  font-size: 22px;
-  @include monitor {
-    width: $cutoff;
-    margin: 0 auto;
+  
+  .rest {
+    font-size: 22px;
+    @include monitor {
+      width: $cutoff;
+      margin: 0 auto;
+    }
   }
-}
-
-.cm-editor {
-  font-size: 85%;
-
-  .nota-text {
-    font-family: $serif;
-    font-size: 108%;
+  
+  .cm-editor {
+    font-size: 85%;
+  
+    .nota-text {
+      font-family: $serif;
+      font-size: 108%;
+    }
   }
 }

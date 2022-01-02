@@ -1,10 +1,14 @@
-import { cli, copy_plugin } from "@nota-lang/esbuild-utils";
+import { cli, ssr_plugin, is_main } from "@nota-lang/esbuild-utils";
 import { sassPlugin } from "esbuild-sass-plugin";
 
-let build = cli();
-build({
-  entryPoints: ["src/index.tsx"],
-  preserveSymlinks: true,
-  format: "iife",
-  plugins: [sassPlugin(), copy_plugin({ extensions: [".html", ".wasm"] })],
-});
+export let plugins = [sassPlugin()];
+
+if (is_main(import.meta)) {
+  let build = cli();
+  build({
+    entryPoints: ["src/index.html"],
+    preserveSymlinks: true,
+    format: "iife",
+    plugins: [ssr_plugin, ...plugins],
+  });
+}

@@ -1,33 +1,30 @@
+$cutoff: 800px;
+
+@mixin mobile {
+  @media (max-width: ($cutoff - 1)) { @content; }
+}
+
+@mixin monitor {
+  @media (min-width: $cutoff) { @content; }
+}
+
+body.no-edit {
+  padding: 1rem 2rem;    
+
+  @include mobile {
+    padding: 0.5rem 1rem;
+  }
+}
+
 .nota-document {
   $serif: 'EB Garamond', serif;
   font: 20px $serif;
     
   margin: 0;
   padding: 0;
-    
-  $cutoff: 800px;
 
-  @mixin mobile {
-    @media (max-width: ($cutoff - 1)) { @content; }
-  }
-  
-  @mixin monitor {
-    @media (min-width: $cutoff) { @content; }
-  }
-  
-  
-  .document {
-    ul {
-      margin: 0.5rem;
-    }
-  }
-  
-  #container {
-    padding: 1rem 2rem;    
-  
-    @include mobile {
-      padding: 0.5rem 1rem;
-    }
+  ul {
+    margin: 0.5rem;
   }
   
   h1 {

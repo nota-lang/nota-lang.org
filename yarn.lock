@@ -247,9 +247,9 @@
     "@lezer/common" "^0.15.0"
 
 "@nota-lang/esbuild-utils@^0.2.1":
-  version "0.2.15"
-  resolved "https://registry.yarnpkg.com/@nota-lang/esbuild-utils/-/esbuild-utils-0.2.15.tgz#144b3caf525e3aa31016b32ac3fb4057f7e41428"
-  integrity sha512-kDPZ/ZtnhQ3JZ1WOa/roLTCd6g7x7mtb6oIgQea+XZv3EV0dF1PcaRi/UBlYV+HcIgaOL0HzSEAG80uDSip4Dg==
+  version "0.2.16"
+  resolved "https://registry.yarnpkg.com/@nota-lang/esbuild-utils/-/esbuild-utils-0.2.16.tgz#3d1608902f98e6e0650300439a7f5ccfe4e9c845"
+  integrity sha512-+qkbGWQrc8bxRG+03a3Cw02Wxp4uzxnVKc+yX4SezdNyCC+nQjtmQrba7sUv1L36B4e7KEBgwP7e7VvdFX5YCQ==
   dependencies:
     "@cspotcode/source-map-support" "^0.7.0"
     commander "^8.3.0"
@@ -258,28 +258,28 @@
     glob-promise "^4.2.2"
     winston "^3.3.3"
 
-"@nota-lang/nota-components@^0.2.1", "@nota-lang/nota-components@^0.2.15":
-  version "0.2.15"
-  resolved "https://registry.yarnpkg.com/@nota-lang/nota-components/-/nota-components-0.2.15.tgz#bac191754434058723debdf2b58ebb1decb4726c"
-  integrity sha512-FBoFxnhQZPdtYXSr4/ZdsQRwvkmuElhJPjX1PSrCT5u+FrjW4Jl/4jP3z08Y03oVqxzvNc32j2PdLqBb8wQarQ==
+"@nota-lang/nota-components@^0.2.1", "@nota-lang/nota-components@^0.2.16":
+  version "0.2.16"
+  resolved "https://registry.yarnpkg.com/@nota-lang/nota-components/-/nota-components-0.2.16.tgz#4fbd20c69ad1a24987f91e48ab0eb7a66a99b43f"
+  integrity sha512-KiRRj3PvQSetvCae8+xu5Ueyo+0wc26S8A0S0pSQrJGrSCvyVOaAHidzzzF4y/rPuLAGPeETtwWYGr5gQNxMeQ==
   dependencies:
     "@popperjs/core" "^2.9.2"
     katex "^0.15.1"
 
 "@nota-lang/nota-editor@^0.2.1":
-  version "0.2.15"
-  resolved "https://registry.yarnpkg.com/@nota-lang/nota-editor/-/nota-editor-0.2.15.tgz#fc8079c0c4187ce3e5ec9108b8c671c4027af45e"
-  integrity sha512-hy1r3lwkF+NYcTjrdNo3NEt8HocQ5VRR4Lp3Cv2AM3algov5Siy5Vp73i2a/HFrreIgQsew96kK1fV4NjsyXBQ==
+  version "0.2.16"
+  resolved "https://registry.yarnpkg.com/@nota-lang/nota-editor/-/nota-editor-0.2.16.tgz#95f64aaccd7b2776d1afdb66e2c749c2a76c4ba6"
+  integrity sha512-5BXVjnIU3qS0rVXMltrH0ywY8BM1g+zGnxeT9RLgna3E3e4bTB1Y2RZkeTPPgjtLQsD3GnweoXlD2TsZwf/jNA==
   dependencies:
     "@babel/standalone" "^7.16.4"
-    "@nota-lang/nota-components" "^0.2.15"
-    "@nota-lang/nota-syntax" "^0.2.15"
+    "@nota-lang/nota-components" "^0.2.16"
+    "@nota-lang/nota-syntax" "^0.2.16"
     prettier "^2.5.1"
 
-"@nota-lang/nota-syntax@^0.2.15":
-  version "0.2.15"
-  resolved "https://registry.yarnpkg.com/@nota-lang/nota-syntax/-/nota-syntax-0.2.15.tgz#db366b5680d9db6243ddcb3af4206d6be23a2b75"
-  integrity sha512-8l3XsQagOzzs1B7CPGAtFtDt8mVpgsREftAbp6W6qh+jzRmskuANK/NSJWUEN9RzFBzn+jXrIvvpREw+BwTyAA==
+"@nota-lang/nota-syntax@^0.2.16":
+  version "0.2.16"
+  resolved "https://registry.yarnpkg.com/@nota-lang/nota-syntax/-/nota-syntax-0.2.16.tgz#40f3c8d85c2cae525e6ae62a9e4f3cb975b57631"
+  integrity sha512-fs5Wwnl/2l6AA/32Kgv3nNlEquJMpNawqUBtNJ/2IWzXrGY4h+CGJ93tActjQeZk89D0DlRtjTJJzKLh08Kp4A==
   dependencies:
     "@babel/standalone" "^7.16.4"
 

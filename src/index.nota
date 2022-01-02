@@ -3,7 +3,6 @@ export let metadata = {
   title: "Nota: A Document Language for the Browser"
 };
   
-import "../css/app.scss"
 import {
   Editor,
   OutputView,

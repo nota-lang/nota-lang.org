@@ -2,29 +2,21 @@
 export let metadata = {
   title: "Nota: A Document Language for the Browser"
 };
-  
-import {
-  Editor,
-  OutputView,
-  JsView,
-  LocalState,
-  StateContext,
-} from "@nota-lang/nota-editor";
-import {useState} from "react";
 
-import "@nota-lang/nota-components/dist/nota-components.css";
-import "@nota-lang/nota-editor/dist/nota-editor.css";
+import {NotaCode} from "./editor";
+
+import "@nota-lang/nota-components/dist/index.css";
 import "../css/app.scss";
+)
 
-let contents = `
-// This code is editable!
+@NotaCode[fancy]|{// This code is editable!
 %(let nota = @strong{@Smallcaps{Nota}})
 @Definition[name="nota"][Label=nota]{
   #nota is a language for writing documents, like academic papers and blog posts.
 }
 The goal of @Ref{nota} is to @strong{bring documents into the #(20 + 1)st century.}
 
-Documents contain a lot of structure --- for example, "@Ref{nota}" is a reference to a term defined in the preceding paragraph. @Ref{nota} enables authors to @em{represent} that structure, which allows the reading medium (the browser) to @em{understand} that structure, which in turn empowers readers to @em{use} that structure. Try clicking on any "@Ref{nota}" reference to see this idea in action.
+Documents contain a lot of structure --- for example, "@Ref{nota}" is a reference to a term defined in the preceding paragraph. @Ref{nota} enables authors to @em{represent} that structure, which allows the reading medium (the browser) to @em{understand} that structure, which in turn empowers readers to @em{use} that structure. Try clicking on any "@Ref{nota}" reference to see this idea in action. (Then try double-clicking!)
 
 A @Ref{nota} document compiles to a JavaScript program, meaning it's easy to:
 
@@ -33,42 +25,49 @@ A @Ref{nota} document compiles to a JavaScript program, meaning it's easy to:
   @li{Use variables, functions, and data structures to simplify document writing.}
   @li{Integrate with JavaScript libraries like @a[href="https://katex.org/"]{KaTeX}, @a[href="https://vega.github.io/vega-lite/"]{Vega-Lite}, and @a[href="https://github.com/penrose/penrose"]{Penrose}.}
   @li{Support accessibility needs like screen readers.}
-}
-`.trim();
-  
-let [state] = useState(() => new LocalState(contents));
-let [show_js, set_show_js] = useState(false);
-)
+}}|
 
-@header{@h1{Nota: A Document Language for the Browser}}
+@Section{Usage}
 
-@(StateContext.Provider)[value=state]{
-  @div[className="row"]{
-    @div[className="output"]{
-      #(show_js 
-        ? @JsView[result=state.translation] 
-        : @OutputView[result=state.translation])
-      @button[className="toggle-output"][onClick=()=>set_show_js(!show_js)]{
-        #(show_js ? @{Show Nota} : @{Show JS})
-      }
-    }
-    @div[className="editor"]{
-      @Editor
-    }
-  }
+You can use Nota by installing the @code{nota} executable via the @code{\@nota-lang/nota} package. For example, you can build a single file by running these shell commands:
+
+// Nota is under active development. The core language design is being settled, and a public release with documentation will come shortly after. Check out our progress on @a[href="https://github.com/nota-lang/nota"]{Github} or follow \@wcrichton on @a[href="https://twitter.com/wcrichton"]{Twitter}.
+
+// If you are interested in contributing, please DM \@wcrichton on Twitter or email @a[href="mailto:wcrichto@cs.stanford.edu"]{wcrichto\@cs.stanford.edu}.
+
+@Listing|{npm install --global @nota-lang/nota
+echo "@h1{Hello world}" > index.nota
+nota build index.nota
+open dist/index.html}|
+
+You can interactively edit a Nota file by running the Nota editor, like so:
+
+@Listing{
+  nota edit index.nota
 }
 
-@div[className="rest"]{
-  @p{
-    Nota is under active development. The core language design is being
-    settled, and a public release with documentation will come shortly
-    after. Check out our progress on
-    @a[href="https://github.com/nota-lang/nota"]{Github} or follow
-    \@wcrichton on @a[href="https://twitter.com/wcrichton"]{Twitter}.
-  }
+To learn more about how to write Nota documents, you can follow the @a[href="/tutorial.html"]{Tutorial} or check out some @a[href="/examples.html"]{Examples}.
 
-  @p{
-    If you are interested in contributing, please DM \@wcrichton on Twitter or 
-    email @a[href="mailto:wcrichto@cs.stanford.edu"]{wcrichto\@cs.stanford.edu}.
-  }
+@Section{What is Nota?}
+
+Nota is comprised of three key pieces:
+
+@ol{
+  @li{A document-authoring language that compiles to React JavaScript.}
+  @li{A set of React components for structuring documents.}
+  @li{An editor designed for Nota documents.}
 }
+
+The components are bundled into the @code|{@nota-lang/nota}| package, but you can use them independently as well. For example, an embeddable version of the editor is included at the top of this page. Nota documents can be styled with CSS, including with premade themes such as @code|{@nota-lang/nota-theme-acm}|.
+
+To learn more about Nota's architecture and how to apply it for your use case, read the @a[href="/integration.html"]{Integration guide}.
+
+@Section{Why Nota?}
+
+There are two main mediums for digital documents: PDFs and web pages. PDFs were designed to mirror physical documents, so they impose the real-world constraints of paper: page breaks, fixed width, and immutable styling. Web pages, by contrast, provides an essential dynamism. Web pages can be dynamically formatted: resized for phones, translated into other languages, colors changed for color-blindness. Web pages can be dynamically interactive: text prompted for more context, diagrams shifted for a new perspective, annotations added for posterity. Web pages are undeniably the future of digital documents.
+
+But currently, that dynamism is only accessible to professional web developers. Existing document tools like @a[href="https://www.latex-project.org/"]{LaTeX}, @a[href="https://pandoc.org/"]{Pandoc}, @a[href="https://daringfireball.net/projects/markdown/"]{Markdown}, and @a[href="https://docs.racket-lang.org/scribble/"]{Scribble} can (for the most part) only generate static web pages. Nota's goal is to bridge that gap by providing authors with a document language that has a low floor, a high ceiling, and a smooth ramp up. 
+
+Part of this design is identifying components that are easy to use for authors and have high impact for the reader. For instance, the @code|{@Definition}| and @code|{@Ref}| components in the example above require a small amount of document annotation on the author's part. Then the Nota runtime can provide features like presenting a reference's definition in context via tooltip. Future Nota versions could include more advanced features like @q{find all references to this definition}.
+
+For more on this design philosophy, you can read my original paper @a[href="https://willcrichton.net/nota/"]{"A New Medium for Communicating Research on Programming Languages"}.

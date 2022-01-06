@@ -1,0 +1,16 @@
+%(
+export let metadata = {
+  title: "Nota Examples"
+};
+
+import {NotaCode} from "./editor";
+import {nota} from "@nota-lang/nota-syntax";
+import "@nota-lang/nota-components/dist/index.css";
+import "../css/app.scss";
+)
+
+@ListingConfigure[language=nota()]
+
+@Title{Nota Examples}
+
+This page is coming soon!

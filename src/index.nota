@@ -7,6 +7,7 @@ import {NotaCode} from "./editor";
 
 import "@nota-lang/nota-components/dist/index.css";
 import "../css/app.scss";
+import "../static/favicon/favicon.ico";
 )
 
 @NotaCode[fancy]|{// This code is editable!

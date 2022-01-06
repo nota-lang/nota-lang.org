@@ -1,4 +1,4 @@
-import { cli, ssr_plugin, is_main } from "@nota-lang/esbuild-utils";
+import { cli, ssr_plugin, is_main, copy_plugin } from "@nota-lang/esbuild-utils";
 import { nota_plugin } from "@nota-lang/nota-syntax/dist/esbuild-plugin.js";
 import { sassPlugin } from "esbuild-sass-plugin";
 
@@ -13,6 +13,7 @@ if (is_main(import.meta)) {
     plugins: [
       ssr_plugin({ template: "./src/template.tsx" }),
       nota_plugin(),
+      copy_plugin({extensions: [".ico"]}),
       ...plugins,
     ],
   });

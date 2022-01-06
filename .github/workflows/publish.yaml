@@ -8,7 +8,7 @@ jobs:
       - run: |
           sudo npm install -g yarn @nota-lang/nota
           yarn install
-          nota build src/index.nota         
+          yarn build
       - uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages

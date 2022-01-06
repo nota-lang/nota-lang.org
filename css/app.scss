@@ -182,7 +182,7 @@ header {
       .nota-editor,
       .nota-document,
       .js-view {
-        height: 550px;
+        max-height: 550px;
         overflow-y: auto;
       }
     }

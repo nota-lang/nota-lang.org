@@ -1,7 +1,9 @@
-import{a as g,b as t,c as r,d as D,e as p,h as i,n,o as l,p as f,q as E,s,t as T}from"./chunk-S3UM2G6H.mjs";var m=t(r()),d=t(D());var o={};g(o,{default:()=>a,metadata:()=>M});var e=t(r());var M={title:"Nota Examples"},a=p(()=>(0,e.createElement)(n,{},...(()=>[`
+import{A as l,B as f,I as s,J as E,L as d,M as O,a as D,b as t,c as r,d as T,e as n,t as p,v as i}from"./chunk-TFI6BC7I.mjs";var m=t(r()),c=t(T());var o={};D(o,{default:()=>a,metadata:()=>C});var e=t(r());var C={title:"Nota Examples"},a=n(()=>(0,e.createElement)(l,{},...(()=>[`
 `,`
-`,(0,e.createElement)(i,{language:f()}),`
+`,(0,e.createElement)(i,{}),`
 `,`
-`,(0,e.createElement)(l,{},"Nota Examples"),`
+`,(0,e.createElement)(p,{language:s()}),`
 `,`
-`,"This page is coming soon!"])()));var c=t(E()),h=t(r()),v=t(T()),u="metadata",N=u in o?o[u]:{},O=x=>m.default.createElement(s,{...x},m.default.createElement(a,null));c.canUseDOM&&d.default.hydrate(m.default.createElement(O,{...N,script:"./examples.mjs"}),document.documentElement);var export_React=h.default;var export_ReactDOMServer=v.default;export{O as Page,export_React as React,export_ReactDOMServer as ReactDOMServer,N as metadata};
+`,(0,e.createElement)(f,{},"Nota Examples"),`
+`,`
+`,"This page is coming soon!"])()));var u=t(E()),b=t(r()),h=t(O()),x="metadata",M=x in o?o[x]:{},N=g=>m.default.createElement(d,{...g},m.default.createElement(a,null));u.canUseDOM&&c.default.hydrate(m.default.createElement(N,{...M,script:"./examples.mjs"}),document.documentElement);var export_React=b.default;var export_ReactDOMServer=h.default;export{N as Page,export_React as React,export_ReactDOMServer as ReactDOMServer,M as metadata};

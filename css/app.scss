@@ -83,12 +83,13 @@ header {
     font-size: 28px;
     font-weight: bold;
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem 1.5rem;
     flex-wrap: wrap;
     
     @include mobile {
       margin-top: 1rem;
       width: 100%;
+      justify-content: space-around;
     }
 
     a {
@@ -103,6 +104,8 @@ header {
 }
 
 .nota-document {
+  position: relative;
+
   @include monitor {
     width: $cutoff;
     margin: 0 auto;
@@ -114,6 +117,37 @@ header {
 
   .ref {
     color: black;
+  }
+
+  .toc-wrapper {
+    $width: 300px;
+    position: absolute;
+    z-index: 999;
+    width: $width;
+    right: -($width + 80px);
+    top: 0;
+    height: 100%;
+    text-align: left;    
+
+    .toc {
+      position: sticky;
+      top: 2rem;    
+
+      > ol {
+        margin-left: 0;
+        padding-left: 1rem;
+        
+        ol {
+          margin-left: -0.5rem;
+          list-style-type: lower-alpha;
+        }
+      }
+
+      &::before {
+        content: "Contents";
+        font-weight: bold;
+      }
+    }
   }
 
   code {
@@ -135,22 +169,15 @@ header {
     margin: 0.5rem;
   }
 
-  // h1 {
-  //   margin: 0;
-
-  //   @include mobile {
-  //     font-size: 30px;
-  //     line-height: 1.2;
-  //   }
-  // }
-
   .nota-code {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     padding: 1rem;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
+    background: white;
+    z-index: 1000;
 
     $normal-border: 3px solid #ccc;
     $fancy-border: 3px solid black;
@@ -167,7 +194,7 @@ header {
     }
 
     @include monitor {
-      $width: $cutoff + 200px;
+      $width: $cutoff + 100px;
       width: $width;
       position: relative;
       right: calc(($width - $cutoff) / 2);
@@ -177,12 +204,13 @@ header {
         width: $width;
         position: relative;
         right: calc(($width - $cutoff) / 2);
+        height: 600px;
       }
 
       .nota-editor,
       .nota-document,
       .js-view {
-        max-height: 550px;
+        max-height: 600px;
         overflow-y: auto;
       }
     }
@@ -268,7 +296,7 @@ header {
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 48px;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
@@ -289,5 +317,22 @@ header {
 
   ol {
     margin: 0.5rem;
+  }
+
+  table {
+    margin: 1rem 0;
+    border-spacing: 1rem 0;
+    
+    th {
+      border-bottom: 1px solid black;
+    }
+
+    tr:nth-child(even) {
+      background: #f5f5f5;
+    }
+  }
+ 
+  .listing {
+    margin: 0.5rem 0;
   }
 }

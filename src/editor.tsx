@@ -7,6 +7,7 @@ import {
   LocalState,
   StateContext,
 } from "@nota-lang/nota-editor";
+import * as lang_rust from "@codemirror/lang-rust";
 import { observer } from "mobx-react";
 import classNames from "classnames";
 
@@ -25,7 +26,7 @@ export let NotaCode: React.FC<{ fancy?: boolean }> = observer(
             {show_js ? (
               <JsView result={state.translation} />
             ) : (
-              <OutputView result={state.translation} />
+              <OutputView result={state.translation} imports={{"@codemirror/lang-rust": lang_rust}} />
             )}
             <button
               className="toggle-output"

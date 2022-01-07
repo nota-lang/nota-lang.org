@@ -9,6 +9,8 @@ import "@nota-lang/nota-components/dist/index.css";
 import "../css/app.scss";
 )
 
+@TableOfContents
+
 @ListingConfigure[language=nota()]
 
 @Title{Nota Examples}

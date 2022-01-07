@@ -14,7 +14,7 @@ let Template: React.FC<TemplateProps> = ({ title, script, children }) => (
         <div className="logo"><a href="/"><span className="fancy">N</span>ota</a></div>
         <nav>
           <a href="/tutorial.html">Tutorial</a>
-          <a href="/examples.html">Examples</a>
+          <a href="/integration.html">Integration</a>
           <a href="https://github.com/nota-lang/nota">Github</a>
         </nav>
       </header>

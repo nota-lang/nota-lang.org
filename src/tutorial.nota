@@ -9,6 +9,8 @@ import "@nota-lang/nota-components/dist/index.css";
 import "../css/app.scss";
 )
 
+@TableOfContents
+
 @ListingConfigure[language=nota()]
 
 @Title{Nota Tutorial}
@@ -97,10 +99,18 @@ Because text arguments may contain commands, they are not translated directly to
 Statements are scoped, so variables defined are only accessible after the statement and within the current text block. For example, the command:
 
 @Center{@code|{@span{%(let x = 1) x = #x}}|}
-  
+
 translates to (in JSX):
-  
+
 @Center{@code|{<span>{(()=>{let x = 1; return [" x = ", x]})}</span>}|}
+
+@Subsection{Javascript}
+
+Nota extends Javascript with the ability to embed an @Ref{atcmd} within a Javascript expression. This feature can be useful for creating utility functions, or for passing Nota text into third party libraries. For example, the equivalent of a LaTeX @code{\newcommand} macro:
+
+@NotaCode|{%(let or = (x, y) => @{#x \vee #y})
+The expression @${#or{x}{y}} means @q{@${x} or @${y}}.
+}|
 
 @Section{Nota components}
 
@@ -171,3 +181,50 @@ A reference's text argument is the definition's name. You can optionally define 
 @NotaCode|{@Definition[name="nota"]{
   Nota is a document language for the browser.
 } Have you tried writing @Ref[Label=@strong{Nota}]{nota}?}|
+
+@Subsection{Math / TeX}
+
+Nota provides inline and block math elements, @code{$} and @code{$$} respectively. Currently these use the @a[href="https://katex.org/"]{KaTeX} library for rendering.
+
+@NotaCode|{The Cauchy-Schwarz inequality states that for all vectors @${u} and @${v} of an inner product space it is true that
+
+%(
+let u = @{\mathbf{u}}; let v = @{\mathbf{v}};
+let vec = (x, y) => @{\langle #x, #y \rangle};
+)
+@$${
+ | #vec[u][v] |^2 \leq #vec[u][u] \cdot #vec[v][v]
+}}|
+
+While you can use TeX macros if necessary, it is recommended to use Javascript variables and functions as shown above. Macros are only essential for referencing TeX builtins such as @code{\leq} for @${\leq}.
+
+The KaTeX integration for Nota provides special support for definitions and references. For example:
+
+@NotaCode|{%(let reaches = (u, v) => tex_ref("reaches", @{#u ~ \mathsf{reaches} ~ #v}))
+@Definition[name="reaches"]{
+  The judgment @${#reaches{n_1}{n_2}} is defined as:  
+  @div{
+    @IR[Top=()=>null][Bot=()=>@${#reaches{n}{n}}]
+  
+    @IR[Top=()=>@PremiseRow{
+      @Premise{@${#reaches{n_1}{n_2}}}
+      @Premise{@${#reaches{n_2}{n_3}}}
+    }][Bot=()=>@${#reaches{n_1}{n_3}}]
+  }
+}}|
+
+Nota provides the function @code{tex_ref} for TeX code which refers to a Nota definition, such as @code{"reaches"} here. Then any reference to the @${\mathsf{reaches}} judgment via the @code{reaches} function will support definition-reference features: click to see the definition, and double-click to jump to it.
+
+@Subsection{Code}
+
+Nota currently uses @a[href="https://codemirror.net/6/"]{Codemirror 6} for code editing and viewing. For example:
+
+@NotaCode|{%(import {rust} from "@codemirror/lang-rust")
+  
+@Listing[language=rust()]{
+  fn char_at(s: &str, i: usize) -> char {
+    s.chars().nth(i).unwrap()
+  }
+}}|
+
+Codemirror does not support server-side rendering and currently has limited language support, so contributions for other syntax highlighting libraries are welcome!

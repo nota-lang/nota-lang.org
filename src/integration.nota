@@ -5,12 +5,124 @@ export let metadata = {
 
 import {NotaCode} from "./editor";
 import {nota} from "@nota-lang/nota-syntax";
+import {javascript} from "@codemirror/lang-javascript";
 import "@nota-lang/nota-components/dist/index.css";
 import "../css/app.scss";
+
+let js = javascript({typescript: true, jsx: true});
+let Js = ({children}) => @Listing[language=js]{#children}
 )
 
-@ListingConfigure[language=nota()]
+@TableOfContents
 
 @Title{Nota Integration Guide}
 
-This page is coming soon!
+A Nota document is a @a[href="https://reactjs.org/"]{React} program. Therefore Nota can be used anywhere React can be used. More specifically, Nota is comprised of three main pieces:
+
+@ol{
+  @li{@a[href="https://github.com/nota-lang/nota/tree/master/packages/nota-syntax"]{@code{\@nota-lang/nota-syntax}}: A document-authoring language that compiles to React JavaScript.}
+  @li{@a[href="https://github.com/nota-lang/nota/tree/master/packages/nota-components"]{@code{\@nota-lang/nota-components}}: A set of React components for structuring documents.}
+  @li{@a[href="https://github.com/nota-lang/nota/tree/master/packages/nota-editor"]{@code{\@nota-lang/nota-editor}}: An editor designed for Nota documents.}
+}
+
+The complete Nota pipeline (in the @a[href="https://github.com/nota-lang/nota/tree/master/packages/nota"]{@code|{@nota-lang/nota}|} package) turns a Nota document into a standalone web page. This pipeline includes dependency and static asset bundling via @a[href="https://esbuild.github.io/"]{esbuild}, as well as server-side rendering via @a[href="https://reactjs.org/docs/react-dom-server.html"]{ReactDOMServer}.
+
+If you want to use Nota in a broader context, such as a personal website or an online academic journal, you can select the subset of Nota packages relevant to your use case.
+
+@Section{Building}
+
+The @code|{@nota-lang/nota-syntax}| package exports two key functions:
+
+
+@Js{
+  let try_parse(input: string): Result<lezer.Tree>;
+  let translate(input: string, tree: lezer.Tree): string;
+}
+
+These functions parse and translate, respectively, a Nota document into a React program (via a @a[href="https://lezer.codemirror.net/"]{Lezer} tree). If possible, you should not call these functions directly but rather use a bundler integration. Currently we only support @a[href="https://esbuild.github.io/"]{esbuild}, but other integrations are welcome!
+
+@Subsection{esbuild}
+
+First, import @code{nota_plugin} and add it to your list of plugins:
+
+@Js{
+  import {nota_plugin} from "\@nota-lang/nota-syntax/dist/esbuild-plugin.js";
+  import esbuild from "esbuild";
+
+  esbuild.build({
+    /* your configuration... */
+    plugins: [nota_plugin()]
+  })
+}
+
+This plugin will allow you to import a file with a @code{.nota} extension. The file's default export will be the document's React component. For example:
+
+@Js{
+  import React from "react";
+  import ReactDOM from "react-dom";
+  import Doc from "./index.nota";
+  
+  let App = () => <div>
+    <h1>My Website</h1>
+    <Doc />
+  </div>;
+  
+  ReactDOM.renderToString(<App />, document.getElementById('app'));
+}
+
+If you follow the approach above, all pipeline issues like bundling and server-side rendering are up to you. Alternatively, you can use the @a[href="https://github.com/nota-lang/nota/tree/master/packages/esbuild-utils"]{@code{\@nota-lang/esbuild-utils}} package to get a simple Nota-enabled static site generator that includes bundling and SSR. Check out the @code{build.mjs} file for @a[href="https://github.com/nota-lang/nota-lang.org"]{nota-lang.org} and @a[href="https://github.com/willcrichton/willcrichton.github.io"]{willcrichton.net} as examples.
+
+@Section{Styling}
+
+Nota components do not have much default styling to allow authors greater flexibility in their own designs. You should either provide your own styling, or use a premade Nota theme. The current list of Nota themes: is:
+
+@ul{
+  @li{@a[href="https://github.com/nota-lang/nota/tree/master/packages/nota-theme-acm"]{@code{\@nota-lang/nota-theme-acm}}: emulates the latest @a[href="https://www.acm.org/publications/proceedings-template"]{ACM LaTeX} conference paper theme.}
+  @li{...That's it so far! If you make your own theme, we can add it to this list.}
+}
+
+To use a theme, you need to import its CSS. For example, after installing @code{\@nota-lang/nota-theme-acm}, you can add at the top of your Nota document:
+
+@Listing[language=nota()]{
+  \%(import "\@nota-lang/nota-theme-acm/dist/index.css")
+}
+
+@Section{Editing}
+
+You can still use the Nota editor on documents that are not built via @code{nota build}. The @code{nota edit} command can take additional flags to interoperate with your personal build pipeline. 
+
+@Subsection{Build configuration}
+
+If you are using esbuild and have custom esbuild flags, e.g. a plugin like @a[href="https://github.com/glromeo/esbuild-sass-plugin"]{esbuild-sass-plugin}, then you can define a configuration file like so:
+
+@Js|{// nota.config.mjs
+import { sassPlugin } from "esbuild-sass-plugin";
+
+export default {
+  plugins: [sassPlugin()];
+}}|
+
+Then incorporate it into your build script:
+
+@Js|{// build.mjs
+import config from "./nota.config.mjs";
+import esbuild from "esbuild";
+
+esbuild.build({
+  entryPoints: ["./src/index.nota"],
+  ...config
+})}|
+
+And then provide the configuration path to the editor:
+
+@Listing{
+  nota edit src/index.nota --config nota.config.mjs
+}
+
+@Subsection{Asset folder}
+
+If your document contains local URLs to assets like images, then you can configure the editor to serve files out of a given directory:
+
+@Listing{
+  nota edit src/index.nota --static assets
+}

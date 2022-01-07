@@ -7,7 +7,6 @@ import {NotaCode} from "./editor";
 
 import "@nota-lang/nota-components/dist/index.css";
 import "../css/app.scss";
-import "../static/favicon/favicon.ico";
 )
 
 @NotaCode[fancy]|{// This code is editable!
@@ -30,7 +29,13 @@ A @Ref{nota} document compiles to a JavaScript program, meaning it's easy to:
 
 @Section{Usage}
 
-You can use Nota by installing the @code{nota} executable via the @code{\@nota-lang/nota} package. For example, you can build a single file by running these shell commands:
+You can use Nota by installing the @code{nota} executable via the @code{\@nota-lang/nota} package. You need @a[href="https://nodejs.org/en/download/"]{NodeJS ≥ 16} and @a[href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm"]{npm ≥ 6}. The NodeJS global binary directory must be on your shell's @code{PATH}, e.g. by running
+
+@Listing{
+  export PATH="$(npm config get prefix)/bin:$PATH"
+}
+
+Then you can build a single Nota document by running these shell commands:
 
 // Nota is under active development. The core language design is being settled, and a public release with documentation will come shortly after. Check out our progress on @a[href="https://github.com/nota-lang/nota"]{Github} or follow \@wcrichton on @a[href="https://twitter.com/wcrichton"]{Twitter}.
 
@@ -47,21 +52,9 @@ You can interactively edit a Nota file by running the Nota editor, like so:
   nota edit index.nota
 }
 
-To learn more about how to write Nota documents, you can follow the @a[href="/tutorial.html"]{Tutorial} or check out some @a[href="/examples.html"]{Examples}.
+To learn more about how to write Nota documents, you can follow the @a[href="/tutorial.html"]{Tutorial}. To add Nota to your website or to learn more about Nota's architecture, read the @a[href="/integration.html"]{Integration guide}.
 
-@Section{What is Nota?}
-
-Nota is comprised of three key pieces:
-
-@ol{
-  @li{A document-authoring language that compiles to React JavaScript.}
-  @li{A set of React components for structuring documents.}
-  @li{An editor designed for Nota documents.}
-}
-
-The components are bundled into the @code|{@nota-lang/nota}| package, but you can use them independently as well. For example, an embeddable version of the editor is included at the top of this page. Nota documents can be styled with CSS, including with premade themes such as @code|{@nota-lang/nota-theme-acm}|.
-
-To learn more about Nota's architecture and how to apply it for your use case, read the @a[href="/integration.html"]{Integration guide}.
+@strong{Nota is a new and evolving technology.} The architecture and API are continually changing. Tooling will have bugs and missing features. Documentation will be incomplete or incorrect. Right now, I am seeking early adopters that want to help make Nota the document language of the future.
 
 @Section{Why Nota?}
 

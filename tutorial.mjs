@@ -1,12 +1,12 @@
-import{A as w,B as v,I as p,J as F,K as a,L as T,M as I,a as L,b as o,c as m,d as $,e as y,q as s,r as n,s as h,t as g,u as r,v as x,w as c,x as t,y as b,z as u}from"./chunk-UYBX2XD6.mjs";var l=o(m()),N=o($());var d={};L(d,{default:()=>f,metadata:()=>J});var e=o(m());var J={title:"Nota Tutorial"},f=y(()=>(0,e.createElement)(w,{},...(()=>[`
+import{A as w,B as v,I as p,J as F,K as a,L as T,M as I,a as L,b as o,c as m,d as $,e as y,q as s,r as n,s as h,t as g,u as r,v as x,w as c,x as t,y as b,z as u}from"./chunk-SNNCH4V5.mjs";var l=o(m()),N=o($());var d={};L(d,{default:()=>f,metadata:()=>J});var e=o(m());var J={title:"Nota Tutorial"},f=y(()=>(0,e.createElement)(w,{},...(()=>[`
 `,`
-`,(0,e.createElement)(x,{}),`
-`,`
-`,(0,e.createElement)(g,{language:p()}),`
+`,(0,e.createElement)(g,{language:p(),wrap:!0}),`
 `,`
 `,(0,e.createElement)(v,{},"Nota Tutorial"),`
 `,`
 `,"This page explains the basics of Nota's language syntax and component library. You can either edit the examples here interactively, or you can follow the instructions on the ",(0,e.createElement)("a",{href:"/"},"home page")," to install Nota and edit files on your own computer. ",`
+`,`
+`,(0,e.createElement)(x,{}),`
 `,`
 `,(0,e.createElement)(c,{},"Syntax"),`
 `,`

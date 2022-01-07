@@ -1,6 +1,8 @@
-import{A as d,J as y,K as c,L as m,M as w,a as f,b as t,c as r,d as b,e as l,u as n,w as i}from"./chunk-UYBX2XD6.mjs";var o=t(r()),h=t(b());var a={};f(a,{default:()=>s,metadata:()=>v});var e=t(r());var v={title:"Nota: A Document Language for the Browser"},s=l(()=>(0,e.createElement)(d,{},...(()=>[`
+import{A as c,J as w,K as m,L as h,M as v,a as b,b as t,c as r,d as y,e as l,t as d,u as n,w as i}from"./chunk-SNNCH4V5.mjs";var o=t(r()),u=t(y());var a={};b(a,{default:()=>s,metadata:()=>x});var e=t(r());var x={title:"Nota: A Document Language for the Browser"},s=l(()=>(0,e.createElement)(c,{},...(()=>[`
 `,`
-`,(0,e.createElement)(c,{fancy:!0},`// This code is editable!
+`,(0,e.createElement)(d,{wrap:!0}),`
+`,`
+`,(0,e.createElement)(m,{fancy:!0},`// This code is editable!
 %(let nota = @strong{@Smallcaps{Nota}})
 @Definition[name="nota"][Label=nota]{
   #nota is a language for writing documents, like academic papers and blog posts.
@@ -51,4 +53,4 @@ open dist/index.html`),`
 `,`
 `,"Part of this design is identifying components that are easy to use for authors and have high impact for the reader. For instance, the ",(0,e.createElement)("code",{},"@Definition")," and ",(0,e.createElement)("code",{},"@Ref")," components in the example above require a small amount of document annotation on the author's part. Then the Nota runtime can provide features like presenting a reference's definition in context via tooltip. Future Nota versions could include more advanced features like ",(0,e.createElement)("q",{},"find all references to this definition"),".",`
 `,`
-`,"For more on this design philosophy, you can read my original paper ",(0,e.createElement)("a",{href:"https://willcrichton.net/nota/"},'"A New Medium for Communicating Research on Programming Languages"'),"."])()));var u=t(y()),N=t(r()),k=t(w()),g="metadata",x=g in a?a[g]:{},T=p=>o.default.createElement(m,{...p},o.default.createElement(s,null));u.canUseDOM&&h.default.hydrate(o.default.createElement(T,{...x,script:"./index.mjs"}),document.documentElement);var export_React=N.default;var export_ReactDOMServer=k.default;export{T as Page,export_React as React,export_ReactDOMServer as ReactDOMServer,x as metadata};
+`,"For more on this design philosophy, you can read my original paper ",(0,e.createElement)("a",{href:"https://willcrichton.net/nota/"},'"A New Medium for Communicating Research on Programming Languages"'),"."])()));var g=t(w()),k=t(r()),D=t(v()),p="metadata",T=p in a?a[p]:{},N=f=>o.default.createElement(h,{...f},o.default.createElement(s,null));g.canUseDOM&&u.default.hydrate(o.default.createElement(N,{...T,script:"./index.mjs"}),document.documentElement);var export_React=k.default;var export_ReactDOMServer=D.default;export{N as Page,export_React as React,export_ReactDOMServer as ReactDOMServer,T as metadata};

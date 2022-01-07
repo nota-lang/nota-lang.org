@@ -25,7 +25,7 @@ A Nota document is a @a[href="https://reactjs.org/"]{React} program. Therefore N
   @li{@a[href="https://github.com/nota-lang/nota/tree/master/packages/nota-editor"]{@code{\@nota-lang/nota-editor}}: An editor designed for Nota documents.}
 }
 
-The complete Nota pipeline (in the @a[href="https://github.com/nota-lang/nota/tree/master/packages/nota"]{@code|{@nota-lang/nota}|} package) turns a Nota document into a standalone web page. This pipeline includes dependency and static asset bundling via @a[href="https://esbuild.github.io/"]{esbuild}, as well as server-side rendering via @a[href="https://reactjs.org/docs/react-dom-server.html"]{ReactDOMServer}.
+The complete Nota pipeline (in the @a[href="https://github.com/nota-lang/nota/tree/master/packages/nota"]{@code|{@nota-lang/nota}|} package) turns a Nota document into a standalone web page. This pipeline includes  bundling via @a[href="https://esbuild.github.io/"]{esbuild}, as well as server-side rendering via @a[href="https://reactjs.org/docs/react-dom-server.html"]{ReactDOMServer}.
 
 If you want to use Nota in a broader context, such as a personal website or an online academic journal, you can select the subset of Nota packages relevant to your use case.
 

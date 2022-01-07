@@ -15,7 +15,7 @@ import "../css/app.scss";
 
 @Title{Nota Tutorial}
 
-You can either edit the examples here interactively, or you can follow the instructions on the @a[href="/"]{home page} to install Nota and edit files on your own computer.
+This page explains the basics of Nota's language syntax and library of components. You can either edit the examples here interactively, or you can follow the instructions on the @a[href="/"]{home page} to install Nota and edit files on your own computer.
 
 @Section{Nota syntax}
 
@@ -28,7 +28,7 @@ A Nota document is text mixed with commands, typically contained in a @code{.not
 #(sysname.toUpperCase()) is my @em{favorite} way to write @a[href="https://en.wikipedia.org/wiki/Document"]{documents}!}|
 
 %(let ExampleTable = ({examples}) => 
-  @table{
+  @table[className="translation-examples"]{
     @thead{@tr{
       @th{Nota}
       @th{Translated}
@@ -53,10 +53,10 @@ Here are some examples of translations between an @Ref{atcmd} and the correspond
   ["@a{Text}", "<a>Text</a>"],
   ['@a[href="url"]{Text}', '<a href="url">Text</a>'],
   ['@(window.a)[href="url"]{Text}', '<window.a href="url">Text</window.a>']
-]]   
+]]
 
 Commands generally have three pieces: a name, code arguments, and text arguments.
-  
+
 @ul{
   @li{A name is a Javascript expression: either a plain identifier, like @code{a}, or a parenthesized expression like @code{(window.a)}.}
   @li{Code arguments use [square brackets] take Javascript code as input, for instance @code|{@a[href="url"]}|. @Ref{atcmd}s only take named code arguments, indicated by @code{href=}.}

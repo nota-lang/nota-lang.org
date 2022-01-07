@@ -15,9 +15,9 @@ import "../css/app.scss";
 
 @Title{Nota Tutorial}
 
-This page explains the basics of Nota's language syntax and library of components. You can either edit the examples here interactively, or you can follow the instructions on the @a[href="/"]{home page} to install Nota and edit files on your own computer.
+This page explains the basics of Nota's language syntax and component library. You can either edit the examples here interactively, or you can follow the instructions on the @a[href="/"]{home page} to install Nota and edit files on your own computer. 
 
-@Section{Nota syntax}
+@Section{Syntax}
 
 A Nota document is text mixed with commands, typically contained in a @code{.nota} file. A basic Nota document looks like this:
 
@@ -33,7 +33,10 @@ A Nota document is text mixed with commands, typically contained in a @code{.not
       @th{Nota}
       @th{Translated}
     }}
-    #(examples.map(([i, o]) => @tr{@td{@code{#i}} @td{@code{#o}}}))
+    #(examples.map(([i, o], k) => @tr[key=k]{
+      @td{@code{#i}}
+      @td{@code{#o}}
+    }))
   }
 )
 
@@ -112,7 +115,7 @@ Nota extends Javascript with the ability to embed an @Ref{atcmd} within a Javasc
 The expression @${#or{x}{y}} means @q{@${x} or @${y}}.
 }|
 
-@Section{Nota components}
+@Section{Components}
 
 The best way to understand the many Nota components is to read through an example on the @a[href="/examples.html"]{Examples page}. But we will review a few common and special ones here.
 
@@ -228,3 +231,49 @@ Nota currently uses @a[href="https://codemirror.net/6/"]{Codemirror 6} for code 
 }}|
 
 Codemirror does not support server-side rendering and currently has limited language support, so contributions for other syntax highlighting libraries are welcome!
+
+@Subsection{Citations}
+
+The @code|{@References}| component takes as input a @a[href="http://www.bibtex.org/"]{BibTeX} string (usually imported from a @code{.bib} file) and does two things:
+
+@ol{
+  @li{It creates a @code{\@Definition} for each citation where the @code{name} is the one provided in bibtex.}
+  @li{It shows the references of all citations used in the document.}
+}
+
+For example:
+
+@NotaCode|{Nota is a document language for the browser @Ref{crichton2021nota}.
+
+@References{
+  \@inproceedings{crichton2021nota,
+    title={A New Medium for Communicating Research on Programming Languages},
+    author={Crichton, Will},
+    booktitle={Proceedings of the 1st Workshop on Human Aspects of Types and Reasoning Assistants},
+    year={2021}
+  }
+}}|
+
+@Section{Styling}
+
+Nota components do not have much default styling to allow authors greater flexibility in their own designs. To add your own styling, you can use CSS. For example, directly via a style tag:
+
+@NotaCode|{@style{ span.text-red { color: red; } }
+
+%(let Red = ({children}) => 
+  @span[className="text-red"]{#children})
+
+I love the color @Red{red!}}|
+
+You can also import an external stylesheet. For example, Nota provides a set of themes. The current list of Nota themes: is:
+
+@ul{
+  @li{@a[href="https://github.com/nota-lang/nota/tree/master/packages/nota-theme-acm"]{@code{\@nota-lang/nota-theme-acm}}: emulates the latest @a[href="https://www.acm.org/publications/proceedings-template"]{ACM LaTeX} conference paper theme.}
+  @li{(...That's it so far! If you make your own theme, we can add it to this list.)}
+}
+
+To use a theme, you simply import its CSS, such as:
+
+@Listing[language=nota()]{
+  \%(import "\@nota-lang/nota-theme-acm/dist/index.css")
+}

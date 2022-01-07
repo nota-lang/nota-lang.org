@@ -33,7 +33,7 @@ $cutoff: 800px;
 
 body {
   font: 20px $serif;
-  padding: 1rem 2rem;
+  padding: 2rem 1rem 6rem;
 
   @include mobile {
     padding: 0.5rem 1rem;
@@ -306,7 +306,11 @@ header {
   }
 
   section {
-    margin-top: 3rem;
+    margin-top: 6rem;
+
+    section {
+      margin-top: 4rem;
+    }
 
     h2 {
       font-size: 32px;
@@ -334,7 +338,11 @@ header {
     }
 
     td:first-child {
-      padding-right: 2rem;
+      padding-right: 2rem;      
+    }
+
+    td, th {
+      padding: 0.25rem;
     }
   }
  

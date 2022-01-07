@@ -27,7 +27,7 @@ A @Ref{nota} document compiles to a JavaScript program, meaning it's easy to:
   @li{Support accessibility needs like screen readers.}
 }}|
 
-@Section{Usage}
+@Section[label="usage"]{Usage}
 
 You can use Nota by installing the @code{nota} executable via the @code{\@nota-lang/nota} package. You need @a[href="https://nodejs.org/en/download/"]{NodeJS ≥ 16} and @a[href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm"]{npm ≥ 6}. The NodeJS global binary directory must be on your shell's @code{PATH}, e.g. by running
 

@@ -1,4 +1,4 @@
-import{A as d,J as y,K as c,L as m,M as w,a as f,b as t,c as r,d as b,e as l,u as n,w as i}from"./chunk-ALBSIDNV.mjs";var o=t(r()),h=t(b());var a={};f(a,{default:()=>s,metadata:()=>v});var e=t(r());var v={title:"Nota: A Document Language for the Browser"},s=l(()=>(0,e.createElement)(d,{},...(()=>[`
+import{A as d,J as y,K as c,L as m,M as w,a as f,b as t,c as r,d as b,e as l,u as n,w as i}from"./chunk-UYBX2XD6.mjs";var o=t(r()),h=t(b());var a={};f(a,{default:()=>s,metadata:()=>v});var e=t(r());var v={title:"Nota: A Document Language for the Browser"},s=l(()=>(0,e.createElement)(d,{},...(()=>[`
 `,`
 `,(0,e.createElement)(c,{fancy:!0},`// This code is editable!
 %(let nota = @strong{@Smallcaps{Nota}})
@@ -18,7 +18,7 @@ A @Ref{nota} document compiles to a JavaScript program, meaning it's easy to:
   @li{Support accessibility needs like screen readers.}
 }`),`
 `,`
-`,(0,e.createElement)(i,{},"Usage"),`
+`,(0,e.createElement)(i,{label:"usage"},"Usage"),`
 `,`
 `,"You can use Nota by installing the ",(0,e.createElement)("code",{},"nota")," executable via the ",(0,e.createElement)("code",{},"@nota-lang/nota")," package. You need ",(0,e.createElement)("a",{href:"https://nodejs.org/en/download/"},"NodeJS \u2265 16")," and ",(0,e.createElement)("a",{href:"https://docs.npmjs.com/downloading-and-installing-node-js-and-npm"},"npm \u2265 6"),". The NodeJS global binary directory must be on your shell's ",(0,e.createElement)("code",{},"PATH"),", e.g. by running",`
 `,`

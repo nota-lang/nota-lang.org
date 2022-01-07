@@ -1,4 +1,4 @@
-import{A as l,B as f,I as s,J as E,L as d,M as O,a as D,b as t,c as r,d as T,e as n,t as p,v as i}from"./chunk-ALBSIDNV.mjs";var m=t(r()),c=t(T());var o={};D(o,{default:()=>a,metadata:()=>C});var e=t(r());var C={title:"Nota Examples"},a=n(()=>(0,e.createElement)(l,{},...(()=>[`
+import{A as l,B as f,I as s,J as E,L as d,M as O,a as D,b as t,c as r,d as T,e as n,t as p,v as i}from"./chunk-UYBX2XD6.mjs";var m=t(r()),c=t(T());var o={};D(o,{default:()=>a,metadata:()=>C});var e=t(r());var C={title:"Nota Examples"},a=n(()=>(0,e.createElement)(l,{},...(()=>[`
 `,`
 `,(0,e.createElement)(i,{}),`
 `,`

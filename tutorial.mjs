@@ -1,14 +1,14 @@
-import{A as b,B as v,I as w,J as R,K as a,L as T,M as A,a as J,b as o,c as d,d as L,e as f,q as r,r as n,s as m,t as y,u as l,v as g,w as u,x as t,y as x,z as h}from"./chunk-ALBSIDNV.mjs";var c=o(d()),N=o(L());var i={};J(i,{default:()=>p,metadata:()=>_});var e=o(d());var _={title:"Nota Tutorial"},p=f(()=>(0,e.createElement)(b,{},...(()=>[`
+import{A as w,B as v,I as p,J as F,K as a,L as T,M as I,a as L,b as o,c as m,d as $,e as y,q as s,r as n,s as h,t as g,u as r,v as x,w as c,x as t,y as b,z as u}from"./chunk-UYBX2XD6.mjs";var l=o(m()),N=o($());var d={};L(d,{default:()=>f,metadata:()=>J});var e=o(m());var J={title:"Nota Tutorial"},f=y(()=>(0,e.createElement)(w,{},...(()=>[`
 `,`
-`,(0,e.createElement)(g,{}),`
+`,(0,e.createElement)(x,{}),`
 `,`
-`,(0,e.createElement)(y,{language:w()}),`
+`,(0,e.createElement)(g,{language:p()}),`
 `,`
 `,(0,e.createElement)(v,{},"Nota Tutorial"),`
 `,`
-`,"This page explains the basics of Nota's language syntax and library of components. You can either edit the examples here interactively, or you can follow the instructions on the ",(0,e.createElement)("a",{href:"/"},"home page")," to install Nota and edit files on your own computer.",`
+`,"This page explains the basics of Nota's language syntax and component library. You can either edit the examples here interactively, or you can follow the instructions on the ",(0,e.createElement)("a",{href:"/"},"home page")," to install Nota and edit files on your own computer. ",`
 `,`
-`,(0,e.createElement)(u,{},"Nota syntax"),`
+`,(0,e.createElement)(c,{},"Syntax"),`
 `,`
 `,"A Nota document is text mixed with commands, typically contained in a ",(0,e.createElement)("code",{},".nota")," file. A basic Nota document looks like this:",`
 `,`
@@ -18,20 +18,21 @@ import{A as b,B as v,I as w,J as R,K as a,L as T,M as A,a as J,b as o,c as d,d a
 
 #(sysname.toUpperCase()) is my @em{favorite} way to write @a[href="https://en.wikipedia.org/wiki/Document"]{documents}!`),`
 `,`
-`,...(()=>{let s=({examples:D})=>(0,e.createElement)("table",{className:"translation-examples"},(0,e.createElement)("thead",{},(0,e.createElement)("tr",{},(0,e.createElement)("th",{},"Nota"),`
+`,...(()=>{let i=({examples:S})=>(0,e.createElement)("table",{className:"translation-examples"},(0,e.createElement)("thead",{},(0,e.createElement)("tr",{},(0,e.createElement)("th",{},"Nota"),`
 `,(0,e.createElement)("th",{},"Translated"))),`
-`,D.map(([S,$])=>(0,e.createElement)("tr",{},(0,e.createElement)("td",{},(0,e.createElement)("code",{},S))," ",(0,e.createElement)("td",{},(0,e.createElement)("code",{},$)))));return[`
+`,S.map(([D,R],A)=>(0,e.createElement)("tr",{key:A},(0,e.createElement)("td",{},(0,e.createElement)("code",{},D)),`
+`,(0,e.createElement)("td",{},(0,e.createElement)("code",{},R)))));return[`
 `,`
 `,"Nota supports three kinds of commands:",`
 `,`
 `,(0,e.createElement)(t,{},"@-commands"),`
 `,`
-`,(0,e.createElement)(r,{name:"atcmd",Label:"@-command"},"@-commands add document components to the output."),`
+`,(0,e.createElement)(s,{name:"atcmd",Label:"@-command"},"@-commands add document components to the output."),`
 `,"This includes HTML elements, like ",(0,e.createElement)("code",{},"@em")," for italics, as well as ",(0,e.createElement)("a",{href:"https://reactjs.org/"},"React")," components, like ",(0,e.createElement)("code",{},"@Title"),". Nota provides a standard library of components such as ",(0,e.createElement)("code",{},"@Title"),", ",(0,e.createElement)("code",{},"@Section"),", ",(0,e.createElement)("code",{},"@Ref"),", and many more. And you can also provide your own!",`
 `,`
 `,"Here are some examples of translations between an ",(0,e.createElement)(n,{},"atcmd")," and the corresponding component (in JSX syntax).",`
 `,`
-`,(0,e.createElement)(s,{examples:[["@a","<a />"],["@a{Text}","<a>Text</a>"],['@a[href="url"]{Text}','<a href="url">Text</a>'],['@(window.a)[href="url"]{Text}','<window.a href="url">Text</window.a>']]}),`
+`,(0,e.createElement)(i,{examples:[["@a","<a />"],["@a{Text}","<a>Text</a>"],['@a[href="url"]{Text}','<a href="url">Text</a>'],['@(window.a)[href="url"]{Text}','<window.a href="url">Text</window.a>']]}),`
 `,`
 `,"Commands generally have three pieces: a name, code arguments, and text arguments.",`
 `,`
@@ -41,30 +42,30 @@ import{A as b,B as v,I as w,J as R,K as a,L as T,M as A,a as J,b as o,c as d,d a
 `,`
 `,(0,e.createElement)(t,{},"#-commands"),`
 `,`
-`,(0,e.createElement)(r,{name:"hashcmd",Label:"#-command"},"#-commands add Javascript expressions to the output. ")," ",`
+`,(0,e.createElement)(s,{name:"hashcmd",Label:"#-command"},"#-commands add Javascript expressions to the output. ")," ",`
 `,"For example, ",(0,e.createElement)("code",{},"#sysname")," embeds the value of the variable ",(0,e.createElement)("code",{},"sysname"),". With parentheses, one can use any Javascript expression such as ",(0,e.createElement)("code",{},"#(sysname.toUpperCase())"),".",`
 `,`
 `,"Here are some examples of translations between an ",(0,e.createElement)(n,{},"hashcmd")," and the corresponding component (in Javascript syntax).",`
 `,`
-`,(0,e.createElement)(s,{examples:[["#sysname","sysname"],["#toUpperCase[sysname]","toUpperCase(sysname)"],["#toUpperCase{#sysname}","toUpperCase([sysname])"],["#(sysname.toUpperCase())","sysname.toUpperCase()"],["#charCodeAt[sysname][0]","charCodeAt(sysname, 0)"]]}),`
+`,(0,e.createElement)(i,{examples:[["#sysname","sysname"],["#toUpperCase[sysname]","toUpperCase(sysname)"],["#toUpperCase{#sysname}","toUpperCase([sysname])"],["#(sysname.toUpperCase())","sysname.toUpperCase()"],["#charCodeAt[sysname][0]","charCodeAt(sysname, 0)"]]}),`
 `,`
 `,"If a ",(0,e.createElement)(n,{},"hashcmd")," has no arguments, it is treated as a variable. If it is given arguments, then it is treated as a function call. Because Javascript only supports positional arguments, the code arguments to ",(0,e.createElement)(n,{},"hashcmd"),"s do not have names, and the order of arguments matters. ",`
 `,`
 `,"Because text arguments may contain commands, they are not translated directly to strings, but rather to heterogenous arrays containing strings and document components. For instance:",`
 `,`
-`,(0,e.createElement)(s,{examples:[["Hello world.",'["Hello world."]'],["Hello #sysname.",'["Hello ", sysname, "."]'],["Hello @em{world}.",'["Hello ", React.createElement("em", ...["World"]), "."]']]}),`
+`,(0,e.createElement)(i,{examples:[["Hello world.",'["Hello world."]'],["Hello #sysname.",'["Hello ", sysname, "."]'],["Hello @em{world}.",'["Hello ", React.createElement("em", ...["World"]), "."]']]}),`
 `,`
 `,(0,e.createElement)(t,{},"%-commands"),`
 `,`
-`,(0,e.createElement)(r,{name:"pctcmd",Label:"%-command"},"%-commands add Javascript statements to the output. ")," For example, ",(0,e.createElement)("code",{},'%(let sysname = "Nota")')," is not inherently visible in the document, but can be used in expressions like ",(0,e.createElement)("code",{},"#sysname"),". ",(0,e.createElement)(n,{},"pctcmd"),"s take no arguments. You simply put ",(0,e.createElement)("code",{},"%(...)")," and add any Javascript statement, including imports and exports.}",`
+`,(0,e.createElement)(s,{name:"pctcmd",Label:"%-command"},"%-commands add Javascript statements to the output. ")," For example, ",(0,e.createElement)("code",{},'%(let sysname = "Nota")')," is not inherently visible in the document, but can be used in expressions like ",(0,e.createElement)("code",{},"#sysname"),". ",(0,e.createElement)(n,{},"pctcmd"),"s take no arguments. You simply put ",(0,e.createElement)("code",{},"%(...)")," and add any Javascript statement, including imports and exports.}",`
 `,`
 `,"Statements are scoped, so variables defined are only accessible after the statement and within the current text block. For example, the command:",`
 `,`
-`,(0,e.createElement)(h,{},(0,e.createElement)("code",{},"@span{%(let x = 1) x = #x}")),`
+`,(0,e.createElement)(u,{},(0,e.createElement)("code",{},"@span{%(let x = 1) x = #x}")),`
 `,`
 `,"translates to (in JSX):",`
 `,`
-`,(0,e.createElement)(h,{},(0,e.createElement)("code",{},'<span>{(()=>{let x = 1; return [" x = ", x]})}</span>')),`
+`,(0,e.createElement)(u,{},(0,e.createElement)("code",{},'<span>{(()=>{let x = 1; return [" x = ", x]})}</span>')),`
 `,`
 `,(0,e.createElement)(t,{},"Javascript"),`
 `,`
@@ -72,7 +73,7 @@ import{A as b,B as v,I as w,J as R,K as a,L as T,M as A,a as J,b as o,c as d,d a
 `,`
 `,(0,e.createElement)(a,{},"%(let or = (x, y) => @{#x \\vee #y})\nThe expression @${#or{x}{y}} means @q{@${x} or @${y}}.\n"),`
 `,`
-`,(0,e.createElement)(u,{},"Nota components"),`
+`,(0,e.createElement)(c,{},"Components"),`
 `,`
 `,"The best way to understand the many Nota components is to read through an example on the ",(0,e.createElement)("a",{href:"/examples.html"},"Examples page"),". But we will review a few common and special ones here.",`
 `,`
@@ -80,7 +81,7 @@ import{A as b,B as v,I as w,J as R,K as a,L as T,M as A,a as J,b as o,c as d,d a
 `,`
 `,"A Nota document is always contained within a ",(0,e.createElement)("code",{},"@Document")," component. Within a document, the main structural components are ",(0,e.createElement)("code",{},"@Title"),", ",(0,e.createElement)("code",{},"@Section"),", and ",(0,e.createElement)("code",{},"@p"),". A ",(0,e.createElement)("code",{},"@Document")," does things to help you simplify structure and reduce nesting. First, sections are automatically nested based on the order of headers. Second, paragraphs are automatically generated based on newlines. For example, this Nota input on the ",(0,e.createElement)(n,{Label:"left"},"leftdoc")," is translated to the equivalent on the ",(0,e.createElement)(n,{Label:"right"},"rightdoc"),".",`
 `,`
-`,(0,e.createElement)(x,{style:{margin:"1rem 0"}},(0,e.createElement)(r,{name:"leftdoc",Tooltip:null},(0,e.createElement)(l,{},`@Document{
+`,(0,e.createElement)(b,{style:{margin:"1rem 0"}},(0,e.createElement)(s,{name:"leftdoc",Tooltip:null},(0,e.createElement)(r,{},`@Document{
   @Title{My Document}  
 
   @Section{Introduction}
@@ -98,7 +99,7 @@ import{A as b,B as v,I as w,J as R,K as a,L as T,M as A,a as J,b as o,c as d,d a
 `,`
 `,(0,e.createElement)("div",{style:{width:"1rem"}}),`
 `,`
-`,(0,e.createElement)(r,{name:"rightdoc",Tooltip:null},(0,e.createElement)(l,{},`@Document{
+`,(0,e.createElement)(s,{name:"rightdoc",Tooltip:null},(0,e.createElement)(r,{},`@Document{
   @Title{My Document}    
 
   @SectionBody{
@@ -152,7 +153,7 @@ let vec = (x, y) => @{\\langle #x, #y \\rangle};
  | #vec[u][v] |^2 \\leq #vec[u][u] \\cdot #vec[v][v]
 }`),`
 `,`
-`,"While you can use TeX macros if necessary, it is recommended to use Javascript variables and functions as shown above. Macros are only essential for referencing TeX builtins such as ",(0,e.createElement)("code",{},"\\leq")," for ",(0,e.createElement)(m,{},"\\leq"),".",`
+`,"While you can use TeX macros if necessary, it is recommended to use Javascript variables and functions as shown above. Macros are only essential for referencing TeX builtins such as ",(0,e.createElement)("code",{},"\\leq")," for ",(0,e.createElement)(h,{},"\\leq"),".",`
 `,`
 `,"The KaTeX integration for Nota provides special support for definitions and references. For example:",`
 `,`
@@ -169,7 +170,7 @@ let vec = (x, y) => @{\\langle #x, #y \\rangle};
   }
 }`),`
 `,`
-`,"Nota provides the function ",(0,e.createElement)("code",{},"tex_ref")," for TeX code which refers to a Nota definition, such as ",(0,e.createElement)("code",{},'"reaches"')," here. Then any reference to the ",(0,e.createElement)(m,{},"\\mathsf{reaches}")," judgment via the ",(0,e.createElement)("code",{},"reaches")," function will support definition-reference features: click to see the definition, and double-click to jump to it.",`
+`,"Nota provides the function ",(0,e.createElement)("code",{},"tex_ref")," for TeX code which refers to a Nota definition, such as ",(0,e.createElement)("code",{},'"reaches"')," here. Then any reference to the ",(0,e.createElement)(h,{},"\\mathsf{reaches}")," judgment via the ",(0,e.createElement)("code",{},"reaches")," function will support definition-reference features: click to see the definition, and double-click to jump to it.",`
 `,`
 `,(0,e.createElement)(t,{},"Code"),`
 `,`
@@ -183,4 +184,44 @@ let vec = (x, y) => @{\\langle #x, #y \\rangle};
   }
 }`),`
 `,`
-`,"Codemirror does not support server-side rendering and currently has limited language support, so contributions for other syntax highlighting libraries are welcome!"]})()])()));var k=o(R()),I=o(d()),q=o(A()),C="metadata",F=C in i?i[C]:{},H=s=>c.default.createElement(T,{...s},c.default.createElement(p,null));k.canUseDOM&&N.default.hydrate(c.default.createElement(H,{...F,script:"./tutorial.mjs"}),document.documentElement);var export_React=I.default;var export_ReactDOMServer=q.default;export{H as Page,export_React as React,export_ReactDOMServer as ReactDOMServer,F as metadata};
+`,"Codemirror does not support server-side rendering and currently has limited language support, so contributions for other syntax highlighting libraries are welcome!",`
+`,`
+`,(0,e.createElement)(t,{},"Citations"),`
+`,`
+`,"The ",(0,e.createElement)("code",{},"@References")," component takes as input a ",(0,e.createElement)("a",{href:"http://www.bibtex.org/"},"BibTeX")," string (usually imported from a ",(0,e.createElement)("code",{},".bib")," file) and does two things:",`
+`,`
+`,(0,e.createElement)("ol",{},(0,e.createElement)("li",{},"It creates a ",(0,e.createElement)("code",{},"@Definition")," for each citation where the ",(0,e.createElement)("code",{},"name")," is the one provided in bibtex."),`
+`,(0,e.createElement)("li",{},"It shows the references of all citations used in the document.")),`
+`,`
+`,"For example:",`
+`,`
+`,(0,e.createElement)(a,{},`Nota is a document language for the browser @Ref{crichton2021nota}.
+
+@References{
+  \\@inproceedings{crichton2021nota,
+    title={A New Medium for Communicating Research on Programming Languages},
+    author={Crichton, Will},
+    booktitle={Proceedings of the 1st Workshop on Human Aspects of Types and Reasoning Assistants},
+    year={2021}
+  }
+}`),`
+`,`
+`,(0,e.createElement)(c,{},"Styling"),`
+`,`
+`,"Nota components do not have much default styling to allow authors greater flexibility in their own designs. To add your own styling, you can use CSS. For example, directly via a style tag:",`
+`,`
+`,(0,e.createElement)(a,{},`@style{ span.text-red { color: red; } }
+
+%(let Red = ({children}) => 
+  @span[className="text-red"]{#children})
+
+I love the color @Red{red!}`),`
+`,`
+`,"You can also import an external stylesheet. For example, Nota provides a set of themes. The current list of Nota themes: is:",`
+`,`
+`,(0,e.createElement)("ul",{},(0,e.createElement)("li",{},(0,e.createElement)("a",{href:"https://github.com/nota-lang/nota/tree/master/packages/nota-theme-acm"},(0,e.createElement)("code",{},"@nota-lang/nota-theme-acm")),": emulates the latest ",(0,e.createElement)("a",{href:"https://www.acm.org/publications/proceedings-template"},"ACM LaTeX")," conference paper theme."),`
+`,(0,e.createElement)("li",{},"(...That's it so far! If you make your own theme, we can add it to this list.)")),`
+`,`
+`,"To use a theme, you simply import its CSS, such as:",`
+`,`
+`,(0,e.createElement)(r,{language:p()},'%(import "@nota-lang/nota-theme-acm/dist/index.css")')]})()])()));var k=o(F()),X=o(m()),B=o(I()),C="metadata",H=C in d?d[C]:{},_=i=>l.default.createElement(T,{...i},l.default.createElement(f,null));k.canUseDOM&&N.default.hydrate(l.default.createElement(_,{...H,script:"./tutorial.mjs"}),document.documentElement);var export_React=X.default;var export_ReactDOMServer=B.default;export{_ as Page,export_React as React,export_ReactDOMServer as ReactDOMServer,H as metadata};

@@ -1,4 +1,4 @@
-import{A as b,B as v,I as w,J as R,K as a,L as T,M as A,a as J,b as o,c as d,d as L,e as f,q as r,r as n,s as m,t as y,u as l,v as g,w as u,x as t,y as x,z as h}from"./chunk-TFI6BC7I.mjs";var c=o(d()),N=o(L());var s={};J(s,{default:()=>p,metadata:()=>_});var e=o(d());var _={title:"Nota Tutorial"},p=f(()=>(0,e.createElement)(b,{},...(()=>[`
+import{A as b,B as v,I as w,J as R,K as a,L as T,M as A,a as J,b as o,c as d,d as L,e as f,q as r,r as n,s as m,t as y,u as l,v as g,w as u,x as t,y as x,z as h}from"./chunk-ALBSIDNV.mjs";var c=o(d()),N=o(L());var i={};J(i,{default:()=>p,metadata:()=>_});var e=o(d());var _={title:"Nota Tutorial"},p=f(()=>(0,e.createElement)(b,{},...(()=>[`
 `,`
 `,(0,e.createElement)(g,{}),`
 `,`
@@ -6,7 +6,7 @@ import{A as b,B as v,I as w,J as R,K as a,L as T,M as A,a as J,b as o,c as d,d a
 `,`
 `,(0,e.createElement)(v,{},"Nota Tutorial"),`
 `,`
-`,"You can either edit the examples here interactively, or you can follow the instructions on the ",(0,e.createElement)("a",{href:"/"},"home page")," to install Nota and edit files on your own computer.",`
+`,"This page explains the basics of Nota's language syntax and library of components. You can either edit the examples here interactively, or you can follow the instructions on the ",(0,e.createElement)("a",{href:"/"},"home page")," to install Nota and edit files on your own computer.",`
 `,`
 `,(0,e.createElement)(u,{},"Nota syntax"),`
 `,`
@@ -18,7 +18,7 @@ import{A as b,B as v,I as w,J as R,K as a,L as T,M as A,a as J,b as o,c as d,d a
 
 #(sysname.toUpperCase()) is my @em{favorite} way to write @a[href="https://en.wikipedia.org/wiki/Document"]{documents}!`),`
 `,`
-`,...(()=>{let i=({examples:D})=>(0,e.createElement)("table",{},(0,e.createElement)("thead",{},(0,e.createElement)("tr",{},(0,e.createElement)("th",{},"Nota"),`
+`,...(()=>{let s=({examples:D})=>(0,e.createElement)("table",{className:"translation-examples"},(0,e.createElement)("thead",{},(0,e.createElement)("tr",{},(0,e.createElement)("th",{},"Nota"),`
 `,(0,e.createElement)("th",{},"Translated"))),`
 `,D.map(([S,$])=>(0,e.createElement)("tr",{},(0,e.createElement)("td",{},(0,e.createElement)("code",{},S))," ",(0,e.createElement)("td",{},(0,e.createElement)("code",{},$)))));return[`
 `,`
@@ -31,10 +31,10 @@ import{A as b,B as v,I as w,J as R,K as a,L as T,M as A,a as J,b as o,c as d,d a
 `,`
 `,"Here are some examples of translations between an ",(0,e.createElement)(n,{},"atcmd")," and the corresponding component (in JSX syntax).",`
 `,`
-`,(0,e.createElement)(i,{examples:[["@a","<a />"],["@a{Text}","<a>Text</a>"],['@a[href="url"]{Text}','<a href="url">Text</a>'],['@(window.a)[href="url"]{Text}','<window.a href="url">Text</window.a>']]}),"   ",`
+`,(0,e.createElement)(s,{examples:[["@a","<a />"],["@a{Text}","<a>Text</a>"],['@a[href="url"]{Text}','<a href="url">Text</a>'],['@(window.a)[href="url"]{Text}','<window.a href="url">Text</window.a>']]}),`
 `,`
 `,"Commands generally have three pieces: a name, code arguments, and text arguments.",`
-`,"  ",`
+`,`
 `,(0,e.createElement)("ul",{},(0,e.createElement)("li",{},"A name is a Javascript expression: either a plain identifier, like ",(0,e.createElement)("code",{},"a"),", or a parenthesized expression like ",(0,e.createElement)("code",{},"(window.a)"),"."),`
 `,(0,e.createElement)("li",{},"Code arguments use [square brackets] take Javascript code as input, for instance ",(0,e.createElement)("code",{},'@a[href="url"]'),". ",(0,e.createElement)(n,{},"atcmd"),"s only take named code arguments, indicated by ",(0,e.createElement)("code",{},"href="),"."),`
 `,(0,e.createElement)("li",{},"Text arguments use {curly braces} and take text (and Nota commands) as input, such as ",(0,e.createElement)("code",{},"{Text}"),". An ",(0,e.createElement)(n,{},"atcmd")," can only take one text argument.")),`
@@ -46,13 +46,13 @@ import{A as b,B as v,I as w,J as R,K as a,L as T,M as A,a as J,b as o,c as d,d a
 `,`
 `,"Here are some examples of translations between an ",(0,e.createElement)(n,{},"hashcmd")," and the corresponding component (in Javascript syntax).",`
 `,`
-`,(0,e.createElement)(i,{examples:[["#sysname","sysname"],["#toUpperCase[sysname]","toUpperCase(sysname)"],["#toUpperCase{#sysname}","toUpperCase([sysname])"],["#(sysname.toUpperCase())","sysname.toUpperCase()"],["#charCodeAt[sysname][0]","charCodeAt(sysname, 0)"]]}),`
+`,(0,e.createElement)(s,{examples:[["#sysname","sysname"],["#toUpperCase[sysname]","toUpperCase(sysname)"],["#toUpperCase{#sysname}","toUpperCase([sysname])"],["#(sysname.toUpperCase())","sysname.toUpperCase()"],["#charCodeAt[sysname][0]","charCodeAt(sysname, 0)"]]}),`
 `,`
 `,"If a ",(0,e.createElement)(n,{},"hashcmd")," has no arguments, it is treated as a variable. If it is given arguments, then it is treated as a function call. Because Javascript only supports positional arguments, the code arguments to ",(0,e.createElement)(n,{},"hashcmd"),"s do not have names, and the order of arguments matters. ",`
 `,`
 `,"Because text arguments may contain commands, they are not translated directly to strings, but rather to heterogenous arrays containing strings and document components. For instance:",`
 `,`
-`,(0,e.createElement)(i,{examples:[["Hello world.",'["Hello world."]'],["Hello #sysname.",'["Hello ", sysname, "."]'],["Hello @em{world}.",'["Hello ", React.createElement("em", ...["World"]), "."]']]}),`
+`,(0,e.createElement)(s,{examples:[["Hello world.",'["Hello world."]'],["Hello #sysname.",'["Hello ", sysname, "."]'],["Hello @em{world}.",'["Hello ", React.createElement("em", ...["World"]), "."]']]}),`
 `,`
 `,(0,e.createElement)(t,{},"%-commands"),`
 `,`
@@ -183,4 +183,4 @@ let vec = (x, y) => @{\\langle #x, #y \\rangle};
   }
 }`),`
 `,`
-`,"Codemirror does not support server-side rendering and currently has limited language support, so contributions for other syntax highlighting libraries are welcome!"]})()])()));var k=o(R()),I=o(d()),q=o(A()),C="metadata",F=C in s?s[C]:{},H=i=>c.default.createElement(T,{...i},c.default.createElement(p,null));k.canUseDOM&&N.default.hydrate(c.default.createElement(H,{...F,script:"./tutorial.mjs"}),document.documentElement);var export_React=I.default;var export_ReactDOMServer=q.default;export{H as Page,export_React as React,export_ReactDOMServer as ReactDOMServer,F as metadata};
+`,"Codemirror does not support server-side rendering and currently has limited language support, so contributions for other syntax highlighting libraries are welcome!"]})()])()));var k=o(R()),I=o(d()),q=o(A()),C="metadata",F=C in i?i[C]:{},H=s=>c.default.createElement(T,{...s},c.default.createElement(p,null));k.canUseDOM&&N.default.hydrate(c.default.createElement(H,{...F,script:"./tutorial.mjs"}),document.documentElement);var export_React=I.default;var export_ReactDOMServer=q.default;export{H as Page,export_React as React,export_ReactDOMServer as ReactDOMServer,F as metadata};

@@ -1,4 +1,4 @@
-import{A as d,J as y,K as c,L as m,M as w,a as f,b as t,c as r,d as b,e as l,u as n,w as i}from"./chunk-TFI6BC7I.mjs";var o=t(r()),h=t(b());var a={};f(a,{default:()=>s,metadata:()=>v});var e=t(r());var v={title:"Nota: A Document Language for the Browser"},s=l(()=>(0,e.createElement)(d,{},...(()=>[`
+import{A as d,J as y,K as c,L as m,M as w,a as f,b as t,c as r,d as b,e as l,u as n,w as i}from"./chunk-ALBSIDNV.mjs";var o=t(r()),h=t(b());var a={};f(a,{default:()=>s,metadata:()=>v});var e=t(r());var v={title:"Nota: A Document Language for the Browser"},s=l(()=>(0,e.createElement)(d,{},...(()=>[`
 `,`
 `,(0,e.createElement)(c,{fancy:!0},`// This code is editable!
 %(let nota = @strong{@Smallcaps{Nota}})

@@ -5,9 +5,10 @@ export let metadata = {
 
 import {NotaCode} from "./editor";
 
-import "@nota-lang/nota-components/dist/index.css";
 import "../css/app.scss";
 )
+
+@ListingConfigure[wrap=true]
 
 @NotaCode[fancy]|{// This code is editable!
 %(let nota = @strong{@Smallcaps{Nota}})

@@ -295,29 +295,29 @@
     glob-promise "^4.2.2"
     winston "^3.3.3"
 
-"@nota-lang/nota-components@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@nota-lang/nota-components/-/nota-components-0.3.1.tgz#80a528180551869b4e16def5c54adffc7a91c067"
-  integrity sha512-9wTjp5DtWobApiEkD5FcFKjScf+sUmLG2tZ3vB5Tq2sfgmovTOmX/TYQcXew2oFLTrBV8pJsKppFq8SxeYmvlQ==
+"@nota-lang/nota-components@^0.3.1", "@nota-lang/nota-components@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@nota-lang/nota-components/-/nota-components-0.3.2.tgz#50e2be1c9f750dadb8e6604e10d057bd607b1a5b"
+  integrity sha512-sr88WL4BZvbUToxHvUsbutQ2XvybQfEEhj+6I8BlCij34+kHV0SpcWcNXl059mQ8Q1axuFoWWF/osaaoUEvfCg==
   dependencies:
     "@popperjs/core" "^2.9.2"
     katex "^0.15.1"
 
 "@nota-lang/nota-editor@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@nota-lang/nota-editor/-/nota-editor-0.3.1.tgz#7829f2799f7690f51834c46fc9d7d555960b3afe"
-  integrity sha512-i1Mhdt7gC1P2hrvWkymat5QgYePizsy5EWSp41mVMkM1hYnDR9AGXT4Th7Frhn4oTWMmc382K1GSofxaQPn6bw==
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@nota-lang/nota-editor/-/nota-editor-0.3.2.tgz#1ce5f8885471368ae3b64d64ac625b48d2c73605"
+  integrity sha512-7NNlw82AUzEa0U7OJeCoBKchWHNTtfvXC32P39bO44IEVRGQobqrSd9O4lRnNTr7QOJaN4pFqyNIPLbjq0w/mw==
   dependencies:
     "@babel/standalone" "^7.16.4"
-    "@nota-lang/nota-components" "^0.3.1"
-    "@nota-lang/nota-syntax" "^0.3.1"
+    "@nota-lang/nota-components" "^0.3.2"
+    "@nota-lang/nota-syntax" "^0.3.2"
     exenv "^1.2.2"
     prettier "^2.5.1"
 
-"@nota-lang/nota-syntax@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@nota-lang/nota-syntax/-/nota-syntax-0.3.1.tgz#aac7d6a7d28fdfa5ad01c6a35ecc042b873e27d6"
-  integrity sha512-ebHRhfAHrDzVK/Rq1XrXpgNTMUQohdguqgSkjojuSS3699k9XNUciYXPv/aK2EnK/2spuhTl/LCURKctWZK6EQ==
+"@nota-lang/nota-syntax@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@nota-lang/nota-syntax/-/nota-syntax-0.3.2.tgz#a5d9ebadf7da0cf9b56dbf710146551b22413226"
+  integrity sha512-dNOUgyAgCakJJUQe8iQgWc3VcvE7cRjioCL/gU1KJy9+0HWICYI64FosV3LHVeF1/iilh61nO7YntT4MN7r/zQ==
   dependencies:
     "@babel/standalone" "^7.16.4"
 
@@ -575,9 +575,9 @@ esbuild-openbsd-64@0.14.10:
   integrity sha512-9rkHZzp10zI90CfKbFrwmQjqZaeDmyQ6s9/hvCwRkbOCHuto6RvMYH9ghQpcr5cUxD5OQIA+sHXi0zokRNXjcg==
 
 esbuild-sass-plugin@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/esbuild-sass-plugin/-/esbuild-sass-plugin-2.0.1.tgz#5606ca21604f6b6a53caf9569684de5476b19690"
-  integrity sha512-RQnhSigszmxJD2nR6yw48M0ldBhpbPT3ISXX0OON9WrSlO/yIcBjcie5/JQSqdyQltjzGZ2EwaYkiHs05F6mYQ==
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/esbuild-sass-plugin/-/esbuild-sass-plugin-2.0.2.tgz#9120d6cc6f8ae1e35590060a91bf96e713a22bf3"
+  integrity sha512-mB525AYwky6LDoTCr52jOBaWzGvSGhMrPYb0FKr3y4z4ahXfbm27aG1/mcU/xrMjiczeoaT8vxzvi3KkblcVbA==
   dependencies:
     esbuild "^0.14.8"
     sass "^1.45.1"

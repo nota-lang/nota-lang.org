@@ -14,6 +14,10 @@
   font-style: normal;
 }
 
+@import "@nota-lang/nota-components/dist/index.css";
+@import "@nota-lang/nota-editor/dist/index.css";
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inconsolata:wght@400;700&display=swap');
+
 $serif: "EB Garamond", serif;
 $monospace: "Inconsolata", monospace;
 
@@ -32,7 +36,7 @@ $cutoff: 800px;
 }
 
 body {
-  font: 20px $serif;
+  font: normal 20px $serif;
   padding: 2rem 1rem 6rem;
 
   @include mobile {
@@ -93,6 +97,7 @@ header {
     }
 
     a {
+      display: inline-block;
       color: black !important;
       text-decoration: none;
 
@@ -120,24 +125,38 @@ header {
   }
 
   .toc-wrapper {
-    $width: 300px;
-    position: absolute;
-    z-index: 999;
-    width: $width;
-    right: -($width + 80px);
-    top: 0;
-    height: 100%;
-    text-align: left;    
+    @include monitor {
+      $width: 300px;
+      position: absolute;
+      z-index: 999;
+      width: $width;
+      right: -($width + 80px);
+      top: 0;
+      height: 100%;
+      text-align: left;    
 
-    .toc {
-      position: sticky;
-      top: 2rem;    
+      .toc {
+        position: sticky;
+        top: 2rem;    
+      }
+    }
+   
+    @include mobile {
+      margin: 2rem 0;
 
+      .toc {
+        border: 2px solid black;
+        padding: 1rem;
+      }
+    }
+
+    .toc {      
       > ol {
         margin-left: 0;
+        margin-bottom: 0;      
         padding-left: 1rem;
 
-        > li {
+        > li:not(:last-child) {
           margin-bottom: 1rem;
         }
         
@@ -150,6 +169,7 @@ header {
       &::before {
         content: "Contents";
         font-weight: bold;
+        font-size: 24px;
       }
     }
   }
@@ -195,6 +215,10 @@ header {
     @include mobile {
       flex-direction: column;
       padding: 0.5rem 0.75rem;
+      
+      &.fancy {
+        margin-top: 1rem;
+      }
     }
 
     @include monitor {

@@ -5,17 +5,17 @@ export let metadata = {
 
 import {NotaCode} from "./editor";
 import {nota} from "@nota-lang/nota-syntax";
-import "@nota-lang/nota-components/dist/index.css";
+
 import "../css/app.scss";
 )
 
-@TableOfContents
-
-@ListingConfigure[language=nota()]
+@ListingConfigure[language=nota()][wrap=true]
 
 @Title{Nota Tutorial}
 
 This page explains the basics of Nota's language syntax and component library. You can either edit the examples here interactively, or you can follow the instructions on the @a[href="/"]{home page} to install Nota and edit files on your own computer. 
+
+@TableOfContents
 
 @Section{Syntax}
 

@@ -14,7 +14,7 @@ let Template: React.FC<TemplateProps> = ({ title, script, children }) => (
       <meta name="twitter:card" content="summary" />
       <title>{title}</title>
     </head>
-    <body className="no-edit">
+    <body>
       <header>
         <div className="logo"><a href="/"><span className="fancy">N</span>ota</a></div>
         <nav>

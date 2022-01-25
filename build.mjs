@@ -5,9 +5,9 @@ import fs from "fs-extra";
 
 export let plugins = [sassPlugin()];
 
-if (is_main(import.meta)) {
+async function main() {
   let build = cli();
-  build({
+  await build({
     entryPoints: [
       "src/index.html",
       "src/tutorial.html",
@@ -21,7 +21,10 @@ if (is_main(import.meta)) {
       nota_plugin(),
       ...plugins,
     ],
-  }).then(async () => {
-    await fs.copy("static/favicon", "dist");
   });
+  await fs.copy("static/favicon", "dist");
+}
+
+if (is_main(import.meta)) {
+  main();
 }

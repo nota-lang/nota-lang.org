@@ -1,3 +1,5 @@
+@use "@nota-lang/nota-common/dist/index" as *;
+
 @font-face {
   font-family: "JMH Beda";
   src: url("./fonts/jmh_beda-webfont.woff2") format("woff2"),
@@ -22,20 +24,6 @@
 $serif: "EB Garamond", serif;
 $monospace: "Inconsolata", monospace;
 
-$cutoff: 800px;
-
-@mixin mobile {
-  @media (max-width: ($cutoff - 1)) {
-    @content;
-  }
-}
-
-@mixin monitor {
-  @media (min-width: $cutoff) {
-    @content;
-  }
-}
-
 body {
   font: normal 20px $serif;
   padding: 2rem 1rem 6rem;
@@ -50,7 +38,7 @@ header {
   margin: 0 auto 3rem;
 
   @include monitor {
-    width: $cutoff;
+    width: $mobile-cutoff;
     display: flex;
     justify-content: space-between;
   }
@@ -113,7 +101,7 @@ header {
   position: relative;
 
   @include monitor {
-    width: $cutoff;
+    width: $mobile-cutoff;
     margin: 0 auto;
 
     .nota-document {
@@ -223,16 +211,16 @@ header {
     }
 
     @include monitor {
-      $width: $cutoff + 100px;
+      $width: $mobile-cutoff + 100px;
       width: $width;
       position: relative;
-      right: calc(($width - $cutoff) / 2);
+      right: calc(($width - $mobile-cutoff) / 2);
 
       &.fancy {
         $width: 80vw;
         width: $width;
         position: relative;
-        right: calc(($width - $cutoff) / 2);
+        right: calc(($width - $mobile-cutoff) / 2);
         height: 600px;
       }
 
@@ -284,7 +272,7 @@ header {
   .rest {
     font-size: 22px;
     @include monitor {
-      width: $cutoff;
+      width: $mobile-cutoff;
       margin: 0 auto;
     }
   }

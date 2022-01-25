@@ -1,9 +1,9 @@
-import{A as l,B as f,I as s,J as E,L as d,M as O,a as D,b as t,c as r,d as T,e as n,t as p,v as i}from"./chunk-SGZFHCFQ.mjs";var m=t(r()),c=t(T());var o={};D(o,{default:()=>a,metadata:()=>C});var e=t(r());var C={title:"Nota Examples"},a=n(()=>(0,e.createElement)(l,{},...(()=>[`
+import{A as f,B as s,I as d,J as E,L as c,M as O,a as D,b as t,c as a,d as T,e as p,t as i,v as l}from"./chunk-X5OACICY.mjs";var m=t(a()),u=t(T());var o={};D(o,{default:()=>n,metadata:()=>C});var e=t(a());var C={title:"Nota Examples"},n=p(r=>(0,e.createElement)(f,{...r},...(()=>[`
 `,`
-`,(0,e.createElement)(i,{}),`
+`,(0,e.createElement)(l,{}),`
 `,`
-`,(0,e.createElement)(p,{language:s()}),`
+`,(0,e.createElement)(i,{language:d()}),`
 `,`
-`,(0,e.createElement)(f,{},"Nota Examples"),`
+`,(0,e.createElement)(s,{},"Nota Examples"),`
 `,`
-`,"This page is coming soon!"])()));var u=t(E()),b=t(r()),h=t(O()),x="metadata",M=x in o?o[x]:{},N=g=>m.default.createElement(d,{...g},m.default.createElement(a,null));u.canUseDOM&&c.default.hydrate(m.default.createElement(N,{...M,script:"./examples.mjs"}),document.documentElement);var export_React=b.default;var export_ReactDOMServer=h.default;export{N as Page,export_React as React,export_ReactDOMServer as ReactDOMServer,M as metadata};
+`,"This page is coming soon!"])()));var x=t(E()),b=t(a()),h=t(O()),g="metadata",M=g in o?o[g]:{},N=r=>m.default.createElement(c,{...r},m.default.createElement(n,null));x.canUseDOM&&u.default.hydrate(m.default.createElement(N,{...M,script:"./examples.mjs"}),document.documentElement);var export_React=b.default;var export_ReactDOMServer=h.default;export{N as Page,export_React as React,export_ReactDOMServer as ReactDOMServer,M as metadata};

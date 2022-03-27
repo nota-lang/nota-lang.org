@@ -1,9 +1,9 @@
-import{A as f,B as s,I as d,J as E,L as c,M as O,a as D,b as t,c as a,d as T,e as p,t as i,v as l}from"./chunk-X5OACICY.mjs";var m=t(a()),u=t(T());var o={};D(o,{default:()=>n,metadata:()=>C});var e=t(a());var C={title:"Nota Examples"},n=p(r=>(0,e.createElement)(f,{...r},...(()=>[`
+import{A as f,B as v,I as w,K as g,a as T,b as m,c as p,d as _,e as c,t as d,v as u}from"./chunk-7KMKLNAH.mjs";var o=m(p()),i=m(_());var a={};T(a,{default:()=>n,metadata:()=>h});var r=m(p());var h={title:"Nota Examples"},n=c(e=>(0,r.createElement)(f,{...e},...(()=>[`
 `,`
-`,(0,e.createElement)(l,{}),`
+`,(0,r.createElement)(u,{}),`
 `,`
-`,(0,e.createElement)(i,{language:d()}),`
+`,(0,r.createElement)(d,{language:w()}),`
 `,`
-`,(0,e.createElement)(s,{},"Nota Examples"),`
+`,(0,r.createElement)(v,{},"Nota Examples"),`
 `,`
-`,"This page is coming soon!"])()));var x=t(E()),b=t(a()),h=t(O()),g="metadata",M=g in o?o[g]:{},N=r=>m.default.createElement(c,{...r},m.default.createElement(n,null));x.canUseDOM&&u.default.hydrate(m.default.createElement(N,{...M,script:"./examples.mjs"}),document.documentElement);var export_React=b.default;var export_ReactDOMServer=h.default;export{N as Page,export_React as React,export_ReactDOMServer as ReactDOMServer,M as metadata};
+`,"This page is coming soon!"])()));var b="metadata",x=b in a?a[b]:{},N=e=>o.default.createElement(g,{...e},o.default.createElement(n,null)),D=async e=>{let t=Date.now(),l=new MutationObserver(s=>{t=Date.now()});return l.observe(e,{subtree:!0,childList:!0,attributes:!0}),new Promise(s=>{let E=setInterval(()=>{Date.now()-t>1e3&&(clearInterval(E),l.disconnect(),s())},50)})},C=async()=>{let e=document.documentElement;if(e.classList.contains("ssr-env"))e.classList.remove("ssr-env"),i.default.render(o.default.createElement(N,{...x,script:"./examples.mjs"}),e),await D(e),window.NOTA_READY=!0;else{let t=document.createElement("div");i.default.render(o.default.createElement(n,null),t),await D(t),root.parentNode.replaceChild(t,root)}};C();

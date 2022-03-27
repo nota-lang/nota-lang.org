@@ -1,10 +1,10 @@
-import{A as m,J as w,K as h,L as u,M as v,a as b,b as t,c as i,d as y,e as d,t as c,u as n,w as s}from"./chunk-X5OACICY.mjs";var o=t(i()),g=t(y());var a={};b(a,{default:()=>l,metadata:()=>x});var e=t(i());var x={title:"Nota: A Document Language for the Browser"},l=d(r=>(0,e.createElement)(m,{...r},...(()=>[`
+import{A as p,J as f,K as b,a as N,b as s,c as h,d as T,e as u,t as g,u as o,w as l}from"./chunk-7KMKLNAH.mjs";var a=s(h()),d=s(T());var i={};N(i,{default:()=>r,metadata:()=>x});var e=s(h());var x={title:"Nota: A Document Language for the Browser"},r=u(t=>(0,e.createElement)(p,{...t},...(()=>[`
 `,`
-`,(0,e.createElement)(c,{wrap:!0}),`
+`,(0,e.createElement)(g,{wrap:!0}),`
 `,`
-`,(0,e.createElement)(h,{fancy:!0},`// This code is editable!
+`,(0,e.createElement)(f,{fancy:!0},`// This code is editable!
 %(let nota = @strong{@Smallcaps{Nota}})
-@Definition[name="nota"][Label=nota]{
+@Definition[name="nota"][label=nota]{
   #nota is a language for writing documents, like academic papers and blog posts.
 }
 The goal of @Ref{nota} is to @strong{bring documents into the #(20 + 1)st century.}
@@ -20,11 +20,11 @@ A @Ref{nota} document compiles to a JavaScript program, meaning it's easy to:
   @li{Support accessibility needs like screen readers.}
 }`),`
 `,`
-`,(0,e.createElement)(s,{label:"usage"},"Usage"),`
+`,(0,e.createElement)(l,{label:"usage"},"Usage"),`
 `,`
 `,"You can use Nota by installing the ",(0,e.createElement)("code",{},"nota")," executable via the ",(0,e.createElement)("code",{},"@nota-lang/nota")," package. You need ",(0,e.createElement)("a",{href:"https://nodejs.org/en/download/"},"NodeJS \u2265 16")," and ",(0,e.createElement)("a",{href:"https://docs.npmjs.com/downloading-and-installing-node-js-and-npm"},"npm \u2265 6"),". The NodeJS global binary directory must be on your shell's ",(0,e.createElement)("code",{},"PATH"),", e.g. by running",`
 `,`
-`,(0,e.createElement)(n,{},'export PATH="$(npm config get prefix)/bin:$PATH"'),`
+`,(0,e.createElement)(o,{},'export PATH="$(npm config get prefix)/bin:$PATH"'),`
 `,`
 `,"Then you can build a single Nota document by running these shell commands:",`
 `,`
@@ -32,20 +32,20 @@ A @Ref{nota} document compiles to a JavaScript program, meaning it's easy to:
 `,`
 `,`
 `,`
-`,(0,e.createElement)(n,{},`npm install --global @nota-lang/nota
+`,(0,e.createElement)(o,{},`npm install --global @nota-lang/nota
 echo "@h1{Hello world}" > index.nota
 nota build index.nota
 open dist/index.html`),`
 `,`
 `,"You can interactively edit a Nota file by running the Nota editor, like so:",`
 `,`
-`,(0,e.createElement)(n,{},"nota edit index.nota"),`
+`,(0,e.createElement)(o,{},"nota edit index.nota"),`
 `,`
 `,"To learn more about how to write Nota documents, you can follow the ",(0,e.createElement)("a",{href:"/tutorial.html"},"Tutorial"),". To add Nota to your website or to learn more about Nota's architecture, read the ",(0,e.createElement)("a",{href:"/integration.html"},"Integration guide"),".",`
 `,`
 `,(0,e.createElement)("strong",{},"Nota is a new and evolving technology.")," The architecture and API are continually changing. Tooling will have bugs and missing features. Documentation will be incomplete or incorrect. Right now, I am seeking early adopters that want to help make Nota the document language of the future.",`
 `,`
-`,(0,e.createElement)(s,{},"Why Nota?"),`
+`,(0,e.createElement)(l,{},"Why Nota?"),`
 `,`
 `,"There are two main mediums for digital documents: PDFs and web pages. PDFs were designed to mirror physical documents, so they impose the real-world constraints of paper: page breaks, fixed width, and immutable styling. Web pages, by contrast, provides an essential dynamism. Web pages can be dynamically formatted: resized for phones, translated into other languages, colors changed for color-blindness. Web pages can be dynamically interactive: text prompted for more context, diagrams shifted for a new perspective, annotations added for posterity. Web pages are undeniably the future of digital documents.",`
 `,`
@@ -53,4 +53,4 @@ open dist/index.html`),`
 `,`
 `,"Part of this design is identifying components that are easy to use for authors and have high impact for the reader. For instance, the ",(0,e.createElement)("code",{},"@Definition")," and ",(0,e.createElement)("code",{},"@Ref")," components in the example above require a small amount of document annotation on the author's part. Then the Nota runtime can provide features like presenting a reference's definition in context via tooltip. Future Nota versions could include more advanced features like ",(0,e.createElement)("q",{},"find all references to this definition"),".",`
 `,`
-`,"For more on this design philosophy, you can read my original paper ",(0,e.createElement)("a",{href:"https://willcrichton.net/nota/"},'"A New Medium for Communicating Research on Programming Languages"'),"."])()));var p=t(w()),k=t(i()),D=t(v()),f="metadata",T=f in a?a[f]:{},N=r=>o.default.createElement(u,{...r},o.default.createElement(l,null));p.canUseDOM&&g.default.hydrate(o.default.createElement(N,{...T,script:"./index.mjs"}),document.documentElement);var export_React=k.default;var export_ReactDOMServer=D.default;export{N as Page,export_React as React,export_ReactDOMServer as ReactDOMServer,T as metadata};
+`,"For more on this design philosophy, you can read my original paper ",(0,e.createElement)("a",{href:"https://willcrichton.net/nota/"},'"A New Medium for Communicating Research on Programming Languages"'),"."])()));var w="metadata",k=w in i?i[w]:{},D=t=>a.default.createElement(b,{...t},a.default.createElement(r,null)),y=async t=>{let n=Date.now(),c=new MutationObserver(m=>{n=Date.now()});return c.observe(t,{subtree:!0,childList:!0,attributes:!0}),new Promise(m=>{let v=setInterval(()=>{Date.now()-n>1e3&&(clearInterval(v),c.disconnect(),m())},50)})},P=async()=>{let t=document.documentElement;if(t.classList.contains("ssr-env"))t.classList.remove("ssr-env"),d.default.render(a.default.createElement(D,{...k,script:"./index.mjs"}),t),await y(t),window.NOTA_READY=!0;else{let n=document.createElement("div");d.default.render(a.default.createElement(r,null),n),await y(n),root.parentNode.replaceChild(n,root)}};P();

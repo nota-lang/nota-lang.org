@@ -44,7 +44,7 @@ Nota supports three kinds of commands:
 
 @Subsection{\@-commands}
 
-@Definition[name="atcmd"][Label="@-command"]{
+@Definition[name="atcmd"][label="@-command"]{
   \@-commands add document components to the output.
 }
 This includes HTML elements, like @code{\@em} for italics, as well as @a[href="https://reactjs.org/"]{React} components, like @code{\@Title}. Nota provides a standard library of components such as @code{\@Title}, @code{\@Section}, @code{\@Ref}, and many more. And you can also provide your own!
@@ -68,7 +68,7 @@ Commands generally have three pieces: a name, code arguments, and text arguments
 
 @Subsection{\#-commands}
 
-@Definition[name="hashcmd"][Label="#-command"]{
+@Definition[name="hashcmd"][label="#-command"]{
   \#-commands add Javascript expressions to the output. 
 } 
 For example, @code{\#sysname} embeds the value of the variable @code{sysname}. With parentheses, one can use any Javascript expression such as @code{\#(sysname.toUpperCase())}.
@@ -95,7 +95,7 @@ Because text arguments may contain commands, they are not translated directly to
 
 @Subsection{\%-commands}
 
-@Definition[name="pctcmd"][Label="%-command"]{
+@Definition[name="pctcmd"][label="%-command"]{
   \%-commands add Javascript statements to the output. 
 } For example, @code{\%(let sysname = "Nota")} is not inherently visible in the document, but can be used in expressions like @code{\#sysname}. @Ref{pctcmd}s take no arguments. You simply put @code|{%(...)}| and add any Javascript statement, including imports and exports.}
 
@@ -121,7 +121,7 @@ The best way to understand the many Nota components is to read through an exampl
 
 @Subsection{Document structure}
 
-A Nota document is always contained within a @code{\@Document} component. Within a document, the main structural components are @code{\@Title}, @code{\@Section}, and @code{\@p}. A @code{\@Document} does things to help you simplify structure and reduce nesting. First, sections are automatically nested based on the order of headers. Second, paragraphs are automatically generated based on newlines. For example, this Nota input on the @Ref[Label="left"]{leftdoc} is translated to the equivalent on the @Ref[Label="right"]{rightdoc}.
+A Nota document is always contained within a @code{\@Document} component. Within a document, the main structural components are @code{\@Title}, @code{\@Section}, and @code{\@p}. A @code{\@Document} does things to help you simplify structure and reduce nesting. First, sections are automatically nested based on the order of headers. Second, paragraphs are automatically generated based on newlines. For example, this Nota input on the @Ref[label="left"]{leftdoc} is translated to the equivalent on the @Ref[label="right"]{rightdoc}.
 
 @Row[style={margin: '1rem 0'}]{
   @Definition[name="leftdoc"][Tooltip=null]{@Listing|{@Document{
@@ -166,7 +166,7 @@ A Nota document is always contained within a @code{\@Document} component. Within
 
 Nota provides @code{\@Definition} and @code{\@Ref} components for defining things and referencing them in a general way. For example:
 
-@NotaCode|{@Definition[name="nota"][Label="Nota"]{
+@NotaCode|{@Definition[name="nota"][label="Nota"]{
   Nota is a document language for the browser.
 } Have you tried writing @Ref{nota}?}|
 
@@ -183,7 +183,7 @@ A reference's text argument is the definition's name. You can optionally define 
 
 @NotaCode|{@Definition[name="nota"]{
   Nota is a document language for the browser.
-} Have you tried writing @Ref[Label=@strong{Nota}]{nota}?}|
+} Have you tried writing @Ref[label=@strong{Nota}]{nota}?}|
 
 @Subsection{Math / TeX}
 

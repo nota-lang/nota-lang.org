@@ -12,7 +12,7 @@ import "../css/app.scss";
 
 @NotaCode[fancy]|{// This code is editable!
 %(let nota = @strong{@Smallcaps{Nota}})
-@Definition[name="nota"][Label=nota]{
+@Definition[name="nota"][label=nota]{
   #nota is a language for writing documents, like academic papers and blog posts.
 }
 The goal of @Ref{nota} is to @strong{bring documents into the #(20 + 1)st century.}

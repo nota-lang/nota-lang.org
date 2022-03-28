@@ -1,5 +1,5 @@
-import { cli, ssr_plugin, is_main } from "@nota-lang/esbuild-utils";
-import { nota_plugin } from "@nota-lang/nota-syntax/dist/esbuild-plugin.js";
+import { cli, ssrPlugin, isMain } from "@nota-lang/esbuild-utils";
+import { notaPlugin } from "@nota-lang/nota-syntax/dist/esbuild-plugin.js";
 import { sassPlugin } from "esbuild-sass-plugin";
 import fs from "fs-extra";
 
@@ -17,14 +17,14 @@ async function main() {
     preserveSymlinks: true,
     splitting: true,
     plugins: [
-      ssr_plugin({ template: "./src/template.tsx" }),
-      nota_plugin(),
+      ssrPlugin({ template: "./src/template.tsx" }),
+      notaPlugin(),
       ...plugins,
     ],
   });
   await fs.copy("static/favicon", "dist");
 }
 
-if (is_main(import.meta)) {
+if (isMain(import.meta)) {
   main();
 }

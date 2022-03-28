@@ -203,7 +203,7 @@ While you can use TeX macros if necessary, it is recommended to use Javascript v
 
 The KaTeX integration for Nota provides special support for definitions and references. For example:
 
-@NotaCode|{%(let reaches = (u, v) => tex_ref("reaches", @{#u ~ \mathsf{reaches} ~ #v}))
+@NotaCode|{%(let reaches = (u, v) => texRef("reaches", @{#u ~ \mathsf{reaches} ~ #v}))
 @Definition[name="reaches"]{
   The judgment @${#reaches{n_1}{n_2}} is defined as:  
   @div{
@@ -216,7 +216,7 @@ The KaTeX integration for Nota provides special support for definitions and refe
   }
 }}|
 
-Nota provides the function @code{tex_ref} for TeX code which refers to a Nota definition, such as @code{"reaches"} here. Then any reference to the @${\mathsf{reaches}} judgment via the @code{reaches} function will support definition-reference features: click to see the definition, and double-click to jump to it.
+Nota provides the function @code{texRef} for TeX code which refers to a Nota definition, such as @code{"reaches"} here. Then any reference to the @${\mathsf{reaches}} judgment via the @code{reaches} function will support definition-reference features: click to see the definition, and double-click to jump to it.
 
 @Subsection{Code}
 

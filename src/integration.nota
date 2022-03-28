@@ -49,7 +49,7 @@ The @code|{@nota-lang/nota-syntax}| package exports two key functions:
 
 
 @Js{
-  let try_parse(input: string): Result<lezer.Tree>;
+  let tryParse(input: string): Result<lezer.Tree>;
   let translate(input: string, tree: lezer.Tree): string;
 }
 
@@ -57,15 +57,15 @@ These functions parse and translate, respectively, a Nota document into a React 
 
 @Subsection{esbuild}
 
-First, import @code{nota_plugin} and add it to your list of plugins:
+First, import @code{notaPlugin} and add it to your list of plugins:
 
 @Js{
-  import {nota_plugin} from "\@nota-lang/nota-syntax/dist/esbuild-plugin.js";
+  import { notaPlugin } from "\@nota-lang/nota-syntax/dist/esbuild-plugin.js";
   import esbuild from "esbuild";
 
   esbuild.build({
     /* your configuration... */
-    plugins: [nota_plugin()]
+    plugins: [notaPlugin()]
   })
 }
 

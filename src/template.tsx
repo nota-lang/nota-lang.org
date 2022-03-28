@@ -23,9 +23,7 @@ let Template: React.FC<TemplateProps> = ({ title, script, children }) => (
           <a href="https://github.com/nota-lang/nota">Github</a>
         </nav>
       </header>
-      <div id="root">
-        {children}
-      </div>
+      {children}
       <script src={script} type="module"></script>
     </body>
   </>

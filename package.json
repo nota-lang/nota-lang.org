@@ -4,21 +4,21 @@
     "build": "node build.mjs"
   },
   "devDependencies": {
-    "@codemirror/basic-setup": "^0.19.1",
-    "@codemirror/lang-javascript": "^0.19.7",
-    "@codemirror/lang-rust": "^0.19.2",
-    "@nota-lang/esbuild-utils": "^0.3.6",
-    "@nota-lang/nota-common": "^0.3.6",
-    "@nota-lang/nota-components": "^0.3.6",
-    "@nota-lang/nota-editor": "^0.3.6",
-    "@types/react-dom": "^17.0.14",
+    "@codemirror/basic-setup": "^0.20.0",
+    "@codemirror/lang-javascript": "^0.20.0",
+    "@codemirror/lang-rust": "^0.20.0",
+    "@nota-lang/nota-common": "^0.3.7",
+    "@nota-lang/nota-components": "^0.3.7",
+    "@nota-lang/nota-syntax": "^0.3.7",
+    "@nota-lang/esbuild-utils": "^0.3.7",
+    "@nota-lang/nota-editor": "^0.3.7",
     "classnames": "^2.3.1",
+    "esbuild": "^0.14.38",
     "esbuild-sass-plugin": "^2.2.5",
     "fs-extra": "^10.0.1",
     "mobx": "^6.5.0",
-    "mobx-react": "^7.3.0",
+    "mobx-react": "^7.4.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "typescript": "^4.6.3"
+    "react-dom": "^17.0.2"
   }
 }

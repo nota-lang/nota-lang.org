@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Row } from "@nota-lang/nota-components";
+import { Row } from "@nota-lang/nota-components/dist/document";
 import {
   Editor,
   OutputView,

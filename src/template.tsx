@@ -1,5 +1,5 @@
 import React from "react";
-import type {TemplateProps} from "@nota-lang/esbuild-utils/dist/template"
+import type {TemplateProps} from "@nota-lang/esbuild-utils/dist/template.js"
 
 let Template: React.FC<TemplateProps> = ({ title, script, children }) => (
   <>

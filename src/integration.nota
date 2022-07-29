@@ -1,127 +1,128 @@
-%(
+%%%
 export let metadata = {
   title: "Nota Integration Guide"
 };
 
 import {NotaCode} from "./editor";
-import {nota} from "@nota-lang/nota-syntax";
+import {nota} from "@nota-lang/nota-syntax/dist/editor/mod.js";
 import {javascript} from "@codemirror/lang-javascript";
 
 import "../css/app.scss";
 
 let js = javascript({typescript: true, jsx: true});
-let Js = ({children}) => @Listing[language=js]{#children}
-)
+%%%
 
-@ListingConfigure[wrap=true]
+@ListingConfigure[wrap: true]
 
-@Title{Nota Integration Guide}
+@Title: Nota Integration Guide
 
-After @a[href="/#def-usage"]{installing Nota}, the simplest way to use it is to input a single document and output a single web page. For example, by running:
+After [installing Nota](/#def-usage), the simplest way to use it is to input a single document and output a single web page. For example, by running:
 
-@Listing{
-  nota edit index.nota
-  nota build index.nota
-}
+```
+nota edit index.nota
+nota build index.nota
+```
 
-You can write the document using the first command. The second command generates a directory @code{dist} containing the ready-to-distribute files, including HTML, CSS, Javascript, and other assets like images. You can put these files on any web hosting service, such as @a[href="https://pages.github.com/"]{Github Pages}.
+You can write the document using the first command. The second command generates a directory `dist` containing the ready-to-distribute files, including HTML, CSS, Javascript, and other assets like images. You can put these files on any web hosting service, such as [Github Pages](https://pages.github.com/).
 
 If you want to use Nota in a broader context, such as a personal website or an online academic journal, the remainder of this guide will explain Nota's overall architecture, and how it can fit into your use case.
 
 @TableOfContents
 
-@Section{Architecture}
-
-A Nota document is a @a[href="https://reactjs.org/"]{React} program. Therefore Nota can be used anywhere React can be used. More specifically, Nota is comprised of three main pieces:
-
-@ol{
-  @li{@a[href="https://github.com/nota-lang/nota/tree/master/packages/nota-syntax"]{@code{\@nota-lang/nota-syntax}}: A document-authoring language that compiles to React JavaScript.}
-  @li{@a[href="https://github.com/nota-lang/nota/tree/master/packages/nota-components"]{@code{\@nota-lang/nota-components}}: A set of React components for structuring documents.}
-  @li{@a[href="https://github.com/nota-lang/nota/tree/master/packages/nota-editor"]{@code{\@nota-lang/nota-editor}}: An editor designed for Nota documents.}
-}
-
-The complete Nota pipeline (in the @a[href="https://github.com/nota-lang/nota/tree/master/packages/nota"]{@code|{@nota-lang/nota}|} package) turns a Nota document into a standalone web page. This pipeline includes  bundling via @a[href="https://esbuild.github.io/"]{esbuild}, as well as server-side rendering via @a[href="https://reactjs.org/docs/react-dom-server.html"]{ReactDOMServer}.
+@Section: Architecture
 
 
-@Section{Building}
+A Nota document is a [React](https://reactjs.org/) program. Therefore Nota can be used anywhere React can be used. More specifically, Nota is comprised of three main pieces:
 
-The @code|{@nota-lang/nota-syntax}| package exports two key functions:
+1. [`@nota-lang/nota-syntax`](https://github.com/nota-lang/nota/tree/master/packages/nota-syntax): A document-authoring language that compiles to React JavaScript.
+2. [`@nota-lang/nota-components`](https://github.com/nota-lang/nota/tree/master/packages/nota-components): A set of React components for structuring documents.
+3. [`@nota-lang/nota-editor`](https://github.com/nota-lang/nota/tree/master/packages/nota-editor): An editor designed for Nota documents.
+
+The complete Nota pipeline (in the [`@nota-lang/nota`](https://github.com/nota-lang/nota/tree/master/packages/nota) package) turns a Nota document into a standalone web page. This pipeline includes bundling via [esbuild](https://esbuild.github.io/), as well as server-side rendering via [ReactDOMServer](https://reactjs.org/docs/react-dom-server.html).
+
+@Section: Building
+
+The `@nota-lang/nota-syntax` package exports two key functions:
+
+```js
+let tryParse(input: string): Result<lezer.Tree>;
+let translate(input: string, tree: lezer.Tree): {code: string; map?: string};
+```
+
+These functions parse and translate, respectively, a Nota document into a React program (via a [Lezer](https://lezer.codemirror.net/) tree). If possible, you should not call these functions directly but rather use a bundler integration. Currently we only support [esbuild](https://esbuild.github.io/), but other integrations are welcome!
+
+@Subsection: esbuild
+
+First, import `notaPlugin` and add it to your list of plugins:
+
+```js
+import { notaPlugin } from "\@nota-lang/nota-syntax/dist/esbuild-plugin.js";
+import esbuild from "esbuild";
+
+esbuild.build({
+  /* your configuration... */
+  plugins: [notaPlugin()]
+})
+```
+
+This plugin will allow you to import a file with a `.nota` extension. The file's default export will be the document's React component. For example:
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import Doc from "./index.nota";
+
+let App = () => <div>
+  <h1>My Website</h1>
+  <Doc />
+</div>;
+
+ReactDOM.renderToString(<App />, document.getElementById('app'));
+```
+
+If you follow the approach above, all pipeline issues like bundling and server-side rendering are up to you. Alternatively, you can use the [`@nota-lang/esbuild-utils`](https://github.com/nota-lang/nota/tree/master/packages/esbuild-utils) package to get a simple Nota-enabled static site generator that includes bundling and SSR. Check out the `build.mjs` file for [nota-lang.org](https://github.com/nota-lang/nota-lang.org) and [willcrichton.net](https://github.com/willcrichton/willcrichton.github.io) as examples.
 
 
-@Js{
-  let tryParse(input: string): Result<lezer.Tree>;
-  let translate(input: string, tree: lezer.Tree): string;
-}
+@Section: Editing
 
-These functions parse and translate, respectively, a Nota document into a React program (via a @a[href="https://lezer.codemirror.net/"]{Lezer} tree). If possible, you should not call these functions directly but rather use a bundler integration. Currently we only support @a[href="https://esbuild.github.io/"]{esbuild}, but other integrations are welcome!
+You can still use the Nota editor on documents that are not built via `nota build`. The `nota edit` command can take additional flags to interoperate with your personal build pipeline. 
 
-@Subsection{esbuild}
+@Subsection: Build configuration
 
-First, import @code{notaPlugin} and add it to your list of plugins:
+If you are using esbuild and have custom esbuild flags, e.g. a plugin like [esbuild-sass-plugin](https://github.com/glromeo/esbuild-sass-plugin), then you can define a configuration file like so:
 
-@Js{
-  import { notaPlugin } from "\@nota-lang/nota-syntax/dist/esbuild-plugin.js";
-  import esbuild from "esbuild";
-
-  esbuild.build({
-    /* your configuration... */
-    plugins: [notaPlugin()]
-  })
-}
-
-This plugin will allow you to import a file with a @code{.nota} extension. The file's default export will be the document's React component. For example:
-
-@Js{
-  import React from "react";
-  import ReactDOM from "react-dom";
-  import Doc from "./index.nota";
-  
-  let App = () => <div>
-    <h1>My Website</h1>
-    <Doc />
-  </div>;
-  
-  ReactDOM.renderToString(<App />, document.getElementById('app'));
-}
-
-If you follow the approach above, all pipeline issues like bundling and server-side rendering are up to you. Alternatively, you can use the @a[href="https://github.com/nota-lang/nota/tree/master/packages/esbuild-utils"]{@code{\@nota-lang/esbuild-utils}} package to get a simple Nota-enabled static site generator that includes bundling and SSR. Check out the @code{build.mjs} file for @a[href="https://github.com/nota-lang/nota-lang.org"]{nota-lang.org} and @a[href="https://github.com/willcrichton/willcrichton.github.io"]{willcrichton.net} as examples.
-
-@Section{Editing}
-
-You can still use the Nota editor on documents that are not built via @code{nota build}. The @code{nota edit} command can take additional flags to interoperate with your personal build pipeline. 
-
-@Subsection{Build configuration}
-
-If you are using esbuild and have custom esbuild flags, e.g. a plugin like @a[href="https://github.com/glromeo/esbuild-sass-plugin"]{esbuild-sass-plugin}, then you can define a configuration file like so:
-
-@Js|{// nota.config.mjs
+```js
+// nota.config.mjs
 import { sassPlugin } from "esbuild-sass-plugin";
 
 export default {
   plugins: [sassPlugin()];
-}}|
+}
+```
 
 Then incorporate it into your build script:
 
-@Js|{// build.mjs
+```js
+// build.mjs
 import config from "./nota.config.mjs";
 import esbuild from "esbuild";
 
 esbuild.build({
   entryPoints: ["./src/index.nota"],
   ...config
-})}|
+})
+```
 
 And then provide the configuration path to the editor:
 
-@Listing{
-  nota edit src/index.nota --config nota.config.mjs
-}
+```
+nota edit src/index.nota --config nota.config.mjs
+```
 
-@Subsection{Asset folder}
+@Subsection: Asset folder
 
 If your document contains local URLs to assets like images, then you can configure the editor to serve files out of a given directory:
 
-@Listing{
-  nota edit src/index.nota --static assets
-}
+```
+nota edit src/index.nota --static assets
+```

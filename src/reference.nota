@@ -1,0 +1,374 @@
+%%%
+export let metadata = {
+  title: "Nota Reference"
+};
+
+import {NotaCode} from "./editor";
+import {nota} from "@nota-lang/nota-syntax/dist/editor/mod.js";
+import {javascript} from "@codemirror/lang-javascript";
+
+import "../css/app.scss"
+%%%
+
+@ListingConfigure[language: nota(), wrap: true]
+
+@Title: Nota Reference
+
+This page explains the basics of Nota's language syntax and component library. You can either edit the examples here interactively, or you can follow the instructions on the [home page](/) to install Nota and edit files on your own computer. 
+
+@TableOfContents
+
+@Section: Syntax
+
+A Nota document is text mixed with commands, typically contained in a `.nota` file. A Nota document looks like this:
+
+@NotaCode|{
+% let sysname = "Nota"
+
+@Section: #sysname: A Document Language for the Browser
+
+#(sysname.toUpperCase()) is my *favorite* way to write [documents](https://en.wikipedia.org/wiki/Document)!
+}|
+
+@Wrap[align: "right"]:
+  @Figure[name: "markdown_examples"]:
+    | Command | Output |
+    | ------- | ------- |
+    | `*italics*`| *italics* |
+    | `**bold**` | **bold** |
+    | `[link](url)` | [link](url) |
+    | `# Header` | @h2{Header} |
+    | `* list` | @ul{@li{list}} |
+    
+    @Caption: Examples of Markdown @br{} supported by Nota.
+    
+Nota syntax is based on [Markdown](https://en.wikipedia.org/wiki/Markdown), specifically [CommonMark](https://commonmark.org/) with some [Github Flavored extensions](https://github.github.com/gfm/). In the example above, `*favorite*` becomes *favorite*. Some examples of Markdown features are shown in &markdown_examples.
+
+The major difference between Nota and traditional Markdown is that Nota enables you to use Javascript in your document. There are three kinds of Javascript in the example above:
+1. Javascript components with `@`, e.g. to use a custom section header `@Section`.
+2. Javascript statements with `%`, e.g. to define variables like `sysname`.
+3. Javascript expressions with `#`, e.g. to put the value of `sysname` in the header.
+
+Next, we will explore how each of these features works.
+
+@Subsection: @-commands
+
+Markdown supports a fixed set of components: bold, italics, headers, lists, and so on. But what if you want to use a component that wasn't built in, like an interactive chart? Then you can use a custom component, like `@VegaLite` from the [Vega-Lite](https://vega.github.io/vega-lite/) package:
+
+% import data from "./data/unemployment-across-industries.json"
+@NotaCode[imports: {"./data/unemployment-across-industries.json": data}]|{
+%%%
+// Chart from: https://vega.github.io/vega-lite/examples/interactive_legend.html
+import values from "./data/unemployment-across-industries.json";
+let spec = {
+  data: {values}, mark: "area",
+  params: [{name: "industry", select: {type: "point", fields: ["series"]}, bind: "legend"}],
+  encoding: {
+    x: {timeUnit: "yearmonth", field: "date", axis: {domain: false, format: "%Y", tickSize: 0}},
+    y: {aggregate: "sum", field: "count", stack: "center", "axis": null},
+    color: {field: "series", scale: {scheme: "category20b"}},
+    opacity: {condition: {param: "industry", value: 1}, value: 0.2},
+  }
+};
+%%%
+
+Try clicking on the legend!
+
+@VegaLite[spec]
+}|
+
+If there isn't a component that does exactly what you want, then you can write your own using [ReactJS](https://reactjs.org/). For example, here's a component that lets users interactively change the text color of the component's children:
+
+@NotaCode|{
+%%%
+import {useState} from "react";
+let ColorPicker = ({children}) => {
+  let [color, setColor] = useState("red");
+  let onClick = () => setColor(color == "red" ? "blue" : "red");
+  return @div{
+    @button[onClick]{Toggle color} ---
+    @span[style: {color}]{#children}
+  };
+}
+%%%
+
+@ColorPicker:
+  Lorem ipsum dolor sit amet.
+}|
+
+At its core, a component has a name (required), a set of attributes (optional), and a sequence of children components (optional). One of Nota's goals is to make it reasonably concise to write components, so there are several syntaxes for writing components. They are:
+
+@NotaCode|{  
+% let Component = () => @div[style: {color: "red"}]{Hello world};
+// A name is either a JS identifier...
+@Component
+// ...or a parenthesized JS expression.
+@([Component][0])
+
+// Attributes are written in either square brackets...
+% let Duplicate = ({content}) => @div{#content#content};
+@Duplicate[content: @{Hello}]
+// ...or pipes (only for attributes that take components as input).
+@Duplicate:
+  | content: Hello
+
+// Children can be delimited in curly braces...
+@div{Hello world}
+// ...or placed after a colon on one line...
+@div: Hello world
+// ...or placed indented on a newline after a colon.
+@div:
+  Hello world
+
+// Putting it all together:
+@("di" + "v")[style: {color: "red"}]:
+  Hello world
+}|
+
+If you want to learn more about how to write React components, I recommend following a React tutorial such as: <https://reactjs.org/tutorial/tutorial.html>
+
+@Subsubsection: Inline vs. block
+
+One tricky part about using Nota components is how they integrate with Markdown parsing. Markdown is very sensitive to indentation and newlines. For example:
+
+@NotaCode|{
+*   Example 1: this list starts an indentation,
+    matching newlines are part of the same item,
+
+    even after empty lines.
+  
+  But reducing the indentation breaks the list!
+
+**Example 2: you can't bold
+
+over multiple lines.**
+}|
+
+In short, Markdown (and CSS) distinguishes *block* and *inline* elements. Block elements are things like headers, lists, and paragraphs --- they generally take the full width of the page, and stack vertically. Inline elements are things like text, styled text (bold / italics / strikethrough), hyperlinks, and buttons --- they flow together horizontally in a sequence.
+
+In Markdown, an empty line is used to delimit inline sequences. So in the example above, the bolding doesn't work because an empty line separates the initial `**` from the final `**`. This fact means that a program like this would not make sense:
+
+```nota
+Hello @span{
+
+  world
+}.
+```
+
+Therefore Nota currently has the following restriction. If a component is in inline position, then its contents MUST not contain any empty newlines. 
+
+Another issue arises over whether a Nota command should be treated as a block or inline element. For example, consider these two programs:
+
+```nota
+@div{Hello world}
+
+@span{Hello} world
+```
+
+The first line should compile into a block element, i.e. a standalone div. The second line should compile into a paragraph that contains the span and the remainder of the text. But this means that the parser doesn't know whether a component is inline or not until reading past the component.
+
+For now, to resolve this ambiguity, the parser assumes that all components at the beginning of a line are block components. You can explicitly indicate that such a component is an inline component by adding a period before @, e.g.
+
+```nota
+.@span{Hello} world
+```
+
+@Subsection{\%-commands}
+
+Markdown allows you to write rich text, but it doesn't support any kind of programming. Programming can be useful when writing a document, for example:
+
+@NotaCode|{
+% let sysname = "Nota"
+I named my system #sysname. But if I decide to rename #sysname later, then I can just change the variable!
+
+% let outlives = macro{#1 :> #2}
+I have a common pattern in my document, like a math formula $#outlives{r_1}{r_2}$. So I can use it in equations like:
+
+$$
+#outlives{r_1}{r_2} \wedge #outlives{r_2}{r_3} \implies #outlives{r_1}{r_3}
+$$
+
+%%% 
+let features = [
+  {title: "Feature 1", text: "Is great!"},
+  {title: "Feature 2", text: "Is even better!"},
+  {title: "Feature 3", text: "You're not gonna believe it."}
+]
+%%%
+
+I have a common structure to my content. So I can encode it in a data structure and write my UI once:
+
+@Row[style: {gap: '1em'}]:
+  #(features.map(({title, text}) => 
+    @div{**#title** @br #text}))
+}|
+
+\%-commands allow you to embed Javascript statements in your document. There are two syntaxes: `%` for a one-line statement, and `%%%` for multi-line statements. A \%-command does not change the visual display of your document --- it only defines data that will be available as the document renders.
+
+You can write any ES6 Javascript (e.g. arrow functions, ESM-style imports, etc.) within a %-command, or any place that Nota permits Javascript (like component attributes). Nota also extends Javascript with two new features:
+
+**Nota-in-JS:** You can also use Nota components within Javascript. Anywhere you would write a Javascript expression, you can also write a Nota-component. For example:
+
+@NotaCode|{
+% let x = @div{Hello world!};
+#x
+}|
+
+Note that the outer-most Nota component within a Javascript expression must use curly-brace delimiters for children (not colons).
+
+**Macros:** When working with components that take complex string inputs such as $\KaTeX$, it's useful to have concisely define string-generating macros. Nota adds a new keyword `macro` that works like this:
+
+@NotaCode|{
+% let implies = macro{#1 \Rightarrow #2}
+$(\neg a \vee b) \iff (#implies{a}{b})$
+}|
+
+This macro is syntactic sugar for:
+
+```javascript
+let implies = (arg1, arg2) => `${arg1} \Rightarrow ${arg2}`;
+```
+
+@Subsection{\#-commands}
+
+With the ability to define variables, you need the ability to use them! A \#-command has three roles:
+
+@NotaCode|{
+% let name = "Nota"
+You can use \# to embed a variable like #name in the document.
+
+% let implies = macro{#1 \Rightarrow #2}
+You can use \# to call a function, like `implies`:
+
+$(\neg a \vee b) \iff (#implies{a}{b})$
+
+You can use \# to embed an arbitrary Javascript expression, like a map over a list:
+
+#(["a", "b"].map(s => @div{#s}))
+}|
+
+@Section: Components
+
+This is a non-exhaustive list of some components that are provided in Nota's standard library.
+
+@Subsection: Definitions and references
+
+Nota provides `@Definition` and `@Ref` components for defining things and referencing them in a general way. For example:
+
+@NotaCode|{
+@Definition[name: "nota", label: "Nota"]: Nota is a document language for the browser.
+
+Have you tried writing &nota?
+}|
+
+A definition has four pieces:
+
+1. `name`: required, string by which to reference this definition.
+2. `label`: optional, element that is shown (by default) for a reference to this definition.
+3. `tooltip`: optional, element to show when a reference to this definition is clicked (by default the definition's body).
+4. The definition body.
+
+A reference's text argument is the definition's name. Because references are common in documents, Nota provides a shorthand for writing references: `&def_name` (because you're making a pointer to something!). You can optionally define the content of the reference:
+
+@NotaCode|{
+@Definition[name: "nota"]: Nota is a document language for the browser.
+
+Have you tried writing @Ref[label: @{**Nota**}]{nota}?
+}|
+
+@Subsection: Math / TeX
+
+Nota provides inline and block math elements, `$` and `$$` respectively. Currently these use the [KaTeX](https://katex.org/) library for rendering.
+
+@NotaCode|{
+The Cauchy-Schwarz inequality states that for all vectors $u$ and $v$ of an inner product space it is true that
+
+% let u = #{\mathbf{u}}; let v = #{\mathbf{v}};
+% let vec = macro{\langle #1, #2 \rangle};
+
+$$
+ | #vec{u}{v} |^2 \leq #vec{u}{u} \cdot #vec{v}{v}
+$$
+}|
+
+While you can use TeX macros if necessary, it is recommended to use Javascript variables and functions as shown above. Macros are only essential for referencing TeX builtins such as `\leq` for `\leq`.
+
+The KaTeX integration for Nota provides special support for definitions and references. For example:
+
+@NotaCode|{
+% let reaches = macro{#texRef{reaches}{#1 ~ \mathsf{reaches} ~ #2}};
+
+@Definition[name: "reaches"]:
+  The judgment $#reaches{n_1}{n_2}$ is defined as:  
+
+  @div:
+    @IR[Bot: @${#reaches{n}{n}}]
+  
+    @IR:
+      | Top: 
+        @Premise: $#reaches{n_1}{n_2}$
+        @Premise: $#reaches{n_2}{n_3}$
+      | Bot: $#reaches{n_1}{n_3}$
+}|
+
+Nota provides the function `texRef` for TeX code which refers to a Nota definition, such as `reaches` here. Then any reference to the $\mathsf{reaches}$ judgment via the `reaches` function will support definition-reference features: click to see the definition, and double-click to jump to it.
+
+@Subsection: Code
+
+Nota uses [Codemirror 6](https://codemirror.net/6/) for code editing and viewing. For example:
+
+@NotaCode|{
+% import {rust} from "@codemirror/lang-rust"
+```rust
+fn char_at(s: &str, i: usize) -> char {
+  s.chars().nth(i).unwrap()
+}
+```
+}|
+
+Note that you need to import the corresponding `lang` package to get the right syntax highlighting.
+
+@Subsection: Citations
+
+The `@References` component takes as input [BibTeX](http://www.bibtex.org/) string (usually imported from a `.bib` file) and does two things:
+
+1. It creates a `@Definition` for each citation where the `name` is the one provided in bibtex.
+2. It shows the references of all citations used in the document.
+
+For example:
+
+@NotaCode|{
+Nota is a document language for the browser &crichton2021nota.
+
+@References{
+  \@inproceedings{crichton2021nota,
+    title={A New Medium for Communicating Research on Programming Languages},
+    author={Crichton, Will},
+    booktitle={Proceedings of the 1st Workshop on Human Aspects of Types and Reasoning Assistants},
+    year={2021}
+  }
+}
+}|
+
+@Section: Styling
+
+Nota components do not have much default styling to allow authors greater flexibility in their own designs. To add your own styling, you can use CSS. For example, directly via a style tag:
+
+@NotaCode|{ 
+@style{ span.text-red { color: red; } }
+
+% let Red = ({children}) => @span[className: "text-red"]{#children}
+
+I love the color @Red{red!}
+}|
+
+You can also import an external stylesheet. For example, Nota provides a set of themes. The current list of Nota themes: is:
+
+* [`@nota-lang/nota-theme-acm`](https://github.com/nota-lang/nota/tree/master/packages/nota-theme-acm): emulates the latest [ACM LaTeX](https://www.acm.org/publications/proceedings-template) conference paper theme.
+* (...That's it so far! If you make your own theme, we can add it to this list.)
+
+To use a theme, you simply import its CSS, such as:
+
+```nota
+% import "@nota-lang/nota-theme-acm/dist/index.css"
+```

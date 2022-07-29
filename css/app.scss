@@ -24,12 +24,14 @@
   --font-body: "EB Garamond", serif;
   --font-header: "EB Garamond", serif;
   --font-mono: "Inconsolata", monospace;
+
+  --size-normal: 20px;
 }
 
 body {
   padding: 2rem 1rem 6rem;
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 20px;
 
   @include mobile {
     padding: 0.5rem 1rem;
@@ -219,7 +221,7 @@ header {
         width: $width;
         position: relative;
         right: calc(($width - $mobile-cutoff) / 2);
-        height: 600px;
+        height: 560px;
       }
 
       .nota-editor,

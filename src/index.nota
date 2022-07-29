@@ -10,7 +10,8 @@ import "../css/app.scss";
 
 @ListingConfigure[wrap: true]
 
-@NotaCode|{// This code is editable!
+@NotaCode[fancy: true]|{
+// This code is editable!
 % let nota = @Smallcaps{**Nota**}
 @Definition[name: "nota", label: nota]:
   #nota is a language for writing documents, like academic papers and blog posts.
@@ -24,7 +25,8 @@ A &nota document compiles to a JavaScript program, meaning it's easy to:
 * View documents on any device that has a web browser.
 * Use variables, functions, and data structures to simplify document writing.
 * Integrate with JavaScript libraries like [KaTeX](https://katex.org/), [Vega-Lite](https://vega.github.io/vega-lite/), and [Penrose](https://github.com/penrose/penrose).
-* Support accessibility needs like screen readers.}|
+* Support accessibility needs like screen readers.
+}|
 
 @Section[name: "usage"]: Usage
 

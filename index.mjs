@@ -1,56 +1,18 @@
-import{a as N,b as s,c as m,d as T,e as u,f as h,j as g,n as p,o as f}from"./chunk-GURI562L.mjs";var a=s(m()),d=s(T());var i={};N(i,{default:()=>r,metadata:()=>D});var e=s(m());var{Document:x,Section:b}=g,{ListingConfigure:k,Listing:l}=h,D={title:"Nota: A Document Language for the Browser"},r=u(t=>(0,e.createElement)(x,t,`
-`,`
-`,(0,e.createElement)(k,{wrap:!0}),`
-`,`
-`,(0,e.createElement)(p,{fancy:!0},`// This code is editable!
-%(let nota = @strong{@Smallcaps{Nota}})
-@Definition[name="nota"][label=nota]{
+import{a as y,b as a,c,d as w,e as v,g as m,i as h,m as u,n as p}from"./chunk-U7BRCNRK.mjs";var n=a(c()),l=a(w());var i={};y(i,{default:()=>r,metadata:()=>x});var e=a(c()),f=a(v());var{Document:T,Section:g}=h,{ListingConfigure:N,Listing:s}=m,x={title:"Nota: A Document Language for the Browser"},r=(0,f.observer)(function(o){return(0,e.createElement)(T,o,null,(0,e.createElement)(N,{wrap:!0}),(0,e.createElement)(u,{},`// This code is editable!
+% let nota = @Smallcaps{**Nota**}
+@Definition[name: "nota", label: nota]:
   #nota is a language for writing documents, like academic papers and blog posts.
-}
-The goal of @Ref{nota} is to @strong{bring documents into the #(20 + 1)st century.}
+  The goal of #nota is to 
+  **bring documents into the #(20 + 1)st century.**
 
-Documents contain a lot of structure --- for example, "@Ref{nota}" is a reference to a term defined in the preceding paragraph. @Ref{nota} enables authors to @em{represent} that structure, which allows the reading medium (the browser) to @em{understand} that structure, which in turn empowers readers to @em{use} that structure. Try clicking on any "@Ref{nota}" reference to see this idea in action. (Then try double-clicking!)
+Documents contain a lot of structure --- for example, "&nota" is a reference to a term defined in the preceding paragraph. &nota enables authors to *represent* that structure, which allows the reading medium (the browser) to *understand* that structure, which in turn empowers readers to *use* that structure. Try clicking on any "&nota" reference to see this idea in action. (Then try double-clicking!)
 
-A @Ref{nota} document compiles to a JavaScript program, meaning it's easy to:
+A &nota document compiles to a JavaScript program, meaning it's easy to:
 
-@ul{
-  @li{View documents on any device that has a web browser.}
-  @li{Use variables, functions, and data structures to simplify document writing.}
-  @li{Integrate with JavaScript libraries like @a[href="https://katex.org/"]{KaTeX}, @a[href="https://vega.github.io/vega-lite/"]{Vega-Lite}, and @a[href="https://github.com/penrose/penrose"]{Penrose}.}
-  @li{Support accessibility needs like screen readers.}
-}`),`
-`,`
-`,(0,e.createElement)(b,{label:"usage"},"Usage"),`
-`,`
-`,"You can use Nota by installing the ",(0,e.createElement)("code",{},"nota")," executable via the ",(0,e.createElement)("code",{},"@nota-lang/nota")," package. You need ",(0,e.createElement)("a",{href:"https://nodejs.org/en/download/"},"NodeJS \u2265 16")," and ",(0,e.createElement)("a",{href:"https://docs.npmjs.com/downloading-and-installing-node-js-and-npm"},"npm \u2265 6"),". The NodeJS global binary directory must be on your shell's ",(0,e.createElement)("code",{},"PATH"),", e.g. by running",`
-`,`
-`,(0,e.createElement)(l,{},'export PATH="$(npm config get prefix)/bin:$PATH"'),`
-`,`
-`,"Then you can build a single Nota document by running these shell commands:",`
-`,`
-`,`
-`,`
-`,`
-`,`
-`,(0,e.createElement)(l,{},`npm install --global @nota-lang/nota
+* View documents on any device that has a web browser.
+* Use variables, functions, and data structures to simplify document writing.
+* Integrate with JavaScript libraries like [KaTeX](https://katex.org/), [Vega-Lite](https://vega.github.io/vega-lite/), and [Penrose](https://github.com/penrose/penrose).
+* Support accessibility needs like screen readers.`),(0,e.createElement)(g,{name:"usage"},"Usage"),(0,e.createElement)("p",{},"You can use Nota by installing the ",(0,e.createElement)("code",{},"nota")," executable via the ",(0,e.createElement)("code",{},"@nota-lang/nota")," package. You need ",(0,e.createElement)("a",{href:"https://nodejs.org/en/download/"},"NodeJS \u2265 16")," and ",(0,e.createElement)("a",{href:"https://docs.npmjs.com/downloading-and-installing-node-js-and-npm"},"npm \u2265 6"),". The NodeJS global binary directory must be on your shell's ",(0,e.createElement)("code",{},"PATH"),", e.g. by running"),(0,e.createElement)(s,{},'export PATH="$(npm config get prefix)/bin:$PATH"'),(0,e.createElement)("p",{},"Then you can build a single Nota document by running these shell commands:"),(0,e.createElement)(s,{},`npm install --global @nota-lang/nota
 echo "@h1{Hello world}" > index.nota
 nota build index.nota
-open dist/index.html`),`
-`,`
-`,"You can interactively edit a Nota file by running the Nota editor, like so:",`
-`,`
-`,(0,e.createElement)(l,{},"nota edit index.nota"),`
-`,`
-`,"To learn more about how to write Nota documents, you can follow the ",(0,e.createElement)("a",{href:"/tutorial.html"},"Tutorial"),". To add Nota to your website or to learn more about Nota's architecture, read the ",(0,e.createElement)("a",{href:"/integration.html"},"Integration guide"),".",`
-`,`
-`,(0,e.createElement)("strong",{},"Nota is a new and evolving technology.")," The architecture and API are continually changing. Tooling will have bugs and missing features. Documentation will be incomplete or incorrect. Right now, I am seeking early adopters that want to help make Nota the document language of the future.",`
-`,`
-`,(0,e.createElement)(b,{},"Why Nota?"),`
-`,`
-`,"There are two main mediums for digital documents: PDFs and web pages. PDFs were designed to mirror physical documents, so they impose the real-world constraints of paper: page breaks, fixed width, and immutable styling. Web pages, by contrast, provides an essential dynamism. Web pages can be dynamically formatted: resized for phones, translated into other languages, colors changed for color-blindness. Web pages can be dynamically interactive: text prompted for more context, diagrams shifted for a new perspective, annotations added for posterity. Web pages are undeniably the future of digital documents.",`
-`,`
-`,"But currently, that dynamism is only accessible to professional web developers. Existing document tools like ",(0,e.createElement)("a",{href:"https://www.latex-project.org/"},"LaTeX"),", ",(0,e.createElement)("a",{href:"https://pandoc.org/"},"Pandoc"),", ",(0,e.createElement)("a",{href:"https://daringfireball.net/projects/markdown/"},"Markdown"),", and ",(0,e.createElement)("a",{href:"https://docs.racket-lang.org/scribble/"},"Scribble")," can (for the most part) only generate static web pages. Nota's goal is to bridge that gap by providing authors with a document language that has a low floor, a high ceiling, and a smooth ramp up. ",`
-`,`
-`,"Part of this design is identifying components that are easy to use for authors and have high impact for the reader. For instance, the ",(0,e.createElement)("code",{},"@Definition")," and ",(0,e.createElement)("code",{},"@Ref")," components in the example above require a small amount of document annotation on the author's part. Then the Nota runtime can provide features like presenting a reference's definition in context via tooltip. Future Nota versions could include more advanced features like ",(0,e.createElement)("q",{},"find all references to this definition"),".",`
-`,`
-`,"For more on this design philosophy, you can read my original paper ",(0,e.createElement)("a",{href:"https://willcrichton.net/nota/"},'"A New Medium for Communicating Research on Programming Languages"'),"."));var w="metadata",P=w in i?i[w]:{},A=t=>a.default.createElement(f,{...t},a.default.createElement("div",{id:"root"},a.default.createElement(r,null))),y=async t=>{let o=Date.now(),n=new MutationObserver(c=>{o=Date.now()});return n.observe(t,{subtree:!0,childList:!0,attributes:!0}),new Promise(c=>{let v=setInterval(()=>{Date.now()-o>1e3&&(clearInterval(v),n.disconnect(),c())},50)})},L=async()=>{let t=document.documentElement;if(t.classList.contains("ssr-env"))t.classList.remove("ssr-env"),d.default.render(a.default.createElement(A,{...P,script:"./index.mjs"}),t),await y(t),window.NOTA_READY=!0;else{let o=document.getElementById("root"),n=document.createElement("div");d.default.render(a.default.createElement(r,null),n),await y(n),o.parentNode.replaceChild(n,o)}};L();
+open dist/index.html`),(0,e.createElement)("p",{},"You can interactively edit a Nota file by running the Nota editor, like so:"),(0,e.createElement)(s,{},"nota edit index.nota"),(0,e.createElement)("p",{},"To learn more about how to write Nota documents, you can read through  the ",(0,e.createElement)("a",{href:"reference.html"},"Reference"),". To add Nota to your website or to learn more about Nota's architecture, read the ",(0,e.createElement)("a",{href:"integration.html"},"Integration guide"),"."),(0,e.createElement)("p",{},(0,e.createElement)("strong",{},"Nota is a new and evolving technology.")," The architecture and API are continually changing. Tooling will have bugs and missing features. Documentation will be incomplete or incorrect. Right now, I am seeking early adopters that want to help make Nota the document language of the future."),(0,e.createElement)(g,{},"Why Nota?"),(0,e.createElement)("p",{},"There are two main mediums for digital documents: PDFs and web pages. PDFs were designed to mirror physical documents, so they impose the real-world constraints of paper: page breaks, fixed width, and immutable styling. Web pages, by contrast, provides an essential dynamism. Web pages can be dynamically formatted: resized for phones, translated into other languages, colors changed for color-blindness. Web pages can be dynamically interactive: text prompted for more context, diagrams shifted for a new perspective, annotations added for posterity. Web pages are undeniably the future of digital documents."),(0,e.createElement)("p",{},"But currently, that dynamism is only accessible to professional web developers. Existing document tools like ",(0,e.createElement)("a",{href:"https://www.latex-project.org/"},"LaTeX"),", ",(0,e.createElement)("a",{href:"https://pandoc.org/"},"Pandoc"),", ",(0,e.createElement)("a",{href:"https://daringfireball.net/projects/markdown/"},"Markdown"),", and ",(0,e.createElement)("a",{href:"https://docs.racket-lang.org/scribble/"},"Scribble")," can (for the most part) only generate static web pages. Nota's goal is to bridge that gap by providing authors with a document language that has a low floor, a high ceiling, and a smooth ramp up. "),(0,e.createElement)("p",{},"Part of this design is identifying components that are easy to use for authors and have high impact for the reader. For instance, the ",(0,e.createElement)("code",{},"@Definition")," and ",(0,e.createElement)("code",{},"@Ref")," components in the example above require a small amount of document annotation on the author's part. Then the Nota runtime can provide features like presenting a reference's definition in context via tooltip. Future Nota versions could include more advanced features like ",(0,e.createElement)("q",{},"find all references to this definition"),"."),(0,e.createElement)("p",{},"For more on this design philosophy, you can read my original paper ",(0,e.createElement)("a",{href:"https://willcrichton.net/nota/"},'"A New Medium for Communicating Research on Programming Languages"'),"."))});var b="metadata",k=b in i?i[b]:{},D=({onRender:t,...o})=>n.default.createElement(p,{...o},n.default.createElement("div",{id:"root"},n.default.createElement(r,{onRender:t,renderTimeout:1e3}))),d=document.documentElement;if(d.classList.contains("ssr-env"))d.classList.remove("ssr-env"),l.createRoot(d).render(n.default.createElement(D,{...k,script:"./index.mjs",onRender:()=>{window.NOTA_READY=!0}}));else{let t=document.getElementById("root"),o=document.createElement("div");l.createRoot(o).render(n.default.createElement(r,{onRender:()=>{t.parentNode.replaceChild(o,t)}}))}

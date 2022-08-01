@@ -1,7 +1,8 @@
 {
   "license": "MIT",
   "scripts": {
-    "build": "node build.mjs"
+    "build": "node build.mjs",
+    "clean": "pnpm -r --parallel exec rm -rf dist node_modules"
   },
   "devDependencies": {
     "@codemirror/autocomplete": "^6.1.0",

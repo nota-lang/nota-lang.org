@@ -10,6 +10,6 @@ import "@nota-lang/nota-components/dist/index.css";
 
 @Title: Nota Gallery
 
-[**PL Research Paper**](./gallery/infoflow-paper/index.html)
+## [PL Research Paper](./gallery/infoflow-paper/index.html)
 
 ![A mathematical definition with a tooltip showing above one letter](/static/gallery/infoflow-paper.jpg)

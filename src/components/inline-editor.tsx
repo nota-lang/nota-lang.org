@@ -37,7 +37,7 @@ export let InlineEditor: React.FC<
           </button>
         </div>
         <Editor embedded />
-        {fancy ? <img className="flourish" src="/static/flourish.png" /> : null}
+        {fancy ? <img className="flourish" src="/static/flourish.jpg" /> : null}
       </document.Row>
     </StateContext.Provider>
   );

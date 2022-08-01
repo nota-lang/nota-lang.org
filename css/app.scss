@@ -292,13 +292,13 @@ body.base-style .nota-document, .base-style-block {
         width: $width;
         position: relative;
         right: calc(($width - $mobile-cutoff) / 2);
-        height: 560px;
+        max-height: 600px;
       }
 
       .nota-editor,
       .nota-document,
       .js-view {
-        max-height: 560px;
+        max-height: 600px;
         overflow-y: auto;
       }
     }

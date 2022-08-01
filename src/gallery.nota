@@ -3,16 +3,13 @@ export let metadata = {
   title: "Nota Gallery"
 };
 
-import {NotaCode} from "./editor";
+import {InlineEditor} from "./components/inline-editor";
 import {nota} from "@nota-lang/nota-syntax/dist/editor/mod.js";
 import "@nota-lang/nota-components/dist/index.css";
-import "../css/app.scss";
 %%%
-
-@TableOfContents
-
-@ListingConfigure[language: nota()]
 
 @Title: Nota Gallery
 
-This page is coming soon!
+[**PL Research Paper**](./gallery/infoflow-paper/index.html)
+
+![A mathematical definition with a tooltip showing above one letter](/static/gallery/infoflow-paper.jpg)

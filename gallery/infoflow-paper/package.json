@@ -1,0 +1,27 @@
+{
+  "name": "infoflow-paper",
+  "version": "0.4.1",
+  "license": "MIT",
+  "main": "dist/document/document.js",
+  "private": true,
+  "scripts": {},
+  "devDependencies": {
+    "@codemirror/lang-cpp": "^6.0.1",
+    "@codemirror/lang-rust": "^6.0.0",
+    "@nota-lang/nota": "^0.4.1",
+    "@nota-lang/nota-theme-acm": "^0.4.1",
+    "@nota-lang/nota-theme-standalone": "^0.4.1",
+    "lodash": "^4.17.21"
+  },
+  "dependencies": {
+    "@codemirror/autocomplete": "^6.1.0",
+    "@codemirror/commands": "^6.0.1",
+    "@codemirror/lint": "^6.0.0",
+    "@codemirror/search": "^6.0.1",
+    "@codemirror/state": "^6.1.0",
+    "@codemirror/view": "^6.1.2",
+    "@lezer/common": "^1.0.0",
+    "@lezer/highlight": "^1.0.0",
+    "@lezer/lr": "^1.2.0"
+  }
+}

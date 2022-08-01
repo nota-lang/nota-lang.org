@@ -3,11 +3,9 @@ export let metadata = {
   title: "Nota Integration Guide"
 };
 
-import {NotaCode} from "./editor";
+import {InlineEditor} from "./components/inline-editor";
 import {nota} from "@nota-lang/nota-syntax/dist/editor/mod.js";
 import {javascript} from "@codemirror/lang-javascript";
-
-import "../css/app.scss";
 
 let js = javascript({typescript: true, jsx: true});
 %%%

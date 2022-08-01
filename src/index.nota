@@ -3,14 +3,14 @@ export let metadata = {
   title: "Nota: A Document Language for the Browser"
 };
 
-import {NotaCode} from "./editor";
+import {InlineEditor} from "./components/inline-editor";
 
 import "../css/app.scss";
 %%%
 
 @ListingConfigure[wrap: true]
 
-@NotaCode[fancy: true]|{
+@InlineEditor[fancy: true]|{
 // This code is editable!
 % let nota = @Smallcaps{**Nota**}
 @Definition[name: "nota", label: nota]:

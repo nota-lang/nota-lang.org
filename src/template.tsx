@@ -1,16 +1,11 @@
 import React from "react";
 import type { TemplateProps } from "@nota-lang/esbuild-utils/dist/template.js";
 
-import "../css/app.scss";
-
-let Template: React.FC<React.PropsWithChildren<TemplateProps>> = ({
-  title,
-  script,
-  children,
-}) => (
+let Template: React.FC<
+  React.PropsWithChildren<TemplateProps & { className?: string; css?: string }>
+> = ({ title, script, children, className, css }) => (
   <>
     <head>
-      <link href="index.css" rel="stylesheet" />
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta property="og:title" content={title} />
@@ -25,8 +20,10 @@ let Template: React.FC<React.PropsWithChildren<TemplateProps>> = ({
       />
       <meta name="twitter:card" content="summary" />
       <title>{title}</title>
+      {css ? <link href={css} rel="stylesheet" /> : null}
+      <link href="/index.css" rel="stylesheet" />
     </head>
-    <body>
+    <body className={className || "base-style"}>
       <header>
         <div className="logo">
           <a href="/">
@@ -34,6 +31,7 @@ let Template: React.FC<React.PropsWithChildren<TemplateProps>> = ({
           </a>
         </div>
         <nav>
+          <a href="/gallery.html">Gallery</a>
           <a href="/reference.html">Reference</a>
           <a href="/integration.html">Integration</a>
           <a href="https://github.com/nota-lang/nota">Github</a>

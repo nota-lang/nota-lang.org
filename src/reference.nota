@@ -3,11 +3,10 @@ export let metadata = {
   title: "Nota Reference"
 };
 
-import {NotaCode} from "./editor";
+import {InlineEditor} from "./components/inline-editor";
 import {nota} from "@nota-lang/nota-syntax/dist/editor/mod.js";
 import {javascript} from "@codemirror/lang-javascript";
-
-import "../css/app.scss"
+import * as langRust from "@codemirror/lang-rust";
 %%%
 
 @ListingConfigure[language: nota(), wrap: true]
@@ -22,7 +21,7 @@ This page explains the basics of Nota's language syntax and component library. Y
 
 A Nota document is text mixed with commands, typically contained in a `.nota` file. A Nota document looks like this:
 
-@NotaCode|{
+@InlineEditor|{
 % let sysname = "Nota"
 
 @Section: #sysname: A Document Language for the Browser
@@ -56,7 +55,7 @@ Next, we will explore how each of these features works.
 Markdown supports a fixed set of components: bold, italics, headers, lists, and so on. But what if you want to use a component that wasn't built in, like an interactive chart? Then you can use a custom component, like `@VegaLite` from the [Vega-Lite](https://vega.github.io/vega-lite/) package:
 
 % import data from "./data/unemployment-across-industries.json"
-@NotaCode[imports: {"./data/unemployment-across-industries.json": data}]|{
+@InlineEditor[imports: {"./data/unemployment-across-industries.json": data}]|{
 %%%
 // Chart from: https://vega.github.io/vega-lite/examples/interactive_legend.html
 import values from "./data/unemployment-across-industries.json";
@@ -79,7 +78,7 @@ Try clicking on the legend!
 
 If there isn't a component that does exactly what you want, then you can write your own using [ReactJS](https://reactjs.org/). For example, here's a component that lets users interactively change the text color of the component's children:
 
-@NotaCode|{
+@InlineEditor|{
 %%%
 import {useState} from "react";
 let ColorPicker = ({children}) => {
@@ -98,7 +97,7 @@ let ColorPicker = ({children}) => {
 
 At its core, a component has a name (required), a set of attributes (optional), and a sequence of children components (optional). One of Nota's goals is to make it reasonably concise to write components, so there are several syntaxes for writing components. They are:
 
-@NotaCode|{  
+@InlineEditor|{  
 % let Component = () => @div[style: {color: "red"}]{Hello world};
 // A name is either a JS identifier...
 @Component
@@ -131,7 +130,7 @@ If you want to learn more about how to write React components, I recommend follo
 
 One tricky part about using Nota components is how they integrate with Markdown parsing. Markdown is very sensitive to indentation and newlines. For example:
 
-@NotaCode|{
+@InlineEditor|{
 *   Example 1: this list starts an indentation,
     matching newlines are part of the same item,
 
@@ -177,7 +176,7 @@ For now, to resolve this ambiguity, the parser assumes that all components at th
 
 Markdown allows you to write rich text, but it doesn't support any kind of programming. Programming can be useful when writing a document, for example:
 
-@NotaCode|{
+@InlineEditor|{
 % let sysname = "Nota"
 I named my system #sysname. But if I decide to rename #sysname later, then I can just change the variable!
 
@@ -209,7 +208,7 @@ You can write any ES6 Javascript (e.g. arrow functions, ESM-style imports, etc.)
 
 **Nota-in-JS:** You can also use Nota components within Javascript. Anywhere you would write a Javascript expression, you can also write a Nota-component. For example:
 
-@NotaCode|{
+@InlineEditor|{
 % let x = @div{Hello world!};
 #x
 }|
@@ -218,7 +217,7 @@ Note that the outer-most Nota component within a Javascript expression must use 
 
 **Macros:** When working with components that take complex string inputs such as $\KaTeX$, it's useful to have concisely define string-generating macros. Nota adds a new keyword `macro` that works like this:
 
-@NotaCode|{
+@InlineEditor|{
 % let implies = macro{#1 \Rightarrow #2}
 $(\neg a \vee b) \iff (#implies{a}{b})$
 }|
@@ -233,7 +232,7 @@ let implies = (arg1, arg2) => `${arg1} \Rightarrow ${arg2}`;
 
 With the ability to define variables, you need the ability to use them! A \#-command has three roles:
 
-@NotaCode|{
+@InlineEditor|{
 % let name = "Nota"
 You can use \# to embed a variable like #name in the document.
 
@@ -255,7 +254,7 @@ This is a non-exhaustive list of some components that are provided in Nota's sta
 
 Nota provides `@Definition` and `@Ref` components for defining things and referencing them in a general way. For example:
 
-@NotaCode|{
+@InlineEditor|{
 @Definition[name: "nota", label: "Nota"]: Nota is a document language for the browser.
 
 Have you tried writing &nota?
@@ -270,7 +269,7 @@ A definition has four pieces:
 
 A reference's text argument is the definition's name. Because references are common in documents, Nota provides a shorthand for writing references: `&def_name` (because you're making a pointer to something!). You can optionally define the content of the reference:
 
-@NotaCode|{
+@InlineEditor|{
 @Definition[name: "nota"]: Nota is a document language for the browser.
 
 Have you tried writing @Ref[label: @{**Nota**}]{nota}?
@@ -280,7 +279,7 @@ Have you tried writing @Ref[label: @{**Nota**}]{nota}?
 
 Nota provides inline and block math elements, `$` and `$$` respectively. Currently these use the [KaTeX](https://katex.org/) library for rendering.
 
-@NotaCode|{
+@InlineEditor|{
 The Cauchy-Schwarz inequality states that for all vectors $u$ and $v$ of an inner product space it is true that
 
 % let u = #{\mathbf{u}}; let v = #{\mathbf{v}};
@@ -295,7 +294,7 @@ While you can use TeX macros if necessary, it is recommended to use Javascript v
 
 The KaTeX integration for Nota provides special support for definitions and references. For example:
 
-@NotaCode|{
+@InlineEditor|{
 % let reaches = macro{#texRef{reaches}{#1 ~ \mathsf{reaches} ~ #2}};
 
 @Definition[name: "reaches"]:
@@ -317,7 +316,7 @@ Nota provides the function `texRef` for TeX code which refers to a Nota definiti
 
 Nota uses [Codemirror 6](https://codemirror.net/6/) for code editing and viewing. For example:
 
-@NotaCode|{
+@InlineEditor[imports: {"@codemirror/lang-rust": langRust}]|{
 % import {rust} from "@codemirror/lang-rust"
 ```rust
 fn char_at(s: &str, i: usize) -> char {
@@ -337,7 +336,7 @@ The `@References` component takes as input [BibTeX](http://www.bibtex.org/) stri
 
 For example:
 
-@NotaCode|{
+@InlineEditor|{
 Nota is a document language for the browser &crichton2021nota.
 
 @References{
@@ -354,7 +353,7 @@ Nota is a document language for the browser &crichton2021nota.
 
 Nota components do not have much default styling to allow authors greater flexibility in their own designs. To add your own styling, you can use CSS. For example, directly via a style tag:
 
-@NotaCode|{ 
+@InlineEditor|{ 
 @style{ span.text-red { color: red; } }
 
 % let Red = ({children}) => @span[className: "text-red"]{#children}

@@ -20,7 +20,7 @@
 @import "@nota-lang/nota-editor/dist/index.css";
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inconsolata:wght@400;700&display=swap");
 
-:root {
+@mixin vars {
   --font-body: "EB Garamond", serif;
   --font-header: "EB Garamond", serif;
   --font-mono: "Inconsolata", monospace;
@@ -28,13 +28,22 @@
   --size-normal: 20px;
 }
 
+:root {
+  @include vars;  
+}
+
 body {
   padding: 2rem 1rem 6rem;
   font-family: var(--font-body);
   font-size: 20px;
+  margin: 0;
 
   @include mobile {
     padding: 0.5rem 1rem;
+  }
+
+  &.gallery {
+    padding: 2rem 0 0 0;    
   }
 }
 
@@ -102,7 +111,69 @@ header {
   }
 }
 
-.nota-document {
+.split {
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+
+  &.vertical {
+    flex-direction: column;
+  }
+
+  &.horizontal {
+    flex-direction: row;
+  }
+
+  .gutter {
+    background-color: #eee;
+
+    background-repeat: no-repeat;
+    background-position: 50%;
+
+    &.gutter-horizontal {
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=");
+      cursor: col-resize;
+    }
+
+    &.gutter-vertical {
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==");
+      cursor: row-resize;
+    }
+  }
+
+  > *:not(.gutter) {
+    overflow-y: auto;
+  }
+}
+
+.page-editor {
+  margin-top: 1rem;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+
+  @include monitor {
+    height: calc(100vh - 2rem);
+    margin: 2rem;
+  }
+
+  .nota-document {
+    padding: 1rem;
+  }
+}
+
+
+.cm-editor {
+  font-size: 85%;
+
+  .nota-text {
+    font-family: var(--font-body);
+    font-size: 108%;
+  }
+}
+
+body.base-style .nota-document, .base-style-block {
+  @include vars;
+
   position: relative;
 
   @include monitor {
@@ -274,15 +345,6 @@ header {
     @include monitor {
       width: $mobile-cutoff;
       margin: 0 auto;
-    }
-  }
-
-  .cm-editor {
-    font-size: 85%;
-
-    .nota-text {
-      font-family: var(--font-body);
-      font-size: 108%;
     }
   }
 

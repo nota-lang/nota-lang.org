@@ -7,23 +7,16 @@ import {
   LocalState,
   StateContext,
 } from "@nota-lang/nota-editor";
-import * as lang_rust from "@codemirror/lang-rust";
-import { observer } from "mobx-react";
 import classNames from "classnames";
 
-// @ts-ignore
-import flourish from "../static/flourish.jpg";
 import "@nota-lang/nota-editor/dist/index.css";
+import { observer } from "mobx-react";
 
-export let NotaCode: React.FC<
+export let InlineEditor: React.FC<
   React.PropsWithChildren<{ fancy?: boolean; imports?: { [key: string]: any } }>
 > = observer(({ fancy, children, imports }) => {
   let [state] = useState(
-    () =>
-      new LocalState((children as any).trim(), {
-        "@codemirror/lang-rust": lang_rust,
-        ...imports,
-      })
+    () => new LocalState({ contents: (children as any).trim(), imports })
   );
   let [show_js, set_show_js] = useState(false);
 
@@ -44,7 +37,7 @@ export let NotaCode: React.FC<
           </button>
         </div>
         <Editor embedded />
-        {fancy ? <img className="flourish" src={flourish} /> : null}
+        {fancy ? <img className="flourish" src="/static/flourish.png" /> : null}
       </document.Row>
     </StateContext.Provider>
   );

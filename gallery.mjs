@@ -1,1 +1,15 @@
-import{a as v,b as n,c as d,d as D,e as E,g as s,i as c,j as p,k as u,n as f}from"./chunk-U7BRCNRK.mjs";var r=n(d()),i=n(D());var a={};v(a,{default:()=>m,metadata:()=>O});var o=n(d()),g=n(E());var{Document:R,TableOfContents:h}=c,{ListingConfigure:y}=s,{Title:N}=p,O={title:"Nota Gallery"},m=(0,g.observer)(function(t){return(0,o.createElement)(R,t,null,(0,o.createElement)(h,{}),(0,o.createElement)(y,{language:u()}),(0,o.createElement)(N,{},"Nota Gallery"),(0,o.createElement)("p",{},"This page is coming soon!"))});var T="metadata",C=T in a?a[T]:{},M=({onRender:e,...t})=>r.default.createElement(f,{...t},r.default.createElement("div",{id:"root"},r.default.createElement(m,{onRender:e,renderTimeout:1e3}))),l=document.documentElement;if(l.classList.contains("ssr-env"))l.classList.remove("ssr-env"),i.createRoot(l).render(r.default.createElement(M,{...C,script:"./gallery.mjs",onRender:()=>{window.NOTA_READY=!0}}));else{let e=document.getElementById("root"),t=document.createElement("div");i.createRoot(t).render(r.default.createElement(m,{onRender:()=>{e.parentNode.replaceChild(t,e)}}))}
+import{b as u}from"./chunk-IGVPSE4Q.mjs";import{E as g,a as w,b as n,c as s,d as x,e as v,m as p,o as d,t as c,w as f}from"./chunk-OAKN26CX.mjs";var r=n(s()),m=n(x());var i={};w(i,{default:()=>a,imports:()=>M,metadata:()=>D,source:()=>T});var t=n(s()),h=n(v());var{Document:E}=p,{Title:R}=d,D={title:"Nota Gallery"},M={"./components/inline-editor":{...u,__esModule:!0},"@nota-lang/nota-syntax/dist/editor/mod.js":{...f,__esModule:!0},"@nota-lang/nota-components/dist/index.css":{...c,__esModule:!0}},T=`%%%
+export let metadata = {
+  title: "Nota Gallery"
+};
+
+import {InlineEditor} from "./components/inline-editor";
+import {nota} from "@nota-lang/nota-syntax/dist/editor/mod.js";
+import "@nota-lang/nota-components/dist/index.css";
+%%%
+
+@Title: Nota Gallery
+
+[**PL Research Paper**](./gallery/infoflow-paper/index.html)
+
+![A mathematical definition with a tooltip showing above one letter](/static/gallery/infoflow-paper.jpg)`,a=(0,h.observer)(function(o){return(0,t.createElement)(E,o,null,(0,t.createElement)(R,{},"Nota Gallery"),(0,t.createElement)("p",{},(0,t.createElement)("a",{href:"./gallery/infoflow-paper/index.html"},(0,t.createElement)("strong",{},"PL Research Paper"))),(0,t.createElement)("p",{},(0,t.createElement)("img",{src:"/static/gallery/infoflow-paper.jpg",alt:"A mathematical definition with a tooltip showing above one letter"})))});var y="metadata",_=y in i?i[y]:{},N=({onRender:e,...o})=>r.default.createElement(g,{...o},r.default.createElement("div",{id:"root"},r.default.createElement(a,{onRender:e,renderTimeout:1e3}))),l=document.documentElement;if(l.classList.contains("ssr-env"))l.classList.remove("ssr-env"),m.createRoot(l).render(r.default.createElement(N,{..._,script:"./gallery.mjs",onRender:()=>{window.NOTA_READY=!0}}));else{let e=document.getElementById("root"),o=document.createElement("div");m.createRoot(o).render(r.default.createElement(a,{onRender:()=>{e.parentNode.replaceChild(o,e)}}))}

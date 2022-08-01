@@ -6,9 +6,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.1
       - run: |
-          sudo npm install -g yarn @nota-lang/nota
-          yarn install
-          yarn build
+          sudo npm install -g pnpm @nota-lang/nota
+          pnpm install
+          pnpm build
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

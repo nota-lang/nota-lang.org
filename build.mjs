@@ -16,14 +16,14 @@ let exec = promisify(cp.exec);
 
 async function main() {
   let build = cli();
-  let gallery = await fs.readdir("gallery");
+  let examples = await fs.readdir("examples");
   await build({
     entryPoints: [
       "src/index.html",
       "src/reference.html",
-      "src/gallery.html",
+      "src/examples.html",
       "src/integration.html",
-      ...gallery.map((name) => `src/gallery/${name}/index.html`),
+      ...examples.map((name) => `src/examples/${name}/index.html`),
     ],
     splitting: true,
     external: [],
@@ -35,19 +35,19 @@ async function main() {
     ],
   });
   await Promise.all(
-    gallery.map(async (s) => {
-      let baseDir = path.join("gallery", s);
+    examples.map(async (s) => {
+      let baseDir = path.join("examples", s);
       await exec("nota build index.nota", {
         cwd: baseDir,
       });
       await fs.copy(
         path.join(baseDir, "static"),
-        path.join("dist", "gallery", s, "static"),
+        path.join("dist", "examples", s, "static"),
         { recursive: true }
       );
       await fs.copy(
         path.join(baseDir, "dist"),
-        path.join("dist", "gallery", s, "standalone")
+        path.join("dist", "examples", s, "standalone")
       );
     })
   );

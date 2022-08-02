@@ -1,0 +1,17 @@
+%%%
+export let metadata = {
+  title: "Nota Examples"
+};
+
+import {InlineEditor} from "./components/inline-editor";
+import {nota} from "@nota-lang/nota-syntax/dist/editor/mod.js";
+import "@nota-lang/nota-components/dist/index.css";
+%%%
+
+@Title: Nota Examples
+
+@div[className: "example-grid"]:
+  @a[href: "./examples/infoflow-paper/index.html"]:
+    @h2: PL Research Paper
+
+    ![A mathematical definition with a tooltip showing above one letter](/static/examples/infoflow-paper.jpg)

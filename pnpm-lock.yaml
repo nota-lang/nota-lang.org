@@ -67,7 +67,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
-  gallery/infoflow-paper:
+  examples/infoflow-paper:
     specifiers:
       '@codemirror/autocomplete': ^6.1.0
       '@codemirror/commands': ^6.0.1

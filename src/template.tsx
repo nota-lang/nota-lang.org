@@ -31,7 +31,7 @@ let Template: React.FC<
           </a>
         </div>
         <nav>
-          <a href="/gallery.html">Gallery</a>
+          <a href="/examples.html">Examples</a>
           <a href="/reference.html">Reference</a>
           <a href="/integration.html">Integration</a>
           <a href="https://github.com/nota-lang/nota">Github</a>

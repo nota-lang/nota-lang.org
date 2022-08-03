@@ -626,9 +626,8 @@ The collective dependencies of the input $#plc$ are collected into $#deps _{#arr
 
 Note that this rule does not depend on the body $#expr$ of the function $#(L.fname)$, only its type signature in $#fnctx$. This is the key to the modular approximation. Additionally, it means that this analysis can trivially handle higher-order functions. If $#(L.fname)$ were a parameter to the function being analyzed, then no control-flow analysis is needed to guess its definition.
 
-**TODO: put this into an "extra" grammar somewhere**
-
-@(L.Bnf)[subset: ["tysx", "tyd", "tyx", "ty", "frmexpr", "frmty"]]
+@Expandable[prompt: "Remaining grammar rules"]:
+  @(L.Bnf)[subset: ["tysx", "tyd", "tyx", "ty", "frmexpr", "frmty"]]
 
 @Section[name: "sec_soundness"]: Soundness
 
@@ -789,7 +788,7 @@ After a manual review of large crates in the Rust ecosystem, we selected 10 crat
 
 @Figure[name: "tab_dataset"]:
   | Project | Crate | Purpose | LOC | \# Vars | \# Funcs | Avg. Instrs/Func
-  | ------- | ----- | ------- | --- | ------- | -------- | ----------------- |
+  | ------- | ----- | ------- | --: | ------: | -------: | ----------------: |
   | [rayon](https://github.com/rayon-rs/rayon) | &nbsp; | Data parallelism library | 15,524 | 10,607 | 1,079 | 16.6
   | [rustls](https://github.com/ctz/rustls) | rustls | TLS implementation | 16,866 | 23,407 | 868 | 42.4
   | [sccache](https://github.com/mozilla/sccache) | &nbsp; | Distributed build cache | 23,202 | 23,987 | 643 | 62.1
@@ -860,7 +859,7 @@ let wholeProgramGraph = {data: {values: wholeProgramData}, hconcat: [leftGraph, 
 
 For &wholeprogram, we compare against &baseline to answer our first evaluation question: how much more precise is a whole-program analysis than a modular one? To quantify precision, we compare the *percentage increase in size* of dependency sets for a given variable between two conditions. For instance, if &wholeprogram computes $|#depctx(x)| = 2$ and &baseline computes $|#depctx(x)| = 5$ for some $x$, then the difference is $(5 - 2) / 2 = 1.5 = 150\%$.
 
-&fig_recurse_whole_program_Left shows a histogram of the differences between &wholeprogram and &baseline for all variables. In 94% of all cases, the &wholeprogram and &baseline conditions produce the same result and hence have a difference of 0. In the remaining 6% of cases with a non-zero difference, visually enhanced with a log-scale in &fig_recurse_whole_program_Right, the metric follows a right-tailed log-normal distribution. We can summarize the log-normal by computing its median, which is 7%. This means that within the 6% of non-zero cases, the median difference is an increase in size by 7%. Thus, the modular approximation does not significantly increase the size of dependency sets in the vast majority of cases.
+Figure 3-&whole_program_Left shows a histogram of the differences between &wholeprogram and &baseline for all variables. In 94% of all cases, the &wholeprogram and &baseline conditions produce the same result and hence have a difference of 0. In the remaining 6% of cases with a non-zero difference, visually enhanced with a log-scale in Figure 3-&whole_program_Right, the metric follows a right-tailed log-normal distribution. We can summarize the log-normal by computing its median, which is 7%. This means that within the 6% of non-zero cases, the median difference is an increase in size by 7%. Thus, the modular approximation does not significantly increase the size of dependency sets in the vast majority of cases.
 
 @Subsubsection[name: "sec_blind"]: &mutblind and &pointerblind
 
@@ -1108,12 +1107,6 @@ Overall, we are excited by the possibilities created by having a practical infor
 
 @Acknowledgments:
   This work was partially supported by the Italian Ministry of Education through funding for the Rita Levi Montalcini grant (call of 2019).
-
-// TODOS for WILL:
-// * labels on #-headers / all md-specific elements
-// * newline at end of block should indent to current block
-// * fix position of error box.
-// * pass parameters to &-form, eg citet
 
 
 @References[bibtex]

@@ -265,7 +265,7 @@ let ownq = L.ownq;
 %%%
 
 1. A syntax of Rust-like programs with expressions $#expr$ and types $#ty$.
-2. @Definition[names: ["fnctx", "tyvarctx", "tyctx"]]{A type-checker, expressed with the judgment $#tc{#fnctx}{#tyvarctx}{#tyctx}{#expr}{#ty}{#tyctx'}$ using the contexts $#tyctx$ for types and lifetimes, $#tyctx$ for type variables, and $#tyctx$ for global functions.}
+2. .@Definition[names: ["fnctx", "tyvarctx", "tyctx"]]{A type-checker, expressed with the judgment $#tc{#fnctx}{#tyvarctx}{#tyctx}{#expr}{#ty}{#tyctx'}$ using the contexts $#tyctx$ for types and lifetimes, $#tyctx$ for type variables, and $#tyctx$ for global functions.}
 3. An interpreter, expressed by a small-step operational semantics with the judgment $#stepsto{\sigma}{#expr}{#stepped{\sigma}}{#expr'}$ using $\sigma$ for a runtime stack.
 
 %%%
@@ -702,21 +702,20 @@ Our formal model provides a sound theoretical basis for analyzing information fl
 @Subsection[name: "sec_mir"]: Analyzing Control-Flow Graphs
 
 @Figure[name: "fig_mir_example"]:
-  @Row:
-    ```
-    fn get_count(
-      h: &mut HashMap<String, u32>,
-      k: String
-    ) -> u32 {
-      if !h.contains_key(&k) {
-        h.insert(k, 0); 0
-      } else {
-        *h.get(&k).unwrap()
-      }
+  ```
+  fn get_count(
+    h: &mut HashMap<String, u32>,
+    k: String
+  ) -> u32 {
+    if !h.contains_key(&k) {
+      h.insert(k, 0); 0
+    } else {
+      *h.get(&k).unwrap()
     }
-    ```
+  }
+  ```
 
-    @object[data: "static/mir-example.svg", type: "image/svg+xml", width: "450px"]
+  @object[data: "static/mir-example.svg", type: "image/svg+xml", width: "450px"]
 
   @Caption:
     Example of how #sysname computes information flow. On the left is a Rust function `get_count` that finds a value in a hash map for a given key, and inserts 0 if none exists. On the right `get_count` is lowered into Rust's MIR control-flow graph, annotated with information flow. Each rectangle is a basic block, named at the top. Arrows indicate control flow (panics omitted).
@@ -998,7 +997,7 @@ Finally, we address the issue: how meaningful are the results above? How likely 
          x: {field: "bin", type: "quantitative", scale: {type: "log"},
                  title: "% difference in dependency set size, log scale"},
         y: {field: "count", type: "quantitative"},
-        facet: {field: "krate", columns: 5}
+        facet: {field: "krate", columns: 5, spacing: 50}
       },
       transform: [{filter: "datum.bin > 0 && datum.count > 0"}],
       mark: "bar",
@@ -1032,7 +1031,7 @@ Finally, we address the issue: how meaningful are the results above? How likely 
 @Section[name: "sec_applications"]: Applications
 
 @Figure[name: "fig_apps"]:
-  @Subfigure[name: "slicer"]:
+  @Subfigure[name: "fig_apps_slicer"]:
     @img[src: "./static/slice-demo.png", width: "500px"]
     @img[src: "./static/slice-demo-2.png", width: "500px"]
     @Caption:
@@ -1040,7 +1039,7 @@ Finally, we address the issue: how meaningful are the results above? How likely 
 
       Below, the user can manipulate aspects of a program such as commenting out code related to timing. The user computes a forward slice on `start`, adds this slice to their selection (in blue), then tells the IDE to comments out all lines in the selection.
 
-  @Subfigure[name: "ifc"]:
+  @Subfigure[name: "fig_apps_ifc"]:
     @img[src: "./static/ifc-demo.png", width: "500px"]
     @img[src: "./static/ifc-demo-2.png", width: "500px"]
     @Caption:

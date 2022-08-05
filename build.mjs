@@ -51,7 +51,7 @@ async function main() {
     splitting: true,
     external: [],
     plugins: [
-      ssrPlugin({ template: "./src/template.tsx" }),
+      ssrPlugin({ template: "./src/template.tsx", externalRenderTimeout: 30000 }),
       notaPlugin({ debugExports: true }),
       peerfixPlugin({ modules: peerDependencies, meta: import.meta }),
       ...config.plugins,

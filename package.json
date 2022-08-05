@@ -30,7 +30,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@nota-lang/esbuild-utils": "^0.4.5",
+    "@nota-lang/esbuild-utils": "^0.4.7",
     "@nota-lang/nota-common": "^0.4.7",
     "@nota-lang/nota-components": "^0.4.7",
     "@nota-lang/nota-editor": "^0.4.7",

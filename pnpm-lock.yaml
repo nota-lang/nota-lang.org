@@ -12,15 +12,15 @@ importers:
       '@codemirror/lint': ^6.0.0
       '@codemirror/search': ^6.0.1
       '@codemirror/state': ^6.1.1
-      '@codemirror/view': ^6.1.4
+      '@codemirror/view': ^6.2.0
       '@lezer/common': ^1.0.0
       '@lezer/highlight': ^1.0.0
       '@lezer/lr': ^1.2.1
       '@nota-lang/esbuild-utils': ^0.4.5
-      '@nota-lang/nota-common': ^0.4.5
-      '@nota-lang/nota-components': ^0.4.6
-      '@nota-lang/nota-editor': ^0.4.6
-      '@nota-lang/nota-syntax': ^0.4.6
+      '@nota-lang/nota-common': ^0.4.7
+      '@nota-lang/nota-components': ^0.4.7
+      '@nota-lang/nota-editor': ^0.4.7
+      '@nota-lang/nota-syntax': ^0.4.7
       '@types/lodash': ^4.14.182
       '@types/react': ^18.0.15
       classnames: ^2.3.1
@@ -36,10 +36,10 @@ importers:
       react-split: ^2.0.14
     dependencies:
       '@nota-lang/esbuild-utils': 0.4.5_esbuild@0.14.53
-      '@nota-lang/nota-common': 0.4.5
-      '@nota-lang/nota-components': 0.4.6_dsax4zzuzy7mgxugckmw5vkxy4
-      '@nota-lang/nota-editor': 0.4.6_viobciiekkqacj7cryzana767i
-      '@nota-lang/nota-syntax': 0.4.6
+      '@nota-lang/nota-common': 0.4.7
+      '@nota-lang/nota-components': 0.4.7_glye5s5krd3fwl3kc3m6s4xfea
+      '@nota-lang/nota-editor': 0.4.7_viobciiekkqacj7cryzana767i
+      '@nota-lang/nota-syntax': 0.4.7
       lodash: 4.17.21
       react-split: 2.0.14_react@18.2.0
     devDependencies:
@@ -51,7 +51,7 @@ importers:
       '@codemirror/lint': 6.0.0
       '@codemirror/search': 6.0.1
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.4
+      '@codemirror/view': 6.2.0
       '@lezer/common': 1.0.0
       '@lezer/highlight': 1.0.0
       '@lezer/lr': 1.2.1
@@ -107,8 +107,8 @@ packages:
       regenerator-runtime: 0.13.9
     dev: false
 
-  /@babel/standalone/7.18.11:
-    resolution: {integrity: sha512-eClNZydz0dyDhJxhxc1h1KZdu7FxRC9I74iEbNlb0hvSTgR/lkOKa7i3fWjW5MIs+0gCud8kLndmO9YNhRiN5w==}
+  /@babel/standalone/7.18.12:
+    resolution: {integrity: sha512-wDh3K5IUJiSMAY0MLYBFoCaj2RCZwvDz5BHn2uHat9KOsGWEVDFgFQFIOO+81Js2phFKNppLC45iOCsZVfJniw==}
     engines: {node: '>=6.9.0'}
     dev: false
 
@@ -117,7 +117,7 @@ packages:
     dependencies:
       '@codemirror/language': 6.2.1
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.4
+      '@codemirror/view': 6.2.0
       '@lezer/common': 1.0.0
 
   /@codemirror/commands/6.0.1:
@@ -125,7 +125,7 @@ packages:
     dependencies:
       '@codemirror/language': 6.2.1
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.4
+      '@codemirror/view': 6.2.0
       '@lezer/common': 1.0.0
 
   /@codemirror/lang-cpp/6.0.1:
@@ -142,7 +142,7 @@ packages:
       '@codemirror/language': 6.2.1
       '@codemirror/lint': 6.0.0
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.4
+      '@codemirror/view': 6.2.0
       '@lezer/common': 1.0.0
       '@lezer/javascript': 1.0.2
 
@@ -157,7 +157,7 @@ packages:
     resolution: {integrity: sha512-MC3svxuvIj0MRpFlGHxLS6vPyIdbTr2KKPEW46kCoCXw2ktb4NTkpkPBI/lSP/FoNXLCBJ0mrnUi1OoZxtpW1Q==}
     dependencies:
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.4
+      '@codemirror/view': 6.2.0
       '@lezer/common': 1.0.0
       '@lezer/highlight': 1.0.0
       '@lezer/lr': 1.2.1
@@ -167,14 +167,14 @@ packages:
     resolution: {integrity: sha512-nUUXcJW1Xp54kNs+a1ToPLK8MadO0rMTnJB8Zk4Z8gBdrN0kqV7uvUraU/T2yqg+grDNR38Vmy/MrhQN/RgwiA==}
     dependencies:
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.4
+      '@codemirror/view': 6.2.0
       crelt: 1.0.5
 
   /@codemirror/search/6.0.1:
     resolution: {integrity: sha512-uOinkOrM+daMduCgMPomDfKLr7drGHB4jHl3Vq6xY2WRlL7MkNsBE0b+XHYa/Mee2npsJOgwvkW4n1lMFeBW2Q==}
     dependencies:
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.4
+      '@codemirror/view': 6.2.0
       crelt: 1.0.5
 
   /@codemirror/state/6.1.0:
@@ -192,8 +192,8 @@ packages:
       w3c-keyname: 2.2.5
     dev: false
 
-  /@codemirror/view/6.1.4:
-    resolution: {integrity: sha512-pekgUX+0hL4ri2JV7/bu7jhhwOgOhU1eRc1/ZyAQYCWcCI4TPB1qLrPE3cD/qW9yjBcYiN9MN0XI1tjK7Yw05Q==}
+  /@codemirror/view/6.2.0:
+    resolution: {integrity: sha512-3emW1symh+GoteFMBPsltjmF790U/trouLILATh3JodbF/z98HvcQh2g3+H6dfNIHx16uNonsAF4mNzVr1TJNA==}
     dependencies:
       '@codemirror/state': 6.1.1
       style-mod: 4.0.0
@@ -321,15 +321,15 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@nota-lang/nota-common/0.4.5:
-    resolution: {integrity: sha512-pVu97oa1PDZ00tB+T10qPGU5/zlurU3f5O0uy8/H8NGs2gbePDyHBiHRBuk4ed5CUccyOrTtBfs/kYU+zTiQdw==}
+  /@nota-lang/nota-common/0.4.7:
+    resolution: {integrity: sha512-M8XaoBLGO+yYhFHsioNisUZBFwFj4qGHM1WI2PsMCfYtOIEFccCGB95a0PyYlZPmDBDdyXWCvTRJOnRmab/rJg==}
     dependencies:
       '@types/lodash': 4.14.182
       lodash: 4.17.21
     dev: false
 
-  /@nota-lang/nota-components/0.4.6_dsax4zzuzy7mgxugckmw5vkxy4:
-    resolution: {integrity: sha512-4W7C3bw7iWkoYgN0MQ4ybKDl1GLOM0VVUSw/WuCS/AI16IuPPaImvql2ceXZwL+uXj5Z/KnfYD/0jzQBrU74fA==}
+  /@nota-lang/nota-components/0.4.7_glye5s5krd3fwl3kc3m6s4xfea:
+    resolution: {integrity: sha512-HmOiUAHglpuSR+C2mdaZLp/oFZWllQzTTds5SM4X34MtG/X0M8F242aq9pxV0x9ZbbhHjIAutGJOUSlmqeNaBA==}
     peerDependencies:
       '@codemirror/autocomplete': ^6.1.0
       '@codemirror/commands': ^6.0.1
@@ -352,11 +352,11 @@ packages:
       '@codemirror/lint': 6.0.0
       '@codemirror/search': 6.0.1
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.4
+      '@codemirror/view': 6.2.0
       '@lezer/common': 1.0.0
       '@lezer/highlight': 1.0.0
       '@lezer/lr': 1.2.1
-      '@nota-lang/nota-common': 0.4.5
+      '@nota-lang/nota-common': 0.4.7
       '@orcid/bibtex-parse-js': 0.0.25
       '@popperjs/core': 2.11.5
       classnames: 2.3.1
@@ -374,20 +374,20 @@ packages:
       - encoding
     dev: false
 
-  /@nota-lang/nota-editor/0.4.6_viobciiekkqacj7cryzana767i:
-    resolution: {integrity: sha512-ax/1oaFyrBOUJ7JF6LqEwSHzqKFPXFng8u71ouNNn2nFjlp98mCdOLq0hOsQY9nMNq6LwXXXZFcjw2TIek6rYQ==}
+  /@nota-lang/nota-editor/0.4.7_viobciiekkqacj7cryzana767i:
+    resolution: {integrity: sha512-+KRsoz2rucuJ4KVuxMUzJs0fqbj0klZOU9JGvqgcoyq3WugFoVg5OV6kTBLjP0xpJ0MIo6AF8gtpZHvgp00bnw==}
     peerDependencies:
       mobx: ^6.6.1
       react: ^18.2.0
     dependencies:
-      '@babel/standalone': 7.18.11
+      '@babel/standalone': 7.18.12
       '@codemirror/commands': 6.0.1
       '@codemirror/lang-javascript': 6.0.2
       '@codemirror/language': 6.2.1
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.4
-      '@nota-lang/nota-components': 0.4.6_dsax4zzuzy7mgxugckmw5vkxy4
-      '@nota-lang/nota-syntax': 0.4.6
+      '@codemirror/view': 6.2.0
+      '@nota-lang/nota-components': 0.4.7_glye5s5krd3fwl3kc3m6s4xfea
+      '@nota-lang/nota-syntax': 0.4.7
       classnames: 2.3.1
       codemirror: 6.0.1
       lodash: 4.17.21
@@ -408,14 +408,14 @@ packages:
       - react-dom
     dev: false
 
-  /@nota-lang/nota-syntax/0.4.6:
-    resolution: {integrity: sha512-xwqg7DVu5rYAhtyJQiAjEaxDQfXb+YtZfrQozLrzrfK/is753c2FiO6IRto1akdb4h03j55ECW30dqfE4dzMtQ==}
+  /@nota-lang/nota-syntax/0.4.7:
+    resolution: {integrity: sha512-DXcRn8VSGRTZEojwwXE8feiCB8ajTCGVpwm+XpIZvz8I9IVvX0y9Mvce71txVx6x6zfudFLohcBoruS9V0QNFQ==}
     dependencies:
-      '@babel/standalone': 7.18.11
+      '@babel/standalone': 7.18.12
       '@codemirror/autocomplete': 6.1.0
       '@codemirror/language': 6.2.1
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.4
+      '@codemirror/view': 6.2.0
       '@lezer/common': 1.0.0
       '@lezer/generator': 1.1.1
       '@lezer/highlight': 1.0.0
@@ -619,7 +619,7 @@ packages:
       '@codemirror/lint': 6.0.0
       '@codemirror/search': 6.0.1
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.4
+      '@codemirror/view': 6.2.0
 
   /color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}

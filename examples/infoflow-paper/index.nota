@@ -262,11 +262,12 @@ let pexp = L.pexp;
 let ty = L.ty;
 let q = L.path;
 let ownq = L.ownq;
+let stack = L.stack;
 %%%
 
 1. A syntax of Rust-like programs with expressions $#expr$ and types $#ty$.
 2. .@Definition[names: ["fnctx", "tyvarctx", "tyctx"]]{A type-checker, expressed with the judgment $#tc{#fnctx}{#tyvarctx}{#tyctx}{#expr}{#ty}{#tyctx'}$ using the contexts $#tyctx$ for types and lifetimes, $#tyctx$ for type variables, and $#tyctx$ for global functions.}
-3. An interpreter, expressed by a small-step operational semantics with the judgment $#stepsto{\sigma}{#expr}{#stepped{\sigma}}{#expr'}$ using $\sigma$ for a runtime stack.
+3. An interpreter, expressed by a small-step operational semantics with the judgment $#stepsto{#stack}{#expr}{#stepped{#stack}}{#expr'}$ using $#stack$ for a runtime stack.
 
 %%%
 let tcnew = macro{#texRef{tcnew}{#1; #2; #3; #4 \vdash #5 : #6 \Rightarrow #7; #8}}
@@ -318,39 +319,45 @@ let IRDef = ({name, ...props}) => {
   ]};
 }
 let gray = macro{\htmlStyle{color: gray}{#1}};
+let vf = L.vrform; 
 %%%
 
 @IRDef[name: "u32"]:
   | Bot:
     $#tcnew{#fnctx}{#tyvarctx}{#tyctx}
-        {#hlt{#depctx}}{n_{#hlt{#loc}}}
+        {#hlt{#depctx}}{#(L.num)_{#hlt{#loc}}}
         {#uty #hlt{#withslice{#deps}}}
         {#tyctx}{#hlt{#depctx}}$
 
 Variables and mutation are introduced through let-bindings and assignment expressions, respectively. For example, this (location-annotated) program mutates a field of a tuple:
 
+% let t = #vf{t}
+
 $$
-#olet{t}{#(L.tystup){#uty, #uty}}{(1_{#loc _1}, 2_{#loc _2})}{#(L.exprasgn){t.1}{3_{#loc _3}}}
+#olet{#t}{#(L.tystup){#uty, #uty}}{(1_{#loc _1}, 2_{#loc _2})}{#(L.exprasgn){#(L.pathwith){#t}{1}}{3_{#loc _3}}}
 $$
 
-Here, $t$ is a variable and $t.1$ is a *place*, or a description of a specific region in memory. For information flow, the key idea is that let-bindings introduce a set of places into $#depctx$, and then assignment expressions change a place's dependencies within $#depctx$.
+Here, $#t$ is a variable and $#(L.pathwith){#t}{1}$ is a *place*, or a description of a specific region in memory. For information flow, the key idea is that let-bindings introduce a set of places into $#depctx$, and then assignment expressions change a place's dependencies within $#depctx$.
 In the above example, after binding $t$, then $#depctx$ is:
 
 $$
-#depctx = \{t, t.0, t.1 \mapsto \{#loc _1, #loc _2\}\}
+#depctx = \{#t, #t.0, #t.1 \mapsto \{#loc _1, #loc _2\}\}
 $$
 
 After checking "$t.1 := 3$", then $#loc _3$ is added to $#depctx(t)$ and $#depctx(t.1)$, but not $#depctx(t.0)$. This is because the values of $t$ and $t.1$ have changed, but the value of $t.0$ has not. Formally, the let-binding rule is:
 
+% let plchole = macro{#texRef{plchole}{#1^\square[#2]}};
+% let ctxsubst = macro{#texRef{ctxsubst}{#1[#2]}}
+
 @IRDef[name: "let"]:
   | Top:
     @Premise:
-      $#tcnew{#fnctx}{#tyvarctx}{#tyctx}{#hlt{#depctx}}{e_1}
+      $#tcnew{#fnctx}{#tyvarctx}{#tyctx}{#hlt{#depctx}}{#expr _1}
         {#tys _1 #hlt{#withslice{#deps _1}}}{#tyctx}{#hlt{#depctx _1}}$
     @Premise:
       $#gray{#tyvarctx; #tyctx _1 \vdash #tys _1 \lesssim #tys _a \Rightarrow #tyctx'_1}$
     @Premise:
-      $#hlt{#depctx _1' = #depctx _1[\forall #plc^\square[#vr] ~ . ~ #plc \mapsto #deps _1]}$
+      $#hlt{#depctx _1' = #ctxsubst{#depctx _1}{\forall #plchole{#plc}{#vr} ~ . ~ #plc \mapsto #deps _1}}$
     @Premise:
       $#tcnew{#fnctx}{#tyvarctx}
         {\mathsf{gc}\text{-}\mathsf{loans}(#tyctx'_1, #vr : #tys _a)}
@@ -366,7 +373,11 @@ After checking "$t.1 := 3$", then $#loc _3$ is added to $#depctx(t)$ and $#depct
 Again, this rule (and many others) contain aspects of Oxide that are not essential for understanding information flow such as the subtyping judgment $#tys _1 \lesssim #tys _a$ or the metafunction $\mathsf{gc}\text{-}\mathsf{loans}$. For brevity we will not cover these aspects here, and instead refer the interested reader to @Ref[full: true]{weiss2019oxide}.
 We have deemphasized (in grey) the judgments which are not important to understanding our information flow additions.
 
-The key concept is the formula $ #depctx _1[\forall #plc^\square[#vr] ~ . ~ #plc \mapsto #deps _1]$. This introduces two shorthands: first, $#plc^\square[#vr]$ means "a place $#plc$ with root variable $#vr$ in a context $#plc^\square$", used to decompose a place. In &tr_let, the update to $#depctx _1$ happens for all places with a root variable $#vr$. Second, $#depctx _1[#plc \mapsto #deps _1]$ means "set $#plc$ to $#deps _1$ in $#depctx _1$". So this rule specifies that when checking $#expr _2$, all places within $#vr$ are initialized to the dependencies $#depctx _1$ of $#expr _1$.
+The key concept is the formula $#ctxsubst{#depctx _1}{\forall #plchole{#plc}{#vr} ~ . ~ #plc \mapsto #deps _1}$. This introduces two shorthands: first, 
+@Definition[name: "plchole"]{$#plchole{#plc}{#vr}$ means "a place $#plc$ with root variable $#vr$ in a context $#plc^\square$", used to decompose a place.} 
+In &tr_let, the update to $#depctx _1$ happens for all places with a root variable $#vr$. Second, 
+@Definition[name: "ctxsubst"]{$#ctxsubst{#depctx _1}{#plc \mapsto #deps _1}$ means "set $#plc$ to $#deps _1$ in $#depctx _1$".}
+So this rule specifies that when checking $#expr _2$, all places within $#vr$ are initialized to the dependencies $#depctx _1$ of $#expr _1$.
 
 Next, the assignment expression rule is defined as updating all the *conflicts* of a place $#plc$:
 
@@ -386,13 +397,13 @@ let updateconflicts = macro{
     @Premise:
       $#gray{#tyvarctx; #tyctx _1 \vdash #tys \lesssim #(L.tysx) \Rightarrow #tyctx'}$
     @Premise:
-      $#hlt{#depctx _2 = #depctx _1[#updateconflicts{#depctx _1}{#plc}{#deps}]}$
+      $#hlt{#depctx _2 = #ctxsubst{#depctx _1}{#updateconflicts{#depctx _1}{#plc}{#deps}}}$
   | Bot:
     $#tcnew{#fnctx}{#tyvarctx}{#tyctx}{#hlt{#depctx}}{#(L.exprasgn){#plc}{#expr}}
       {#(L.tybunit){} #hlt{#withslice{\varnothing}}}
-      {#tyctx'[#plc \mapsto #tys] \vartriangleright #plc}{#hlt{#depctx _2}}$
+      {#ctxsubst{#tyctx'}{#plc \mapsto #tys} \vartriangleright #plc}{#hlt{#depctx _2}}$
 
-If you conceptualize a type as a tree and a path as a node in that tree, then a node's conflicts are its ancestors and descendants (but not siblings). Semantically, conflicts are the set of places whose value change if a given place is mutated. Recall from the previous example that $t.1$ conflicts with $t$ and $t.1$, but not $t.0$. Formally, we say two places are disjoint ($#("\#")$) or conflict ($\sqcap$) when:
+If you conceptualize a type as a tree and a path as a node in that tree, then a node's conflicts are its ancestors and descendants (but not siblings). Semantically, conflicts are the set of places whose value change if a given place is mutated. Recall from the previous example that $#t.1$ conflicts with $#t$ and $#t.1$, but not $#t.0$. Formally, we say two places are disjoint ($#("\#")$) or conflict ($\sqcap$) when:
 
 %%%
 let disjoint = macro{#texRef{disjoint}{#1 \mathop{#("\#")} #2}};
@@ -424,7 +435,7 @@ Finally, the rule for reading places is simply to look up the place's dependenci
 
 @IRDef[name: "move"]:
   | Top:
-    @Premise: $#gray{#tyvarctx; #tyctx \vdash_{#uniq} #plc \Rightarrow \{~^{#uniq} #plc\} }$
+    @Premise: $#gray{#ownsafe{#tyvarctx}{#tyctx}{#uniq}{#plc}{\{~^{#uniq} #plc\}}}$
     @Premise: $#gray{#tyctx(#plc) = #tys }$
     @Premise: $#gray{#msf{noncopyable}_{#fnctx}~#tys }$
   | Bot:
@@ -614,7 +625,7 @@ Finally, the function application rule can be revised to include information flo
       $$
   | Bot:
     $#tcnew{#fnctx}{#tyvarctx}{#tyctx}{#hlt{#depctx}}
-      {#(L.exprcall){#(L.fname)}{\overline{\Phi}}{\overline{\rho}}{\overline{#tys}}{#plc}}
+      {#(L.exprcall){#(L.fname)}{\overline{#(L.frmexpr)}}{\overline{#(L.prov)}}{\overline{#tys}}{#plc}}
       {#tys _r
           #repeat{[#(L.frmexpr) / #(L.frmvar)]}
           #repeat{[#(L.prov) / #abstrprov]}
@@ -636,8 +647,6 @@ To characterize the correctness of our analysis, we seek to prove its *soundness
 To formally define noninterference within Oxide, we first need to explore Oxide's operational semantics. Oxide programs are executed in the context of a stack of frames that map variables to values:
 
 @(L.Bnf)[subset: ["value", "stack", "stackframe"]]
-
-% let stack = L.stack;
 
 For example, in the empty stack $#(L.stackempty){}$, the expression "$#olet{x}{#uty}{1}{x := 2}$" would first add $x \mapsto 1$ to the stack. Then executing $x := 2$ would update $#(L.stack)(x) = 2$. More generally, we use the shorthand $#stack(#pexp)$ to mean ``reduce $#pexp$ to a concrete location $#plc$, then look up the value of $#plc$ in $#stack$.''
 

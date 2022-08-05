@@ -12,13 +12,13 @@ importers:
       '@codemirror/lint': ^6.0.0
       '@codemirror/search': ^6.0.1
       '@codemirror/state': ^6.1.1
-      '@codemirror/view': ^6.1.3
+      '@codemirror/view': ^6.1.4
       '@lezer/common': ^1.0.0
       '@lezer/highlight': ^1.0.0
       '@lezer/lr': ^1.2.1
       '@nota-lang/esbuild-utils': ^0.4.3
-      '@nota-lang/nota-common': ^0.4.3
-      '@nota-lang/nota-components': ^0.4.3
+      '@nota-lang/nota-common': ^0.4.5
+      '@nota-lang/nota-components': ^0.4.5
       '@nota-lang/nota-editor': ^0.4.4
       '@nota-lang/nota-syntax': ^0.4.4
       '@types/lodash': ^4.14.182
@@ -36,8 +36,8 @@ importers:
       react-split: ^2.0.14
     dependencies:
       '@nota-lang/esbuild-utils': 0.4.3_esbuild@0.14.53
-      '@nota-lang/nota-common': 0.4.3
-      '@nota-lang/nota-components': 0.4.3_c7k3ysazklu3wikom7yjkfeftm
+      '@nota-lang/nota-common': 0.4.5
+      '@nota-lang/nota-components': 0.4.5_dsax4zzuzy7mgxugckmw5vkxy4
       '@nota-lang/nota-editor': 0.4.4_viobciiekkqacj7cryzana767i
       '@nota-lang/nota-syntax': 0.4.4
       lodash: 4.17.21
@@ -51,7 +51,7 @@ importers:
       '@codemirror/lint': 6.0.0
       '@codemirror/search': 6.0.1
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.3
+      '@codemirror/view': 6.1.4
       '@lezer/common': 1.0.0
       '@lezer/highlight': 1.0.0
       '@lezer/lr': 1.2.1
@@ -107,8 +107,8 @@ packages:
       regenerator-runtime: 0.13.9
     dev: false
 
-  /@babel/standalone/7.18.10:
-    resolution: {integrity: sha512-0KWHiRX9TUHiWE+dKYYEOIiRJcPwGU6u8Bq/p+ldekj7Kew9PCwl4S4FTSEPpTrn3Vc+r3iRSaN1l9AcGgLx4Q==}
+  /@babel/standalone/7.18.11:
+    resolution: {integrity: sha512-eClNZydz0dyDhJxhxc1h1KZdu7FxRC9I74iEbNlb0hvSTgR/lkOKa7i3fWjW5MIs+0gCud8kLndmO9YNhRiN5w==}
     engines: {node: '>=6.9.0'}
     dev: false
 
@@ -117,7 +117,7 @@ packages:
     dependencies:
       '@codemirror/language': 6.2.1
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.3
+      '@codemirror/view': 6.1.4
       '@lezer/common': 1.0.0
 
   /@codemirror/commands/6.0.1:
@@ -125,7 +125,7 @@ packages:
     dependencies:
       '@codemirror/language': 6.2.1
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.3
+      '@codemirror/view': 6.1.4
       '@lezer/common': 1.0.0
 
   /@codemirror/lang-cpp/6.0.1:
@@ -142,7 +142,7 @@ packages:
       '@codemirror/language': 6.2.1
       '@codemirror/lint': 6.0.0
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.3
+      '@codemirror/view': 6.1.4
       '@lezer/common': 1.0.0
       '@lezer/javascript': 1.0.2
 
@@ -157,7 +157,7 @@ packages:
     resolution: {integrity: sha512-MC3svxuvIj0MRpFlGHxLS6vPyIdbTr2KKPEW46kCoCXw2ktb4NTkpkPBI/lSP/FoNXLCBJ0mrnUi1OoZxtpW1Q==}
     dependencies:
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.3
+      '@codemirror/view': 6.1.4
       '@lezer/common': 1.0.0
       '@lezer/highlight': 1.0.0
       '@lezer/lr': 1.2.1
@@ -167,14 +167,14 @@ packages:
     resolution: {integrity: sha512-nUUXcJW1Xp54kNs+a1ToPLK8MadO0rMTnJB8Zk4Z8gBdrN0kqV7uvUraU/T2yqg+grDNR38Vmy/MrhQN/RgwiA==}
     dependencies:
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.3
+      '@codemirror/view': 6.1.4
       crelt: 1.0.5
 
   /@codemirror/search/6.0.1:
     resolution: {integrity: sha512-uOinkOrM+daMduCgMPomDfKLr7drGHB4jHl3Vq6xY2WRlL7MkNsBE0b+XHYa/Mee2npsJOgwvkW4n1lMFeBW2Q==}
     dependencies:
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.3
+      '@codemirror/view': 6.1.4
       crelt: 1.0.5
 
   /@codemirror/state/6.1.0:
@@ -192,12 +192,12 @@ packages:
       w3c-keyname: 2.2.5
     dev: false
 
-  /@codemirror/view/6.1.3:
-    resolution: {integrity: sha512-Ba8TdKX8cphIsgJ3NGT15Ac8c2mIObwo6MsDryffYKqB7Nw6l1c9cnjrahPF8DoN3HVfryW395O77vkuCNhW0A==}
+  /@codemirror/view/6.1.4:
+    resolution: {integrity: sha512-pekgUX+0hL4ri2JV7/bu7jhhwOgOhU1eRc1/ZyAQYCWcCI4TPB1qLrPE3cD/qW9yjBcYiN9MN0XI1tjK7Yw05Q==}
     dependencies:
       '@codemirror/state': 6.1.1
       style-mod: 4.0.0
-      w3c-keyname: 2.2.5
+      w3c-keyname: 2.2.6
 
   /@colors/colors/1.5.0:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
@@ -321,15 +321,15 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@nota-lang/nota-common/0.4.3:
-    resolution: {integrity: sha512-/bfd4EQQQjKz8zJR4qPUCy+wSg6x3kYye735/xrm5LmjmrYR54ANcXXVF/qh3wnqCGIXnkFvCou8IYPGlRuQrg==}
+  /@nota-lang/nota-common/0.4.5:
+    resolution: {integrity: sha512-pVu97oa1PDZ00tB+T10qPGU5/zlurU3f5O0uy8/H8NGs2gbePDyHBiHRBuk4ed5CUccyOrTtBfs/kYU+zTiQdw==}
     dependencies:
       '@types/lodash': 4.14.182
       lodash: 4.17.21
     dev: false
 
-  /@nota-lang/nota-components/0.4.3_c7k3ysazklu3wikom7yjkfeftm:
-    resolution: {integrity: sha512-zi6WtyFFwIdqQ3tMKW+eikNZGcjmND6MXg0JpGDnw+vtMbrn6gjhvDDnUuBKPfO82lmaE4hytCnEtMIXAZfUxA==}
+  /@nota-lang/nota-components/0.4.5_dsax4zzuzy7mgxugckmw5vkxy4:
+    resolution: {integrity: sha512-7XoYIHcPwQOhiPyXcIe8U6/hIHIpbazZxaLRByeapTlhFdNZt7Eb2SEOPxvNw7GGfvoaUrBb3Y6Um60hLVS74A==}
     peerDependencies:
       '@codemirror/autocomplete': ^6.1.0
       '@codemirror/commands': ^6.0.1
@@ -352,11 +352,11 @@ packages:
       '@codemirror/lint': 6.0.0
       '@codemirror/search': 6.0.1
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.3
+      '@codemirror/view': 6.1.4
       '@lezer/common': 1.0.0
       '@lezer/highlight': 1.0.0
       '@lezer/lr': 1.2.1
-      '@nota-lang/nota-common': 0.4.3
+      '@nota-lang/nota-common': 0.4.5
       '@orcid/bibtex-parse-js': 0.0.25
       '@popperjs/core': 2.11.5
       classnames: 2.3.1
@@ -380,13 +380,13 @@ packages:
       mobx: ^6.6.1
       react: ^18.2.0
     dependencies:
-      '@babel/standalone': 7.18.10
+      '@babel/standalone': 7.18.11
       '@codemirror/commands': 6.0.1
       '@codemirror/lang-javascript': 6.0.2
       '@codemirror/language': 6.2.1
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.3
-      '@nota-lang/nota-components': 0.4.3_c7k3ysazklu3wikom7yjkfeftm
+      '@codemirror/view': 6.1.4
+      '@nota-lang/nota-components': 0.4.5_dsax4zzuzy7mgxugckmw5vkxy4
       '@nota-lang/nota-syntax': 0.4.4
       classnames: 2.3.1
       codemirror: 6.0.1
@@ -411,11 +411,11 @@ packages:
   /@nota-lang/nota-syntax/0.4.4:
     resolution: {integrity: sha512-SS0e5ifP/Wnzq4hOOu4R2uZRE8p48Q3L65YZ3UnFZriUd7aqvrEV7hAtYrEI3DB8QNvzq732yDV358CCelA4cw==}
     dependencies:
-      '@babel/standalone': 7.18.10
+      '@babel/standalone': 7.18.11
       '@codemirror/autocomplete': 6.1.0
       '@codemirror/language': 6.2.1
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.3
+      '@codemirror/view': 6.1.4
       '@lezer/common': 1.0.0
       '@lezer/generator': 1.1.1
       '@lezer/highlight': 1.0.0
@@ -451,7 +451,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 3.0.5
-      '@types/node': 18.6.3
+      '@types/node': 18.6.4
     dev: false
 
   /@types/lodash/4.14.182:
@@ -461,8 +461,8 @@ packages:
     resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
     dev: false
 
-  /@types/node/18.6.3:
-    resolution: {integrity: sha512-6qKpDtoaYLM+5+AFChLhHermMQxc3TOEFIDzrZLPRGHPrLEwqFkkT5Kx3ju05g6X7uDPazz3jHbKPX0KzCjntg==}
+  /@types/node/18.6.4:
+    resolution: {integrity: sha512-I4BD3L+6AWiUobfxZ49DlU43gtI+FTHSv9pE2Zekg6KjMpre4ByusaljW3vYSLJrvQ1ck1hUaeVu8HVlY3vzHg==}
     dev: false
 
   /@types/prop-types/15.7.5:
@@ -482,7 +482,7 @@ packages:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
     dependencies:
-      '@types/node': 18.6.3
+      '@types/node': 18.6.4
     dev: false
     optional: true
 
@@ -619,7 +619,7 @@ packages:
       '@codemirror/lint': 6.0.0
       '@codemirror/search': 6.0.1
       '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.1.3
+      '@codemirror/view': 6.1.4
 
   /color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
@@ -1029,7 +1029,7 @@ packages:
     dependencies:
       esbuild: 0.14.53
       resolve: 1.22.1
-      sass: 1.54.2
+      sass: 1.54.3
     dev: true
 
   /esbuild-sunos-64/0.14.53:
@@ -1299,8 +1299,8 @@ packages:
       binary-extensions: 2.2.0
     dev: true
 
-  /is-core-module/2.9.0:
-    resolution: {integrity: sha512-+5FPy5PnwmO3lvfMb0AsoPaBG+5KHUI0wYFXOtYPnVVVspTFUuMZNfNaNVRt3FZadstu2c8x23vykRW/NBoU6A==}
+  /is-core-module/2.10.0:
+    resolution: {integrity: sha512-Erxj2n/LDAZ7H8WNJXd9tw38GYM3dv8rk8Zcs+jJuxYTW7sozH+SS8NtrSjVL1/vpLvWi1hxy96IzjJ3EHTJJg==}
     dependencies:
       has: 1.0.3
     dev: true
@@ -1720,7 +1720,7 @@ packages:
     resolution: {integrity: sha512-nBpuuYuY5jFsli/JIs1oldw6fOQCBioohqWZg/2hiaOybXOft4lonv85uDOKXdf8rhyK159cxU5cDcK/NKk8zw==}
     hasBin: true
     dependencies:
-      is-core-module: 2.9.0
+      is-core-module: 2.10.0
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
@@ -1753,8 +1753,8 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: false
 
-  /sass/1.54.2:
-    resolution: {integrity: sha512-wbVV26sejsCIbBScZZtNkvnrB/bVCQ8hSlZ01D9nzsVh9zLqCkWrlpvTb3YEb6xsuNi9cx75hncqwikHFSz7tw==}
+  /sass/1.54.3:
+    resolution: {integrity: sha512-fLodey5Qd41Pxp/Tk7Al97sViYwF/TazRc5t6E65O7JOk4XF8pzwIW7CvCxYVOfJFFI/1x5+elDyBIixrp+zrw==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
@@ -2298,6 +2298,10 @@ packages:
 
   /w3c-keyname/2.2.5:
     resolution: {integrity: sha512-WJrK7i6w+ULuZsGscCezbCH4Aev5U3xY87vnSimzzEgPQhb0Sa0a1rE3c2jtEwrFtSfi61Jefw3jI5/DD/3jbQ==}
+    dev: false
+
+  /w3c-keyname/2.2.6:
+    resolution: {integrity: sha512-f+fciywl1SJEniZHD6H+kUO8gOnwIr7f4ijKA6+ZvJFjeGi1r4PDLl53Ayud9O/rk64RqgoQine0feoeOU0kXg==}
 
   /webidl-conversions/3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
@@ -2375,8 +2379,8 @@ packages:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
     dev: false
 
-  /yargs-parser/21.1.0:
-    resolution: {integrity: sha512-xzm2t63xTV/f7+bGMSRzLhUNk1ajv/tDoaD5OeGyC3cFo2fl7My9Z4hS3q2VdQ7JaLvTxErO8Jp5pRIFGMD/zg==}
+  /yargs-parser/21.1.1:
+    resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
     engines: {node: '>=12'}
     dev: false
 
@@ -2390,7 +2394,7 @@ packages:
       require-directory: 2.1.1
       string-width: 4.2.3
       y18n: 5.0.8
-      yargs-parser: 21.1.0
+      yargs-parser: 21.1.1
     dev: false
 
   /yauzl/2.10.0:

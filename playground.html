@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="en" class=""><head><style>.ͼ1.cm-editor.cm-focused {outline: 1px dotted #212121;}
+.ͼ1.cm-editor {position: relative !important; box-sizing: border-box; display: flex !important; flex-direction: column;}
+.ͼ1 .cm-scroller {display: flex !important; align-items: flex-start !important; font-family: monospace; line-height: 1.4; height: 100%; overflow-x: auto; position: relative; z-index: 0;}
+.ͼ1 .cm-content[contenteditable=true] {-webkit-user-modify: read-write-plaintext-only;}
+.ͼ1 .cm-content {margin: 0; flex-grow: 2; flex-shrink: 0; min-height: 100%; display: block; white-space: pre; word-wrap: normal; box-sizing: border-box; padding: 4px 0; outline: none;}
+.ͼ1 .cm-lineWrapping {white-space: pre-wrap; white-space: break-spaces; word-break: break-word; overflow-wrap: anywhere; flex-shrink: 1;}
+.ͼ2 .cm-content {caret-color: black;}
+.ͼ3 .cm-content {caret-color: white;}
+.ͼ1 .cm-line {display: block; padding: 0 2px 0 4px;}
+.ͼ1 .cm-selectionLayer {z-index: -1; contain: size style;}
+.ͼ1 .cm-selectionBackground {position: absolute;}
+.ͼ2 .cm-selectionBackground {background: #d9d9d9;}
+.ͼ3 .cm-selectionBackground {background: #222;}
+.ͼ2.cm-focused .cm-selectionBackground {background: #d7d4f0;}
+.ͼ3.cm-focused .cm-selectionBackground {background: #233;}
+.ͼ1 .cm-cursorLayer {z-index: 100; contain: size style; pointer-events: none;}
+.ͼ1.cm-focused .cm-cursorLayer {animation: steps(1) cm-blink 1.2s infinite;}
+@keyframes cm-blink {50% {opacity: 0;}}
+@keyframes cm-blink2 {50% {opacity: 0;}}
+.ͼ1 .cm-cursor, .ͼ1 .cm-dropCursor {position: absolute; border-left: 1.2px solid black; margin-left: -0.6px; pointer-events: none;}
+.ͼ1 .cm-cursor {display: none;}
+.ͼ3 .cm-cursor {border-left-color: #444;}
+.ͼ1.cm-focused .cm-cursor {display: block;}
+.ͼ2 .cm-activeLine {background-color: #f3f9ff;}
+.ͼ3 .cm-activeLine {background-color: #223039;}
+.ͼ2 .cm-specialChar {color: red;}
+.ͼ3 .cm-specialChar {color: #f78;}
+.ͼ1 .cm-gutters {flex-shrink: 0; display: flex; height: 100%; box-sizing: border-box; left: 0; z-index: 200;}
+.ͼ2 .cm-gutters {background-color: #f5f5f5; color: #6c6c6c; border-right: 1px solid #ddd;}
+.ͼ3 .cm-gutters {background-color: #333338; color: #ccc;}
+.ͼ1 .cm-gutter {display: flex !important; flex-direction: column; flex-shrink: 0; box-sizing: border-box; min-height: 100%; overflow: hidden;}
+.ͼ1 .cm-gutterElement {box-sizing: border-box;}
+.ͼ1 .cm-lineNumbers .cm-gutterElement {padding: 0 3px 0 5px; min-width: 20px; text-align: right; white-space: nowrap;}
+.ͼ2 .cm-activeLineGutter {background-color: #e2f2ff;}
+.ͼ3 .cm-activeLineGutter {background-color: #222227;}
+.ͼ1 .cm-panels {box-sizing: border-box; position: sticky; left: 0; right: 0;}
+.ͼ2 .cm-panels {background-color: #f5f5f5; color: black;}
+.ͼ2 .cm-panels-top {border-bottom: 1px solid #ddd;}
+.ͼ2 .cm-panels-bottom {border-top: 1px solid #ddd;}
+.ͼ3 .cm-panels {background-color: #333338; color: white;}
+.ͼ1 .cm-tab {display: inline-block; overflow: hidden; vertical-align: bottom;}
+.ͼ1 .cm-widgetBuffer {vertical-align: text-top; height: 1em; display: inline;}
+.ͼ1 .cm-placeholder {color: #888; display: inline-block; vertical-align: top;}
+.ͼ1 .cm-button {vertical-align: middle; color: inherit; font-size: 70%; padding: .2em 1em; border-radius: 1px;}
+.ͼ2 .cm-button:active {background-image: linear-gradient(#b4b4b4, #d0d3d6);}
+.ͼ2 .cm-button {background-image: linear-gradient(#eff1f5, #d9d9df); border: 1px solid #888;}
+.ͼ3 .cm-button:active {background-image: linear-gradient(#111, #333);}
+.ͼ3 .cm-button {background-image: linear-gradient(#393939, #111); border: 1px solid #888;}
+.ͼ1 .cm-textfield {vertical-align: middle; color: inherit; font-size: 70%; border: 1px solid silver; padding: .2em .5em;}
+.ͼ2 .cm-textfield {background-color: white;}
+.ͼ3 .cm-textfield {border: 1px solid #555; background-color: inherit;}
+.ͼ1 .cm-selectionMatch {background-color: #99ff7780;}
+.ͼ1 .cm-searchMatch .cm-selectionMatch {background-color: transparent;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > li {overflow-x: hidden; text-overflow: ellipsis; cursor: pointer; padding: 1px 3px; line-height: 1.2;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul {font-family: monospace; white-space: nowrap; overflow: hidden auto; max-width: 700px; max-width: min(700px, 95vw); min-width: 250px; max-height: 10em; list-style: none; margin: 0; padding: 0;}
+.ͼ2 .cm-tooltip-autocomplete ul li[aria-selected] {background: #17c; color: white;}
+.ͼ3 .cm-tooltip-autocomplete ul li[aria-selected] {background: #347; color: white;}
+.ͼ1 .cm-completionListIncompleteTop:before, .ͼ1 .cm-completionListIncompleteBottom:after {content: "···"; opacity: 0.5; display: block; text-align: center;}
+.ͼ1 .cm-tooltip.cm-completionInfo {position: absolute; padding: 3px 9px; width: max-content; max-width: 300px;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-left {right: 100%;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-right {left: 100%;}
+.ͼ2 .cm-snippetField {background-color: #00000022;}
+.ͼ3 .cm-snippetField {background-color: #ffffff22;}
+.ͼ1 .cm-snippetFieldPosition {vertical-align: text-top; width: 0; height: 1.15em; margin: 0 -0.7px -.7em; border-left: 1.4px dotted #888;}
+.ͼ1 .cm-completionMatchedText {text-decoration: underline;}
+.ͼ1 .cm-completionDetail {margin-left: 0.5em; font-style: italic;}
+.ͼ1 .cm-completionIcon {font-size: 90%; width: .8em; display: inline-block; text-align: center; padding-right: .6em; opacity: 0.6;}
+.ͼ1 .cm-completionIcon-function:after, .ͼ1 .cm-completionIcon-method:after {content: 'ƒ';}
+.ͼ1 .cm-completionIcon-class:after {content: '○';}
+.ͼ1 .cm-completionIcon-interface:after {content: '◌';}
+.ͼ1 .cm-completionIcon-variable:after {content: '𝑥';}
+.ͼ1 .cm-completionIcon-constant:after {content: '𝐶';}
+.ͼ1 .cm-completionIcon-type:after {content: '𝑡';}
+.ͼ1 .cm-completionIcon-enum:after {content: '∪';}
+.ͼ1 .cm-completionIcon-property:after {content: '□';}
+.ͼ1 .cm-completionIcon-keyword:after {content: '🔑︎';}
+.ͼ1 .cm-completionIcon-namespace:after {content: '▢';}
+.ͼ1 .cm-completionIcon-text:after {content: 'abc'; font-size: 50%; vertical-align: middle;}
+.ͼ1 .cm-tooltip {z-index: 100;}
+.ͼ2 .cm-tooltip {border: 1px solid #bbb; background-color: #f5f5f5;}
+.ͼ2 .cm-tooltip-section:not(:first-child) {border-top: 1px solid #bbb;}
+.ͼ3 .cm-tooltip {background-color: #333338; color: white;}
+.ͼ1 .cm-tooltip-arrow:before, .ͼ1 .cm-tooltip-arrow:after {content: ''; position: absolute; width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow:before {border-top: 7px solid #bbb;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow:after {border-top: 7px solid #f5f5f5; bottom: 1px;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow {bottom: -7px;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow:before {border-bottom: 7px solid #bbb;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow:after {border-bottom: 7px solid #f5f5f5; top: 1px;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow {top: -7px;}
+.ͼ1 .cm-tooltip-arrow {height: 7px; width: 14px; position: absolute; z-index: -1; overflow: hidden;}
+.ͼ3 .cm-tooltip .cm-tooltip-arrow:before {border-top-color: #333338; border-bottom-color: #333338;}
+.ͼ3 .cm-tooltip .cm-tooltip-arrow:after {border-top-color: transparent; border-bottom-color: transparent;}
+.ͼ1.cm-focused .cm-matchingBracket {background-color: #328c8252;}
+.ͼ1.cm-focused .cm-nonmatchingBracket {background-color: #bb555544;}
+.ͼ1 .cm-foldPlaceholder {background-color: #eee; border: 1px solid #ddd; color: #888; border-radius: .2em; margin: 0 1px; padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-foldGutter span {padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-indentation-guide {position: relative;}
+.ͼ1 .cm-indentation-guide:after {position: absolute; content: ''; right: 0.5ch; height: 1.3em; border-left: 1px solid rgba(193, 199, 249, 0.4);}
+.ͼ1 .cm-indentation-level-0 {text-indent: -0ch; margin-left: 0ch;}
+.ͼ1 .cm-indentation-level-1 {text-indent: -2ch; margin-left: 2ch;}
+.ͼ1 .cm-indentation-level-2 {text-indent: -4ch; margin-left: 4ch;}
+.ͼ1 .cm-indentation-level-3 {text-indent: -6ch; margin-left: 6ch;}
+.ͼ1 .cm-indentation-level-4 {text-indent: -8ch; margin-left: 8ch;}
+.ͼ1 .cm-indentation-level-5 {text-indent: -10ch; margin-left: 10ch;}
+.ͼ1 .cm-indentation-level-6 {text-indent: -12ch; margin-left: 12ch;}
+.ͼ1 .cm-indentation-level-7 {text-indent: -14ch; margin-left: 14ch;}
+.ͼ1 .cm-indentation-level-8 {text-indent: -16ch; margin-left: 16ch;}
+.ͼ1 .cm-indentation-level-9 {text-indent: -18ch; margin-left: 18ch;}
+.ͼ1 .cm-indentation-level-10 {text-indent: -20ch; margin-left: 20ch;}
+.ͼ1 .cm-indentation-level-11 {text-indent: -22ch; margin-left: 22ch;}
+.ͼ1 .cm-indentation-level-12 {text-indent: -24ch; margin-left: 24ch;}
+.ͼ1 .cm-indentation-level-13 {text-indent: -26ch; margin-left: 26ch;}
+.ͼ1 .cm-indentation-level-14 {text-indent: -28ch; margin-left: 28ch;}
+.ͼ1 .cm-indentation-level-15 {text-indent: -30ch; margin-left: 30ch;}
+.ͼ1 .cm-indentation-level-16 {text-indent: -32ch; margin-left: 32ch;}
+.ͼ1 .cm-indentation-level-17 {text-indent: -34ch; margin-left: 34ch;}
+.ͼ1 .cm-indentation-level-18 {text-indent: -36ch; margin-left: 36ch;}
+.ͼ1 .cm-indentation-level-19 {text-indent: -38ch; margin-left: 38ch;}
+.ͼr {height: 100%; text-align: left;}
+.ͼr.cm-editor.cm-focused {outline: 0;}
+.ͼr .cm-scroller {font-family: Inconsolata, monospace; line-height: 1.3;}
+.ͼr .cm-gutters {background: none; border: none;}
+.ͼr .cm-highlight {padding: 0 2px; margin: -1px -2px; border-radius: 2px;}
+.ͼr .cm-error {background: rgba(255, 0, 0, 0.12);}
+.ͼp {color: rgb(31, 95, 31);}
+.ͼq {color: #333;}
+.ͼ5 {color: #7a757a;}
+.ͼ6 {text-decoration: underline;}
+.ͼ7 {text-decoration: underline; font-weight: bold;}
+.ͼ8 {font-style: italic;}
+.ͼ9 {font-weight: bold;}
+.ͼa {text-decoration: line-through;}
+.ͼb {color: #708;}
+.ͼc {color: #219;}
+.ͼd {color: #164;}
+.ͼe {color: #a11;}
+.ͼf {color: #e40;}
+.ͼg {color: #00f;}
+.ͼh {color: #30a;}
+.ͼi {color: #085;}
+.ͼj {color: #167;}
+.ͼk {color: #256;}
+.ͼl {color: #00c;}
+.ͼm {color: #940;}
+.ͼn {color: #f00;}
+.ͼ4 .cm-line ::selection {background-color: transparent !important;}
+.ͼ4 .cm-line::selection {background-color: transparent !important;}
+.ͼ4 .cm-line {caret-color: transparent !important;}
+</style><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta property="og:title" content="Nota Playground"><meta property="og:type" content="article"><meta property="og:description" content="Making a world where you never have to use LaTeX again."><meta property="og:image" content="https://nota-lang.org/android-chrome-512x512.png"><meta name="twitter:card" content="summary"><title>Nota Playground</title><link href="/index.css" rel="stylesheet"></head><body class="examples"><header><div class="logo"><a href="/"><span class="fancy">N</span>ota</a></div><nav><a href="/examples.html">Examples</a><a href="/playground.html">Playground</a><a href="/reference.html">Reference</a><a href="/integration.html">Integration</a></nav></header><div id="root"><div class="nota-document"><div class="nota-document-inner"><div class="base-style-block"><h1 class="document-title">Nota Playground</h1></div><div class="page-editor"><div class="split horizontal"><div style="width: calc(50% - 5px);"><div class="nota-document editing"><div class="nota-document-inner"><h1 class="document-title"><em>Nota bene</em></h1><p>From Wikipedia, the free encyclopedia</p><p><strong><em>Nota bene</em></strong> (/<code>ˈnoʊtə ˈbɛneɪ</code>/, /<code>ˈnoʊtə ˈbɛni</code>/ or /<code>ˈnoʊtə ˈbiːni</code>/; plural form <strong><em>notate bene</em></strong>) is a Latin phrase meaning "note well". It is often abbreviated as <strong><em>NB</em></strong>, <strong><em>n.b.</em></strong>, or with the ligature <span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.6833em;"></span><span class="mord mathrm">N</span><span class="mspace" style="margin-right: -0.1667em;"></span><span class="mspace" style="margin-right: -0.1667em;"></span><span class="mord mathrm">B</span></span></span></span></span> and first appeared in English writing c. 1711. In Modern English, it is used, particularly in legal papers, to draw the attention of the reader to a certain (side) aspect or detail of the subject being addressed. While NB is also often used in academic writing, <em>note</em> is a common substitute.</p><p>The markings used to draw readers' attention in medieval manuscripts are also called nota bene marks. The common medieval markings do not, however, include the abbreviation NB. The usual medieval equivalents are anagrams from the four letters in the word nota, the abbreviation DM from dignum memoria ("worth remembering"), or a symbol of a little hand (☞), called a manicule or index, with the index finger pointing towards the beginning of the significant passage.</p><section><h2 class="section-title"><div id="def-section-1" class="definition"> See Also</div></h2><ul><li><p>Annotation</p></li><li><p>Footnote</p></li><li><p>List of Latin Abbreviations</p></li><li><p>List of Latin phrases</p></li><li><p>List of legal Latin terms</p></li><li><p><em>Obiter dictum</em></p></li><li><p><em>Postscript</em></p></li><li><p><em>Quod vide</em></p></li></ul></section><div class="logger"></div></div><div class="portal"></div></div></div><div class="gutter gutter-horizontal" style="width: 10px;"></div><div class="nota-editor" style="width: calc(50% - 5px);"><div class="cm-editor ͼ1 ͼ2 ͼ4 ͼr"><div aria-live="polite" style="position: absolute; top: -10000px;"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 252px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">99</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 14px;">1</div><div class="cm-gutterElement" style="height: 14px;">2</div><div class="cm-gutterElement" style="height: 14px;">3</div><div class="cm-gutterElement" style="height: 14px;">4</div><div class="cm-gutterElement" style="height: 14px;">5</div><div class="cm-gutterElement" style="height: 14px;">6</div><div class="cm-gutterElement" style="height: 14px;">7</div><div class="cm-gutterElement" style="height: 14px;">8</div><div class="cm-gutterElement" style="height: 14px;">9</div><div class="cm-gutterElement" style="height: 14px;">10</div><div class="cm-gutterElement" style="height: 14px;">11</div><div class="cm-gutterElement" style="height: 14px;">12</div><div class="cm-gutterElement" style="height: 14px;">13</div><div class="cm-gutterElement" style="height: 14px;">14</div><div class="cm-gutterElement" style="height: 14px;">15</div><div class="cm-gutterElement" style="height: 14px;">16</div><div class="cm-gutterElement" style="height: 14px;">17</div><div class="cm-gutterElement" style="height: 14px;">18</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 14px;"></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" class="cm-content cm-lineWrapping" style="tab-size: 2" role="textbox" aria-multiline="true" aria-autocomplete="list"><div class="cm-activeLine cm-line"><span class="ͼb ͼb">@</span><span class="ͼk ͼk">Title</span>: <span class="ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">*</span><span class="ͼ8 nota-editor-text ͼ8">Nota bene</span><span class="ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">*</span></div><div class="cm-line"><br></div><div class="cm-line"><span class="nota-editor-text">From Wikipedia, the free encyclopedia</span></div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼ9 nota-editor-text ͼ9 ͼ5 ͼ5">**</span><span class="ͼ9 nota-editor-text ͼ9 ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">_</span><span class="ͼ9 nota-editor-text ͼ9 ͼ8 nota-editor-text ͼ8">Nota bene</span><span class="ͼ9 nota-editor-text ͼ9 ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">_</span><span class="ͼ9 nota-editor-text ͼ9 ͼ5 ͼ5">**</span><span class="nota-editor-text"> (/</span><span class="ͼ5 ͼ5">`</span><span class="nota-editor-text">ˈnoʊtə ˈbɛneɪ</span><span class="ͼ5 ͼ5">`</span><span class="nota-editor-text">/, /</span><span class="ͼ5 ͼ5">`</span><span class="nota-editor-text">ˈnoʊtə ˈbɛni</span><span class="ͼ5 ͼ5">`</span><span class="nota-editor-text">/ or /</span><span class="ͼ5 ͼ5">`</span><span class="nota-editor-text">ˈnoʊtə ˈbiːni</span><span class="ͼ5 ͼ5">`</span><span class="nota-editor-text">/; plural form </span><span class="ͼ9 nota-editor-text ͼ9 ͼ5 ͼ5">**</span><span class="ͼ9 nota-editor-text ͼ9 ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">_</span><span class="ͼ9 nota-editor-text ͼ9 ͼ8 nota-editor-text ͼ8">notate bene</span><span class="ͼ9 nota-editor-text ͼ9 ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">_</span><span class="ͼ9 nota-editor-text ͼ9 ͼ5 ͼ5">**</span><span class="nota-editor-text">) is a Latin phrase meaning "note well". It is often abbreviated as </span><span class="ͼ9 nota-editor-text ͼ9 ͼ5 ͼ5">**</span><span class="ͼ9 nota-editor-text ͼ9 ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">_</span><span class="ͼ9 nota-editor-text ͼ9 ͼ8 nota-editor-text ͼ8">NB</span><span class="ͼ9 nota-editor-text ͼ9 ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">_</span><span class="ͼ9 nota-editor-text ͼ9 ͼ5 ͼ5">**</span><span class="nota-editor-text">, </span><span class="ͼ9 nota-editor-text ͼ9 ͼ5 ͼ5">**</span><span class="ͼ9 nota-editor-text ͼ9 ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">_</span><span class="ͼ9 nota-editor-text ͼ9 ͼ8 nota-editor-text ͼ8">n.b.</span><span class="ͼ9 nota-editor-text ͼ9 ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">_</span><span class="ͼ9 nota-editor-text ͼ9 ͼ5 ͼ5">**</span><span class="nota-editor-text">, or with the ligature </span><span class="ͼp ͼp">$</span><span class="ͼp">\mathrm{N}\!\!\mathrm{B}</span><span class="ͼp ͼp">$</span><span class="nota-editor-text"> and first appeared in English writing c. 1711. In Modern English, it is used, particularly in legal papers, to draw the attention of the reader to a certain (side) aspect or detail of the subject being addressed. While NB is also often used in academic writing, </span><span class="ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">*</span><span class="ͼ8 nota-editor-text ͼ8">note</span><span class="ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">*</span><span class="nota-editor-text"> is a common substitute.</span></div><div class="cm-line"><br></div><div class="cm-line"><span class="nota-editor-text">The markings used to draw readers' attention in medieval manuscripts are also called nota bene marks. The common medieval markings do not, however, include the abbreviation NB. The usual medieval equivalents are anagrams from the four letters in the word nota, the abbreviation DM from dignum memoria ("worth remembering"), or a symbol of a little hand (☞), called a manicule or index, with the index finger pointing towards the beginning of the significant passage.</span></div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼb ͼb">@</span><span class="ͼk ͼk">Section</span>[<span class="ͼl ͼl">plain</span>: <span class="ͼc ͼc">true</span>]: See Also</div><div class="cm-line"><br></div><div class="cm-line"><span class="nota-editor-text ͼ5 ͼ5">*</span><span class="nota-editor-text"> </span><span class="nota-editor-text nota-editor-text">Annotation</span></div><div class="cm-line"><span class="nota-editor-text ͼ5 ͼ5">*</span><span class="nota-editor-text"> </span><span class="nota-editor-text nota-editor-text">Footnote</span></div><div class="cm-line"><span class="nota-editor-text ͼ5 ͼ5">*</span><span class="nota-editor-text"> </span><span class="nota-editor-text nota-editor-text">List of Latin Abbreviations</span></div><div class="cm-line"><span class="nota-editor-text ͼ5 ͼ5">*</span><span class="nota-editor-text"> </span><span class="nota-editor-text nota-editor-text">List of Latin phrases</span></div><div class="cm-line"><span class="nota-editor-text ͼ5 ͼ5">*</span><span class="nota-editor-text"> </span><span class="nota-editor-text nota-editor-text">List of legal Latin terms</span></div><div class="cm-line"><span class="nota-editor-text ͼ5 ͼ5">*</span><span class="nota-editor-text"> </span><span class="nota-editor-text ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">*</span><span class="nota-editor-text ͼ8 nota-editor-text ͼ8">Obiter dictum</span><span class="nota-editor-text ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">*</span></div><div class="cm-line"><span class="nota-editor-text ͼ5 ͼ5">*</span><span class="nota-editor-text"> </span><span class="nota-editor-text ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">*</span><span class="nota-editor-text ͼ8 nota-editor-text ͼ8">Postscript</span><span class="nota-editor-text ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">*</span></div><div class="cm-line"><span class="nota-editor-text ͼ5 ͼ5">*</span><span class="nota-editor-text"> </span><span class="nota-editor-text ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">*</span><span class="nota-editor-text ͼ8 nota-editor-text ͼ8">Quod vide</span><span class="nota-editor-text ͼ8 nota-editor-text ͼ8 ͼ5 ͼ5">*</span></div></div><div class="cm-selectionLayer" aria-hidden="true"></div><div class="cm-cursorLayer" aria-hidden="true" style="animation-duration: 1200ms;"><div class="cm-cursor cm-cursor-primary" style="left: 42.8125px; top: 5px; height: 18px;"></div></div></div></div></div></div></div><div class="logger"></div></div><div class="portal"></div></div></div><script src="./playground.mjs" type="module" async=""></script></body></html>

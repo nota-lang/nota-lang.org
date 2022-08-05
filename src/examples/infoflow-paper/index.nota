@@ -12,13 +12,14 @@ import {imports as exampleImports, source as exampleSource} from "../../../examp
 @div[className: "base-style-block"]:
   @Title: PL Research Paper
 
-  This document is a Nota-fied version of a programming languages research paper, "Modular Information Flow through Ownership" published at PLDI 2022. For comparison, you can read the LaTeX version on arXiv: <https://arxiv.org/abs/2111.13662>
+  @div[className: "example-links"]:
+    [_Standalone web page_](standalone/) /
+    [_LaTeX comparison_](https://arxiv.org/abs/2111.13662) /
+    [_Full source_](https://github.com/nota-lang/nota-lang.org/tree/main/examples/infoflow-paper)
 
-  This example includes:
+  This document is a Nota-fied version of a programming languages research paper, "Modular Information Flow through Ownership" published at PLDI 2022. This example includes:
   * Academic paper structure (sections, subsections, figures, abstracts)
   * Math (inline TeX, block TeX, theorems, definitions)
   * Charts (Vega-Lite)
-
-  You can view full source (including `package.json` and figures) [on Github](https://github.com/nota-lang/nota-lang.org/tree/main/examples/infoflow-paper). You can view this example in a standalone page (without the editor) [at this link](standalone/).
 
 @PageEditor[imports: exampleImports, contents: exampleSource]

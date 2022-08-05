@@ -32,9 +32,9 @@ let Template: React.FC<
         </div>
         <nav>
           <a href="/examples.html">Examples</a>
+          <a href="/playground.html">Playground</a>
           <a href="/reference.html">Reference</a>
           <a href="/integration.html">Integration</a>
-          <a href="https://github.com/nota-lang/nota">Github</a>
         </nav>
       </header>
       {children}

@@ -30,11 +30,11 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@nota-lang/esbuild-utils": "^0.4.3",
+    "@nota-lang/esbuild-utils": "^0.4.5",
     "@nota-lang/nota-common": "^0.4.5",
-    "@nota-lang/nota-components": "^0.4.5",
-    "@nota-lang/nota-editor": "^0.4.4",
-    "@nota-lang/nota-syntax": "^0.4.4",
+    "@nota-lang/nota-components": "^0.4.6",
+    "@nota-lang/nota-editor": "^0.4.6",
+    "@nota-lang/nota-syntax": "^0.4.6",
     "lodash": "^4.17.21",
     "react-split": "^2.0.14"
   }

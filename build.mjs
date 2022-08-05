@@ -23,6 +23,7 @@ async function main() {
       "src/reference.html",
       "src/examples.html",
       "src/integration.html",
+      "src/playground.html",
       ...examples.map((name) => `src/examples/${name}/index.html`),
     ],
     splitting: true,

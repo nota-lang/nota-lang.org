@@ -16,11 +16,11 @@ importers:
       '@lezer/common': ^1.0.0
       '@lezer/highlight': ^1.0.0
       '@lezer/lr': ^1.2.1
-      '@nota-lang/esbuild-utils': ^0.4.3
+      '@nota-lang/esbuild-utils': ^0.4.5
       '@nota-lang/nota-common': ^0.4.5
-      '@nota-lang/nota-components': ^0.4.5
-      '@nota-lang/nota-editor': ^0.4.4
-      '@nota-lang/nota-syntax': ^0.4.4
+      '@nota-lang/nota-components': ^0.4.6
+      '@nota-lang/nota-editor': ^0.4.6
+      '@nota-lang/nota-syntax': ^0.4.6
       '@types/lodash': ^4.14.182
       '@types/react': ^18.0.15
       classnames: ^2.3.1
@@ -35,11 +35,11 @@ importers:
       react-dom: ^18.2.0
       react-split: ^2.0.14
     dependencies:
-      '@nota-lang/esbuild-utils': 0.4.3_esbuild@0.14.53
+      '@nota-lang/esbuild-utils': 0.4.5_esbuild@0.14.53
       '@nota-lang/nota-common': 0.4.5
-      '@nota-lang/nota-components': 0.4.5_dsax4zzuzy7mgxugckmw5vkxy4
-      '@nota-lang/nota-editor': 0.4.4_viobciiekkqacj7cryzana767i
-      '@nota-lang/nota-syntax': 0.4.4
+      '@nota-lang/nota-components': 0.4.6_dsax4zzuzy7mgxugckmw5vkxy4
+      '@nota-lang/nota-editor': 0.4.6_viobciiekkqacj7cryzana767i
+      '@nota-lang/nota-syntax': 0.4.6
       lodash: 4.17.21
       react-split: 2.0.14_react@18.2.0
     devDependencies:
@@ -296,8 +296,8 @@ packages:
       '@lezer/lr': 1.2.1
     dev: true
 
-  /@nota-lang/esbuild-utils/0.4.3_esbuild@0.14.53:
-    resolution: {integrity: sha512-TgTcHBgMgRVOq+KZHrLCvE9ez0lI0nQyALB3g8Cgs2G5O9SXSvO4k9EjSWkkvkxfi+3xRuxPzORtdd9dOLqArQ==}
+  /@nota-lang/esbuild-utils/0.4.5_esbuild@0.14.53:
+    resolution: {integrity: sha512-2/TMiStiHYaq1fkCNtfA7YGxSy6mEALaFjfpxhIF68+hzcDccaoYNlcMcWsXczv1v6H0j3tsXpYtazlWQn+z8A==}
     peerDependencies:
       esbuild: ^0.14.49
     dependencies:
@@ -328,8 +328,8 @@ packages:
       lodash: 4.17.21
     dev: false
 
-  /@nota-lang/nota-components/0.4.5_dsax4zzuzy7mgxugckmw5vkxy4:
-    resolution: {integrity: sha512-7XoYIHcPwQOhiPyXcIe8U6/hIHIpbazZxaLRByeapTlhFdNZt7Eb2SEOPxvNw7GGfvoaUrBb3Y6Um60hLVS74A==}
+  /@nota-lang/nota-components/0.4.6_dsax4zzuzy7mgxugckmw5vkxy4:
+    resolution: {integrity: sha512-4W7C3bw7iWkoYgN0MQ4ybKDl1GLOM0VVUSw/WuCS/AI16IuPPaImvql2ceXZwL+uXj5Z/KnfYD/0jzQBrU74fA==}
     peerDependencies:
       '@codemirror/autocomplete': ^6.1.0
       '@codemirror/commands': ^6.0.1
@@ -374,8 +374,8 @@ packages:
       - encoding
     dev: false
 
-  /@nota-lang/nota-editor/0.4.4_viobciiekkqacj7cryzana767i:
-    resolution: {integrity: sha512-39pDUFc7s0iwj8VPWeAPdf/TD5SpTWWZKjcGOTiL65EKq31CtOvKjOlMk/AARmbDwxm43KnjRd039KbeYLADxw==}
+  /@nota-lang/nota-editor/0.4.6_viobciiekkqacj7cryzana767i:
+    resolution: {integrity: sha512-ax/1oaFyrBOUJ7JF6LqEwSHzqKFPXFng8u71ouNNn2nFjlp98mCdOLq0hOsQY9nMNq6LwXXXZFcjw2TIek6rYQ==}
     peerDependencies:
       mobx: ^6.6.1
       react: ^18.2.0
@@ -386,8 +386,8 @@ packages:
       '@codemirror/language': 6.2.1
       '@codemirror/state': 6.1.1
       '@codemirror/view': 6.1.4
-      '@nota-lang/nota-components': 0.4.5_dsax4zzuzy7mgxugckmw5vkxy4
-      '@nota-lang/nota-syntax': 0.4.4
+      '@nota-lang/nota-components': 0.4.6_dsax4zzuzy7mgxugckmw5vkxy4
+      '@nota-lang/nota-syntax': 0.4.6
       classnames: 2.3.1
       codemirror: 6.0.1
       lodash: 4.17.21
@@ -408,8 +408,8 @@ packages:
       - react-dom
     dev: false
 
-  /@nota-lang/nota-syntax/0.4.4:
-    resolution: {integrity: sha512-SS0e5ifP/Wnzq4hOOu4R2uZRE8p48Q3L65YZ3UnFZriUd7aqvrEV7hAtYrEI3DB8QNvzq732yDV358CCelA4cw==}
+  /@nota-lang/nota-syntax/0.4.6:
+    resolution: {integrity: sha512-xwqg7DVu5rYAhtyJQiAjEaxDQfXb+YtZfrQozLrzrfK/is753c2FiO6IRto1akdb4h03j55ECW30dqfE4dzMtQ==}
     dependencies:
       '@babel/standalone': 7.18.11
       '@codemirror/autocomplete': 6.1.0

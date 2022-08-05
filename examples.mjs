@@ -1,4 +1,4 @@
-import{b as x}from"./chunk-5OJ4H56X.mjs";import{E as u,a as v,b as r,c as s,d as w,e as N,m as p,o as d,t as c,w as f}from"./chunk-TGZBJ43G.mjs";var n=r(s()),l=r(w());var i={};v(i,{default:()=>a,imports:()=>M,metadata:()=>D,source:()=>T});var t=r(s()),h=r(N());var{Document:y}=p,{Title:R}=d,D={title:"Nota Examples"},M={"./components/inline-editor":{...x,__esModule:!0},"@nota-lang/nota-syntax/dist/editor/mod.js":{...f,__esModule:!0},"@nota-lang/nota-components/dist/index.css":{...c,__esModule:!0}},T=`%%%
+import{b as x}from"./chunk-6KB7UQWS.mjs";import{E as u,a as v,b as r,c as s,d as w,e as N,m as p,o as d,t as c,w as f}from"./chunk-YOYT3NV3.mjs";var n=r(s()),l=r(w());var i={};v(i,{default:()=>a,imports:()=>M,metadata:()=>D,source:()=>T});var t=r(s()),h=r(N());var{Document:y}=p,{Title:R}=d,D={title:"Nota Examples"},M={"./components/inline-editor":{...x,__esModule:!0},"@nota-lang/nota-syntax/dist/editor/mod.js":{...f,__esModule:!0},"@nota-lang/nota-components/dist/index.css":{...c,__esModule:!0}},T=`%%%
 export let metadata = {
   title: "Nota Examples"
 };

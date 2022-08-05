@@ -1,4 +1,4 @@
-import{a as p,b as h}from"./chunk-YTQTSMNG.mjs";import{E as c,a as v,b as a,c as m,d as w,e as N,m as d,o as u}from"./chunk-TGZBJ43G.mjs";var n=a(m()),l=a(w());var r={};v(r,{default:()=>i,imports:()=>E,metadata:()=>L,source:()=>T});var o=a(m()),b=a(N());var{Document:y}=d,{Title:_}=u,L={title:"Nota Playground",className:"examples"},E={"./components/page-editor":{...h,__esModule:!0}},T=`%%%
+import{a as p,b as h}from"./chunk-TSONLPSE.mjs";import{E as c,a as v,b as a,c as m,d as w,e as N,m as d,o as u}from"./chunk-YOYT3NV3.mjs";var n=a(m()),l=a(w());var r={};v(r,{default:()=>i,imports:()=>E,metadata:()=>L,source:()=>T});var o=a(m()),b=a(N());var{Document:y}=d,{Title:_}=u,L={title:"Nota Playground",className:"examples"},E={"./components/page-editor":{...h,__esModule:!0}},T=`%%%
 export let metadata = {
   title: "Nota Playground",
   className: "examples",

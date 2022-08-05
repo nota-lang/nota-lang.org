@@ -16,7 +16,7 @@ importers:
       '@lezer/common': ^1.0.0
       '@lezer/highlight': ^1.0.0
       '@lezer/lr': ^1.2.1
-      '@nota-lang/esbuild-utils': ^0.4.5
+      '@nota-lang/esbuild-utils': ^0.4.7
       '@nota-lang/nota-common': ^0.4.7
       '@nota-lang/nota-components': ^0.4.7
       '@nota-lang/nota-editor': ^0.4.7
@@ -35,7 +35,7 @@ importers:
       react-dom: ^18.2.0
       react-split: ^2.0.14
     dependencies:
-      '@nota-lang/esbuild-utils': 0.4.5_esbuild@0.14.53
+      '@nota-lang/esbuild-utils': 0.4.7_esbuild@0.14.53
       '@nota-lang/nota-common': 0.4.7
       '@nota-lang/nota-components': 0.4.7_glye5s5krd3fwl3kc3m6s4xfea
       '@nota-lang/nota-editor': 0.4.7_viobciiekkqacj7cryzana767i
@@ -296,8 +296,8 @@ packages:
       '@lezer/lr': 1.2.1
     dev: true
 
-  /@nota-lang/esbuild-utils/0.4.5_esbuild@0.14.53:
-    resolution: {integrity: sha512-2/TMiStiHYaq1fkCNtfA7YGxSy6mEALaFjfpxhIF68+hzcDccaoYNlcMcWsXczv1v6H0j3tsXpYtazlWQn+z8A==}
+  /@nota-lang/esbuild-utils/0.4.7_esbuild@0.14.53:
+    resolution: {integrity: sha512-tf/6OTkRBzcyVLDDkIy4qqHPobmDmMzIuZ6lO0fZ1cZa1wcJ0aMbnZ/E5onOxV8uGR7gnwaWiLyqvRnCd9eRGg==}
     peerDependencies:
       esbuild: ^0.14.49
     dependencies:

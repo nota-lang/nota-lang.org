@@ -17,6 +17,28 @@ let exec = promisify(cp.exec);
 async function main() {
   let build = cli();
   let examples = await fs.readdir("examples");
+
+  await fs.mkdirp("dist");
+  await fs.copy("favicon", "dist");
+  await fs.copy("static", path.join("dist", "static"));
+  await Promise.all(
+    examples.map(async (s) => {
+      let baseDir = path.join("examples", s);
+      await exec("nota build --config ../../nota.config.mjs index.nota", {
+        cwd: baseDir,
+      });
+      await fs.copy(
+        path.join(baseDir, "static"),
+        path.join("dist", "examples", s, "static"),
+        { recursive: true }
+      );
+      await fs.copy(
+        path.join(baseDir, "dist"),
+        path.join("dist", "examples", s, "standalone")
+      );
+    })
+  );
+
   await build({
     entryPoints: [
       "src/index.html",
@@ -35,25 +57,6 @@ async function main() {
       ...config.plugins,
     ],
   });
-  await Promise.all(
-    examples.map(async (s) => {
-      let baseDir = path.join("examples", s);
-      await exec("nota build index.nota", {
-        cwd: baseDir,
-      });
-      await fs.copy(
-        path.join(baseDir, "static"),
-        path.join("dist", "examples", s, "static"),
-        { recursive: true }
-      );
-      await fs.copy(
-        path.join(baseDir, "dist"),
-        path.join("dist", "examples", s, "standalone")
-      );
-    })
-  );
-  await fs.copy("favicon", "dist");
-  await fs.copy("static", path.join("dist", "static"));
 }
 
 if (isMain(import.meta)) {

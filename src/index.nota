@@ -40,7 +40,7 @@ Then you can build a single Nota document by running these shell commands:
 
 ```
 npm install --global @nota-lang/nota
-echo "@h1{Hello world}" > index.nota
+echo "@Title: Hello world" > index.nota
 nota build index.nota
 open dist/index.html
 ```

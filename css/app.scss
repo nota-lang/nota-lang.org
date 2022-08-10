@@ -178,6 +178,7 @@ header {
 }
 
 body.base-style .nota-document,
+.nota-document.editing,
 .base-style-block {
   @include vars;
 
@@ -196,58 +197,9 @@ body.base-style .nota-document,
     color: black;
   }
 
-  .toc-wrapper {
-    @include monitor {
-      $width: 300px;
-      position: absolute;
-      z-index: 999;
-      width: $width;
-      right: -($width + 150px);
-      top: 0;
-      height: 100%;
-      text-align: left;
-
-      .toc {
-        position: sticky;
-        top: 2rem;
-      }
-    }
-
-    @include mobile {
-      margin: 2rem 0;
-
-      .toc {
-        border: 2px solid black;
-        padding: 1rem;
-      }
-    }
-
-    // .toc {
-    //   > ol {
-    //     margin-left: 0;
-    //     margin-bottom: 0;
-    //     padding-left: 1rem;
-
-    //     > li:not(:last-child) {
-    //       margin-bottom: 1rem;
-    //     }
-
-    //     ol {
-    //       margin: 0 0 0.5rem -0.5rem;
-    //       list-style-type: lower-alpha;
-    //     }
-    //   }
-    // }
-  }
-
   code {
     font-size: 92%;
   }
-
-  // .nota-editor-text {
-  //   font-family: var(--font-body);
-  //   font-size: 110%;
-  // }
 
   ul,
   ol {
@@ -293,15 +245,16 @@ body.base-style .nota-document,
         width: $width;
         position: relative;
         right: calc(($width - $mobile-cutoff) / 2);
-        max-height: 600px;
       }
 
-      .nota-editor,
-      .nota-document,
       .js-view {
         max-height: 600px;
         overflow-y: auto;
       }
+    }
+
+    .buttons {
+      padding: 0;
     }
 
     > .nota-editor {
@@ -375,27 +328,27 @@ body.base-style .nota-document,
     }
   }
 
-  h1 {
+  .document-title {
     font-size: 48px;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
 
   section {
-    margin-top: 6rem;
+    margin-top: 5rem;
 
     section {
-      margin-top: 4rem;
+      margin-top: 2.5rem;
     }
 
-    h2 {
+    h1 {
       font-size: 32px;
       border-bottom: 2px solid black;
       padding-bottom: 0.5rem;
       margin-bottom: 0.5rem;
     }
 
-    h3 {
+    h2 {
       font-size: 24px;
       margin-bottom: 0.5rem;
     }
@@ -464,4 +417,34 @@ body.base-style .nota-document,
     gap: 1em;
     margin-bottom: 1em;    
   }
+}
+
+.nota-document:not(.editing) {
+  .toc-wrapper {
+    @include monitor {
+      $width: 300px;
+      position: absolute;
+      z-index: 999;
+      width: $width;
+      right: -($width + 150px);
+      top: 0;
+      height: 100%;
+      text-align: left;
+
+      .toc {
+        position: sticky;
+        top: 2rem;
+      }
+    }
+
+    @include mobile {
+      margin: 2rem 0;
+
+      .toc {
+        border: 2px solid black;
+        padding: 1rem;
+      }
+    }
+  }
+
 }

@@ -20,9 +20,11 @@
 @import "@nota-lang/nota-editor/dist/index.css";
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inconsolata:wght@400;700&display=swap");
 
+$font: "EB Garamond", serif;
+
 @mixin vars {
-  --font-body: "EB Garamond", serif;
-  --font-header: "EB Garamond", serif;
+  --font-body: #{$font};
+  --font-header: #{$font};
   --font-mono: "Inconsolata", monospace;
 
   --size-normal: 20px;
@@ -52,6 +54,7 @@ body {
 header {
   padding: 1rem 0;
   margin: 0 auto 3rem;
+  font-family: $font;
 
   @include monitor {
     width: $mobile-cutoff;
@@ -69,7 +72,7 @@ header {
 
   .logo {
     font-size: 72px;
-    font-family: "JMH Beda", var(--font-header);
+    font-family: "JMH Beda", $font;
     margin: 0;
 
     @include mobile {
@@ -84,7 +87,7 @@ header {
     .fancy {
       vertical-align: middle;
       font-weight: 400;
-      font-family: "Medieval Victoriana No.1", var(--font-header);
+      font-family: "Medieval Victoriana No.1", $font;
     }
   }
 
@@ -156,15 +159,15 @@ header {
     height: calc(100vh - 2rem);
     border: 3px solid #ccc;
     margin: 2rem;
+
+    .nota-document {
+      padding: 1rem;
+    }
   }
 
   @include mobile {
     border-top: 3px solid #ccc;
     padding-top: 1rem;
-  }
-
-  .nota-document {
-    padding: 1rem;
   }
 }
 
@@ -178,9 +181,10 @@ header {
 }
 
 body.base-style .nota-document,
-.nota-document.editing,
+// .nota-document.editing,
 .base-style-block {
   @include vars;
+  font-family: var(--font-body);
 
   position: relative;
 
@@ -400,7 +404,7 @@ body.base-style .nota-document,
   .example-links {
     display: flex;
     gap: 1em;
-    margin-bottom: 1em;    
+    margin-bottom: 1em;
   }
 }
 
@@ -431,5 +435,4 @@ body.base-style .nota-document,
       }
     }
   }
-
 }

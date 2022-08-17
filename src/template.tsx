@@ -20,8 +20,8 @@ let Template: React.FC<
       />
       <meta name="twitter:card" content="summary" />
       <title>{title}</title>
-      {css ? <link href={css} rel="stylesheet" /> : null}
       <link href="/index.css" rel="stylesheet" />
+      {css ? <link href={css} rel="stylesheet" /> : null}
     </head>
     <body className={className || "base-style"}>
       <header>

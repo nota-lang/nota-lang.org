@@ -10,7 +10,6 @@ import Split from "react-split";
 import _ from "lodash";
 import classNames from "classnames";
 import { observer } from "mobx-react";
-// import classNames from "classnames";
 
 let useWindowSize = () => {
   const [size, setSize] = useState([window.innerWidth, window.innerHeight]);

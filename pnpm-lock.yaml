@@ -31,6 +31,7 @@ importers:
       lodash: ^4.17.21
       mobx: ^6.6.1
       mobx-react: ^7.5.2
+      normalize.css: ^8.0.1
       react: ^18.2.0
       react-dom: ^18.2.0
       react-split: ^2.0.14
@@ -64,6 +65,7 @@ importers:
       fs-extra: 10.1.0
       mobx: 6.6.1
       mobx-react: 7.5.2_m26jawr67gnusmh4egzqtnhxru
+      normalize.css: 8.0.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
 
@@ -1529,6 +1531,10 @@ packages:
   /normalize-path/3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /normalize.css/8.0.1:
+    resolution: {integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==}
     dev: true
 
   /object-assign/4.1.1:

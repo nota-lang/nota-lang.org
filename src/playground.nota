@@ -13,7 +13,7 @@ import {PageEditor} from "./components/page-editor";
 @PageEditor[contents: `
 @Title: *Nota bene*
 
-From Wikipedia, the free encyclopedia
+@div[style: {marginBottom: '1em'}]: From Wikipedia, the free encyclopedia
 
 **_Nota bene_** (/\`ˈnoʊtə ˈbɛneɪ\`/, /\`ˈnoʊtə ˈbɛni\`/ or /\`ˈnoʊtə ˈbiːni\`/; plural form **_notate bene_**) is a Latin phrase meaning "note well". It is often abbreviated as **_NB_**, **_n.b._**, or with the ligature $\\mathrm{N}\\!\\!\\mathrm{B}$ and first appeared in English writing c. 1711. In Modern English, it is used, particularly in legal papers, to draw the attention of the reader to a certain (side) aspect or detail of the subject being addressed. While NB is also often used in academic writing, *note* is a common substitute.
 

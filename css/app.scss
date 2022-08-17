@@ -1,4 +1,5 @@
 @use "@nota-lang/nota-common/dist/index" as *;
+@import "normalize.css/normalize.css";
 
 @font-face {
   font-family: "JMH Beda";
@@ -156,9 +157,9 @@ header {
   box-sizing: border-box;
 
   @include monitor {
-    height: calc(100vh - 2rem);
+    height: calc(100vh - 4rem);
     border: 3px solid #ccc;
-    margin: 2rem;
+    margin: 3rem 2rem 2rem;
 
     .nota-document {
       padding: 1rem;

@@ -283,10 +283,10 @@ Nota provides inline and block math elements, `$` and `$$` respectively. Current
 The Cauchy-Schwarz inequality states that for all vectors $u$ and $v$ of an inner product space it is true that
 
 % let u = #{\mathbf{u}}; let v = #{\mathbf{v}};
-% let vec = macro{\langle #1, #2 \rangle};
+% let iprod = macro{\langle #1, #2 \rangle};
 
 $$
- #vec{u}{v} ^2 \leq #vec{u}{u} \cdot #vec{v}{v}
+ #iprod{#u}{#v} ^2 \leq #iprod{#u}{#u} \cdot #iprod{#v}{#v}
 $$
 }|
 

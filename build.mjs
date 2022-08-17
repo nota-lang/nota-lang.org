@@ -22,9 +22,9 @@ async function main() {
   await fs.copy("favicon", "dist");
   await fs.copy("static", path.join("dist", "static"));
   await Promise.all(
-    examples.map(async (s) => {
+    examples.map(async (s, i) => {
       let baseDir = path.join("examples", s);
-      await exec("nota build --config ../../nota.config.mjs index.nota", {
+      await exec(`nota build --config ../../nota.config.mjs --port ${8000 + i} index.nota`, {
         cwd: baseDir,
       });
       if (fs.existsSync(path.join(baseDir, "static"))) {

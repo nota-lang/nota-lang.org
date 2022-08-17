@@ -18,9 +18,9 @@ importers:
       '@lezer/lr': ^1.2.3
       '@nota-lang/esbuild-utils': ^0.4.9
       '@nota-lang/nota-common': ^0.4.9
-      '@nota-lang/nota-components': ^0.4.9
-      '@nota-lang/nota-editor': ^0.4.9
-      '@nota-lang/nota-syntax': ^0.4.9
+      '@nota-lang/nota-components': ^0.4.10
+      '@nota-lang/nota-editor': ^0.4.10
+      '@nota-lang/nota-syntax': ^0.4.10
       '@types/lodash': ^4.14.183
       '@types/react': ^18.0.17
       classnames: ^2.3.1
@@ -37,9 +37,9 @@ importers:
     dependencies:
       '@nota-lang/esbuild-utils': 0.4.9_esbuild@0.14.54
       '@nota-lang/nota-common': 0.4.9
-      '@nota-lang/nota-components': 0.4.9_k2b5tggen4hrkzcgqevjbtyf2a
-      '@nota-lang/nota-editor': 0.4.9_chaf2zaucexpkkc2au24mdd364
-      '@nota-lang/nota-syntax': 0.4.9_amu5hmomffcyu32kuughzc3jue
+      '@nota-lang/nota-components': 0.4.10_k2b5tggen4hrkzcgqevjbtyf2a
+      '@nota-lang/nota-editor': 0.4.10_chaf2zaucexpkkc2au24mdd364
+      '@nota-lang/nota-syntax': 0.4.10_amu5hmomffcyu32kuughzc3jue
       lodash: 4.17.21
       react-split: 2.0.14_react@18.2.0
     devDependencies:
@@ -348,8 +348,8 @@ packages:
       lodash: 4.17.21
     dev: false
 
-  /@nota-lang/nota-components/0.4.9_k2b5tggen4hrkzcgqevjbtyf2a:
-    resolution: {integrity: sha512-oZL8XFqOVAAxctN8nuZO4iR/mUOSzjUa4pv3GcZdkyj2oIUVqfezmwnpQMWabocWkh8jhnP8pqNtfsxuwSVrNA==}
+  /@nota-lang/nota-components/0.4.10_k2b5tggen4hrkzcgqevjbtyf2a:
+    resolution: {integrity: sha512-wUU2F9Vl9kvhqU5KEPCJrfbXpmrogvPfjV42h9irvhwx6VkbIYhS/rtnU0RAQpUG6WuTyxyXYzyEv6ECFXTgig==}
     peerDependencies:
       '@codemirror/autocomplete': ^6.1.0
       '@codemirror/commands': ^6.0.1
@@ -394,8 +394,8 @@ packages:
       - encoding
     dev: false
 
-  /@nota-lang/nota-editor/0.4.9_chaf2zaucexpkkc2au24mdd364:
-    resolution: {integrity: sha512-QpoJghkoC97FKk8h4EoCWxYmpohvucb5NfG5qoAJcYEBIqsF0FEZxUkGqMGOcvQlzJBUroTzHDtPM6NfvL5b2A==}
+  /@nota-lang/nota-editor/0.4.10_chaf2zaucexpkkc2au24mdd364:
+    resolution: {integrity: sha512-GI4DCSRribavLm/ODZx0dB4pcdx4GawVp2PB0UUOI6YhdrU4w5SB9Jxy80F2L+tuyWl5GvQIyZmRnHPfMHiBRg==}
     peerDependencies:
       mobx: ^6.6.1
       mobx-react: ^7.5.2
@@ -410,8 +410,8 @@ packages:
       '@fortawesome/fontawesome-svg-core': 6.1.2
       '@fortawesome/free-solid-svg-icons': 6.1.2
       '@fortawesome/react-fontawesome': 0.2.0_tebjjym7ugcdduvdrfbg7ugwxq
-      '@nota-lang/nota-components': 0.4.9_k2b5tggen4hrkzcgqevjbtyf2a
-      '@nota-lang/nota-syntax': 0.4.9_amu5hmomffcyu32kuughzc3jue
+      '@nota-lang/nota-components': 0.4.10_k2b5tggen4hrkzcgqevjbtyf2a
+      '@nota-lang/nota-syntax': 0.4.10_amu5hmomffcyu32kuughzc3jue
       classnames: 2.3.1
       codemirror: 6.0.1
       lodash: 4.17.21
@@ -432,8 +432,8 @@ packages:
       - react-dom
     dev: false
 
-  /@nota-lang/nota-syntax/0.4.9_amu5hmomffcyu32kuughzc3jue:
-    resolution: {integrity: sha512-PvS0EyX2Xt3ygfVMKNmQipIEsEzU0+JbT7gKPaucNYAT/Zza4PsO5KYECcqowrEzX8wLz5i855iK5ViOB3ZijA==}
+  /@nota-lang/nota-syntax/0.4.10_amu5hmomffcyu32kuughzc3jue:
+    resolution: {integrity: sha512-W1zN8vO0Pk4PYshTieip0y7CMtpdIWdelmz8KGnsyCrevA5AMRLDpYSA8qj1s+hzfT9/mQJodaMZsLwMGOQ0Gw==}
     dependencies:
       '@babel/standalone': 7.18.12
       '@codemirror/autocomplete': 6.1.0
@@ -445,7 +445,7 @@ packages:
       '@lezer/highlight': 1.0.0
       '@lezer/lr': 1.2.3
       '@lezer/markdown': 1.0.1
-      '@nota-lang/nota-components': 0.4.9_k2b5tggen4hrkzcgqevjbtyf2a
+      '@nota-lang/nota-components': 0.4.10_k2b5tggen4hrkzcgqevjbtyf2a
       he: 1.2.0
       indent-string: 5.0.0
       lodash: 4.17.21

@@ -286,7 +286,7 @@ The Cauchy-Schwarz inequality states that for all vectors $u$ and $v$ of an inne
 % let vec = macro{\langle #1, #2 \rangle};
 
 $$
- | #vec{u}{v} |^2 \leq #vec{u}{u} \cdot #vec{v}{v}
+ #vec{u}{v} ^2 \leq #vec{u}{u} \cdot #vec{v}{v}
 $$
 }|
 

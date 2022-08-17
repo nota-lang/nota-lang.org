@@ -32,9 +32,9 @@
   "dependencies": {
     "@nota-lang/esbuild-utils": "^0.4.9",
     "@nota-lang/nota-common": "^0.4.9",
-    "@nota-lang/nota-components": "^0.4.9",
-    "@nota-lang/nota-editor": "^0.4.9",
-    "@nota-lang/nota-syntax": "^0.4.9",
+    "@nota-lang/nota-components": "^0.4.10",
+    "@nota-lang/nota-editor": "^0.4.10",
+    "@nota-lang/nota-syntax": "^0.4.10",
     "lodash": "^4.17.21",
     "react-split": "^2.0.14"
   }

@@ -313,10 +313,10 @@ let IRDef = ({name, ...props}) => {
   return @Definition[
     name: defName,
     label: displayName
-  ]{@IR[
+  ]{@Center{@IR[
     Right: displayName,
     ...props
-  ]};
+  ]}};
 }
 let gray = macro{\htmlStyle{color: gray}{#1}};
 let vf = L.vrform; 
@@ -451,7 +451,7 @@ Beyond concrete places in memory, Oxide also contains references that point to p
 @(L.Bnf)[subset: [
   "concrprov", "abstrprov", "pexp", "prov", "ownq",
   ["tys", ["brw"]],
-  ["expr", ["brw", "pasgn", "letprov"]]
+  ["expr", ["brw", "deref", "pasgn", "letprov"]]
 ]]
 
 %%%
@@ -671,21 +671,19 @@ Then we define noninterference as follows:
 
 %%%
 let evalsto = macro{#fnctx \vdash ({#1}; {#2}) \xrightarrow{\ast} ({#3}; {#4})};
-let stacksafe = macro{#texRef{stacksafe}{#1 \vdash #3 : #4}};
+let stacksafe = macro{#texRef{stacksafe}{#1 \vdash #2 : #3}};
 %%%
 
 @Theorem[name: "noninterference", title: "Noninterference"]:
   Let $#expr$ such that:
 
-  $$
-  #tcnew{#fnctx}{\bullet}{#tyctx}{#depctx}{#expr}{#ty #withslice{#deps}}{#tyctx'}{#depctx'}
-  $$
+  @$$[nocenter: true]:
+    #tcnew{#fnctx}{\bullet}{#tyctx}{#depctx}{#expr}{#ty #withslice{#deps}}{#tyctx'}{#depctx'}
 
   For $i \in \{1, 2\}$, let $#stack _i$ such that:
 
-  $$
-  #stacksafe{#fnctx}{#stack _i}{#tyctx} \hspace{12pt} \text{and} \hspace{12pt} #evalsto{#stack _i}{#expr}{#stepped{#stack}_i}{#(L.value) _i}
-  $$
+  @$$[nocenter: true]:
+    #stacksafe{#fnctx}{#stack _i}{#tyctx} \hspace{12pt} \text{and} \hspace{12pt} #evalsto{#stack _i}{#expr}{#stepped{#stack}_i}{#(L.value) _i}
 
   Then:
   1. $#stack _1 #stackdepeq{#depctx}{#deps} #stack _2 \implies #(L.value)_1 = #(L.value)_2$

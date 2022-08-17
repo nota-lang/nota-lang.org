@@ -10,23 +10,23 @@ importers:
       '@codemirror/lang-rust': ^6.0.0
       '@codemirror/language': ^6.2.1
       '@codemirror/lint': ^6.0.0
-      '@codemirror/search': ^6.0.1
+      '@codemirror/search': ^6.1.0
       '@codemirror/state': ^6.1.1
       '@codemirror/view': ^6.2.0
       '@lezer/common': ^1.0.0
       '@lezer/highlight': ^1.0.0
-      '@lezer/lr': ^1.2.1
-      '@nota-lang/esbuild-utils': ^0.4.8
-      '@nota-lang/nota-common': ^0.4.8
-      '@nota-lang/nota-components': ^0.4.8
-      '@nota-lang/nota-editor': ^0.4.8
-      '@nota-lang/nota-syntax': ^0.4.8
-      '@types/lodash': ^4.14.182
+      '@lezer/lr': ^1.2.3
+      '@nota-lang/esbuild-utils': ^0.4.9
+      '@nota-lang/nota-common': ^0.4.9
+      '@nota-lang/nota-components': ^0.4.9
+      '@nota-lang/nota-editor': ^0.4.9
+      '@nota-lang/nota-syntax': ^0.4.9
+      '@types/lodash': ^4.14.183
       '@types/react': ^18.0.17
       classnames: ^2.3.1
       codemirror: ^6.0.1
       esbuild: ^0.14.54
-      esbuild-sass-plugin: ^2.3.1
+      esbuild-sass-plugin: ^2.3.2
       fs-extra: ^10.1.0
       lodash: ^4.17.21
       mobx: ^6.6.1
@@ -35,11 +35,11 @@ importers:
       react-dom: ^18.2.0
       react-split: ^2.0.14
     dependencies:
-      '@nota-lang/esbuild-utils': 0.4.8_esbuild@0.14.54
-      '@nota-lang/nota-common': 0.4.8
-      '@nota-lang/nota-components': 0.4.8_glye5s5krd3fwl3kc3m6s4xfea
-      '@nota-lang/nota-editor': 0.4.8_viobciiekkqacj7cryzana767i
-      '@nota-lang/nota-syntax': 0.4.8_cwkfbgnepqzx6nc7jv2q6txbam
+      '@nota-lang/esbuild-utils': 0.4.9_esbuild@0.14.54
+      '@nota-lang/nota-common': 0.4.9
+      '@nota-lang/nota-components': 0.4.9_k2b5tggen4hrkzcgqevjbtyf2a
+      '@nota-lang/nota-editor': 0.4.9_chaf2zaucexpkkc2au24mdd364
+      '@nota-lang/nota-syntax': 0.4.9_amu5hmomffcyu32kuughzc3jue
       lodash: 4.17.21
       react-split: 2.0.14_react@18.2.0
     devDependencies:
@@ -49,23 +49,31 @@ importers:
       '@codemirror/lang-rust': 6.0.0
       '@codemirror/language': 6.2.1
       '@codemirror/lint': 6.0.0
-      '@codemirror/search': 6.0.1
+      '@codemirror/search': 6.1.0
       '@codemirror/state': 6.1.1
       '@codemirror/view': 6.2.0
       '@lezer/common': 1.0.0
       '@lezer/highlight': 1.0.0
-      '@lezer/lr': 1.2.1
-      '@types/lodash': 4.14.182
+      '@lezer/lr': 1.2.3
+      '@types/lodash': 4.14.183
       '@types/react': 18.0.17
       classnames: 2.3.1
       codemirror: 6.0.1
       esbuild: 0.14.54
-      esbuild-sass-plugin: 2.3.1
+      esbuild-sass-plugin: 2.3.2
       fs-extra: 10.1.0
       mobx: 6.6.1
       mobx-react: 7.5.2_m26jawr67gnusmh4egzqtnhxru
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+
+  examples/blog-post:
+    specifiers:
+      '@codemirror/lang-rust': ^6.0.0
+      '@nota-lang/nota-theme-acm': ^0.4.1
+    dependencies:
+      '@codemirror/lang-rust': 6.0.0
+      '@nota-lang/nota-theme-acm': 0.4.1
 
   examples/infoflow-paper:
     specifiers:
@@ -151,7 +159,6 @@ packages:
     dependencies:
       '@codemirror/language': 6.2.1
       '@lezer/rust': 1.0.0
-    dev: true
 
   /@codemirror/language/6.2.1:
     resolution: {integrity: sha512-MC3svxuvIj0MRpFlGHxLS6vPyIdbTr2KKPEW46kCoCXw2ktb4NTkpkPBI/lSP/FoNXLCBJ0mrnUi1OoZxtpW1Q==}
@@ -160,7 +167,7 @@ packages:
       '@codemirror/view': 6.2.0
       '@lezer/common': 1.0.0
       '@lezer/highlight': 1.0.0
-      '@lezer/lr': 1.2.1
+      '@lezer/lr': 1.2.3
       style-mod: 4.0.0
 
   /@codemirror/lint/6.0.0:
@@ -172,6 +179,14 @@ packages:
 
   /@codemirror/search/6.0.1:
     resolution: {integrity: sha512-uOinkOrM+daMduCgMPomDfKLr7drGHB4jHl3Vq6xY2WRlL7MkNsBE0b+XHYa/Mee2npsJOgwvkW4n1lMFeBW2Q==}
+    dependencies:
+      '@codemirror/state': 6.1.1
+      '@codemirror/view': 6.2.0
+      crelt: 1.0.5
+    dev: false
+
+  /@codemirror/search/6.1.0:
+    resolution: {integrity: sha512-ye6m0jFHSgQ4qnfWVwArvm7XrCMNppMYnL5f4M0WdBScslnckomf5eVacYCw8P0UBWeq72lCSXA0/eo1piZxLA==}
     dependencies:
       '@codemirror/state': 6.1.1
       '@codemirror/view': 6.2.0
@@ -291,7 +306,7 @@ packages:
     hasBin: true
     dependencies:
       '@lezer/common': 1.0.0
-      '@lezer/lr': 1.2.1
+      '@lezer/lr': 1.2.3
     dev: false
 
   /@lezer/highlight/1.0.0:
@@ -303,15 +318,15 @@ packages:
     resolution: {integrity: sha512-IjOVeIRhM8IuafWNnk+UzRz7p4/JSOKBNINLYLsdSGuJS9Ju7vFdc82AlTt0jgtV5D8eBZf4g0vK4d3ttBNz7A==}
     dependencies:
       '@lezer/highlight': 1.0.0
-      '@lezer/lr': 1.2.1
+      '@lezer/lr': 1.2.3
 
   /@lezer/lr/1.2.0:
     resolution: {integrity: sha512-TgEpfm9br2SX8JwtwKT8HsQZKuFkLRg6g+IRxObk9nVKQLKnkP3oMh+QGcTBL9GQsfQ2ADtKPbj2iGSMf3ytiA==}
     dependencies:
       '@lezer/common': 1.0.0
 
-  /@lezer/lr/1.2.1:
-    resolution: {integrity: sha512-RpHRs+Q+5tPsXtobSfSeRFRAnTRD0e4bApDvo74O+JiaWq9812x5S8WgftNX67owdaTQXCB5E8XZGALo4Wt77A==}
+  /@lezer/lr/1.2.3:
+    resolution: {integrity: sha512-qpB7rBzH8f6Mzjv2AVZRahcm+2Cf7nbIH++uXbvVOL1yIRvVWQ3HAM/saeBLCyz/togB7LGo76qdJYL1uKQlqA==}
     dependencies:
       '@lezer/common': 1.0.0
 
@@ -326,11 +341,10 @@ packages:
     resolution: {integrity: sha512-IpGAxIjNxYmX9ra6GfQTSPegdCAWNeq23WNmrsMMQI7YNSvKtYxO4TX5rgZUmbhEucWn0KTBMeDEPXg99YKtTA==}
     dependencies:
       '@lezer/highlight': 1.0.0
-      '@lezer/lr': 1.2.1
-    dev: true
+      '@lezer/lr': 1.2.3
 
-  /@nota-lang/esbuild-utils/0.4.8_esbuild@0.14.54:
-    resolution: {integrity: sha512-W1oRXrYnZROixL9fT0KjTuqBqwXUu6OYLNpdy+u9QI1PGSyZxAUY2DJlt8kD/B1IeAPwH8pIwZFLSJFcdM8Nzw==}
+  /@nota-lang/esbuild-utils/0.4.9_esbuild@0.14.54:
+    resolution: {integrity: sha512-8OcdrCmOxIsKg63QxQkxWzJ1LZg/HVaXHt/Ky8nXgqi/7eGUWOpR0mG17aj5/q9eoyHcID6pJUCcyb3ycx3CsA==}
     peerDependencies:
       esbuild: ^0.14.49
     dependencies:
@@ -354,15 +368,15 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@nota-lang/nota-common/0.4.8:
-    resolution: {integrity: sha512-jHNGuOMXfNHm9mcyRLXQvWW7MU975RtXV4z6/eiBn1vlopJmewmK41USZTfkEveviQ7u0WfRi9FTxGmZaarOqA==}
+  /@nota-lang/nota-common/0.4.9:
+    resolution: {integrity: sha512-SIUjm2IG87uckhHJDBLOz1rm9mCRN3nIxwOeArUw904gB0lA1poOFOmfMg+uRYuKqId1i4pD5gCLlaCVt/fZUQ==}
     dependencies:
-      '@types/lodash': 4.14.182
+      '@types/lodash': 4.14.183
       lodash: 4.17.21
     dev: false
 
-  /@nota-lang/nota-components/0.4.8_glye5s5krd3fwl3kc3m6s4xfea:
-    resolution: {integrity: sha512-WmVG4Vdmbpbrx4rT0esa0gqnc7kIfPTKit1ghTzwLUI67zJM9KBzDBeIrwQ2UM/q+SJizfKNXicTVDM4EWL2/w==}
+  /@nota-lang/nota-components/0.4.9_k2b5tggen4hrkzcgqevjbtyf2a:
+    resolution: {integrity: sha512-oZL8XFqOVAAxctN8nuZO4iR/mUOSzjUa4pv3GcZdkyj2oIUVqfezmwnpQMWabocWkh8jhnP8pqNtfsxuwSVrNA==}
     peerDependencies:
       '@codemirror/autocomplete': ^6.1.0
       '@codemirror/commands': ^6.0.1
@@ -383,15 +397,15 @@ packages:
       '@codemirror/commands': 6.0.1
       '@codemirror/language': 6.2.1
       '@codemirror/lint': 6.0.0
-      '@codemirror/search': 6.0.1
+      '@codemirror/search': 6.1.0
       '@codemirror/state': 6.1.1
       '@codemirror/view': 6.2.0
       '@lezer/common': 1.0.0
       '@lezer/highlight': 1.0.0
-      '@lezer/lr': 1.2.1
-      '@nota-lang/nota-common': 0.4.8
+      '@lezer/lr': 1.2.3
+      '@nota-lang/nota-common': 0.4.9
       '@orcid/bibtex-parse-js': 0.0.25
-      '@popperjs/core': 2.11.5
+      '@popperjs/core': 2.11.6
       classnames: 2.3.1
       katex: 0.16.0
       lodash: 4.17.21
@@ -400,15 +414,15 @@ packages:
       react: 18.2.0
       react-async: 10.0.1_react@18.2.0
       react-dom: 18.2.0_react@18.2.0
-      react-vega: 7.6.0_vfltlkkygopziclbgvvoonqtam
+      react-vega: 7.6.0_owrgf5per7xuu6js62r2357ghm
       vega: 5.22.1
-      vega-lite: 5.4.0_vega@5.22.1
+      vega-lite: 5.5.0_vega@5.22.1
     transitivePeerDependencies:
       - encoding
     dev: false
 
-  /@nota-lang/nota-editor/0.4.8_viobciiekkqacj7cryzana767i:
-    resolution: {integrity: sha512-HwgI2eS8Fi1DP51jahDWopPEsvXEuq/0TxQUWmsqh54u7dg31lY+zm7MY4m6HrowLTOnQi6iFG+v7VKEr0Jzag==}
+  /@nota-lang/nota-editor/0.4.9_chaf2zaucexpkkc2au24mdd364:
+    resolution: {integrity: sha512-QpoJghkoC97FKk8h4EoCWxYmpohvucb5NfG5qoAJcYEBIqsF0FEZxUkGqMGOcvQlzJBUroTzHDtPM6NfvL5b2A==}
     peerDependencies:
       mobx: ^6.6.1
       mobx-react: ^7.5.2
@@ -423,8 +437,8 @@ packages:
       '@fortawesome/fontawesome-svg-core': 6.1.2
       '@fortawesome/free-solid-svg-icons': 6.1.2
       '@fortawesome/react-fontawesome': 0.2.0_tebjjym7ugcdduvdrfbg7ugwxq
-      '@nota-lang/nota-components': 0.4.8_glye5s5krd3fwl3kc3m6s4xfea
-      '@nota-lang/nota-syntax': 0.4.8_cwkfbgnepqzx6nc7jv2q6txbam
+      '@nota-lang/nota-components': 0.4.9_k2b5tggen4hrkzcgqevjbtyf2a
+      '@nota-lang/nota-syntax': 0.4.9_amu5hmomffcyu32kuughzc3jue
       classnames: 2.3.1
       codemirror: 6.0.1
       lodash: 4.17.21
@@ -445,8 +459,8 @@ packages:
       - react-dom
     dev: false
 
-  /@nota-lang/nota-syntax/0.4.8_cwkfbgnepqzx6nc7jv2q6txbam:
-    resolution: {integrity: sha512-qCooWlg+mxNFGNagOFbLant5COYhkP9PrYHFRLaveXE6co5qbVMhSdvQt85snvBoHhQ420m/ZfgveQfEWHM/GA==}
+  /@nota-lang/nota-syntax/0.4.9_amu5hmomffcyu32kuughzc3jue:
+    resolution: {integrity: sha512-PvS0EyX2Xt3ygfVMKNmQipIEsEzU0+JbT7gKPaucNYAT/Zza4PsO5KYECcqowrEzX8wLz5i855iK5ViOB3ZijA==}
     dependencies:
       '@babel/standalone': 7.18.12
       '@codemirror/autocomplete': 6.1.0
@@ -456,9 +470,9 @@ packages:
       '@lezer/common': 1.0.0
       '@lezer/generator': 1.1.1
       '@lezer/highlight': 1.0.0
-      '@lezer/lr': 1.2.1
+      '@lezer/lr': 1.2.3
       '@lezer/markdown': 1.0.1
-      '@nota-lang/nota-components': 0.4.8_glye5s5krd3fwl3kc3m6s4xfea
+      '@nota-lang/nota-components': 0.4.9_k2b5tggen4hrkzcgqevjbtyf2a
       he: 1.2.0
       indent-string: 5.0.0
       lodash: 4.17.21
@@ -476,14 +490,13 @@ packages:
 
   /@nota-lang/nota-theme-acm/0.4.1:
     resolution: {integrity: sha512-IZjv4+JSi7BudzY8UCx0gB8CZ6FCQGY/PLLApu9j8XUQMid1Sn4naB0E8jWmso9fIdNZC6/3EMG2lNHAL70eIg==}
-    dev: true
 
   /@orcid/bibtex-parse-js/0.0.25:
     resolution: {integrity: sha512-n6VuG5/WjiifC1DoUzq0sUCWNSbAyRZznBgvPcY4jVZ/2eJiMv2tNUAt2NukbnFExOUa0RyTOFsqhH2MGpiLgQ==}
     dev: false
 
-  /@popperjs/core/2.11.5:
-    resolution: {integrity: sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==}
+  /@popperjs/core/2.11.6:
+    resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==}
     dev: false
 
   /@types/clone/2.1.1:
@@ -498,18 +511,18 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 3.0.5
-      '@types/node': 18.6.5
+      '@types/node': 18.7.6
     dev: false
 
-  /@types/lodash/4.14.182:
-    resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==}
+  /@types/lodash/4.14.183:
+    resolution: {integrity: sha512-UXavyuxzXKMqJPEpFPri6Ku5F9af6ZJXUneHhvQJxavrEjuHkFp2YnDWHcxJiG7hk8ZkWqjcyNeW1s/smZv5cw==}
 
   /@types/minimatch/3.0.5:
     resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
     dev: false
 
-  /@types/node/18.6.5:
-    resolution: {integrity: sha512-Xjt5ZGUa5WusGZJ4WJPbOT8QOqp6nDynVFRKcUt32bOgvXEoc6o085WNkYTMO7ifAj2isEfQQ2cseE+wT6jsRw==}
+  /@types/node/18.7.6:
+    resolution: {integrity: sha512-EdxgKRXgYsNITy5mjjXjVE/CS8YENSdhiagGrLqjG0pvA2owgJ6i4l7wy/PFZGC0B1/H20lWKN7ONVDNYDZm7A==}
     dev: false
 
   /@types/prop-types/15.7.5:
@@ -529,7 +542,7 @@ packages:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
     dependencies:
-      '@types/node': 18.6.5
+      '@types/node': 18.7.6
     dev: false
     optional: true
 
@@ -664,7 +677,7 @@ packages:
       '@codemirror/commands': 6.0.1
       '@codemirror/language': 6.2.1
       '@codemirror/lint': 6.0.0
-      '@codemirror/search': 6.0.1
+      '@codemirror/search': 6.1.0
       '@codemirror/state': 6.1.1
       '@codemirror/view': 6.2.0
 
@@ -1071,12 +1084,12 @@ packages:
     requiresBuild: true
     optional: true
 
-  /esbuild-sass-plugin/2.3.1:
-    resolution: {integrity: sha512-PcggASq7YWAqJ4U7JvjRqNcOAiA8etfDx6cMRAtGgrKawZv7xw67RzrhEOeJPeoRtNY5YYg0p/MNxXkX8GS94g==}
+  /esbuild-sass-plugin/2.3.2:
+    resolution: {integrity: sha512-bNIV241S0vpy+F9U9oMbmlAD+GDzKLJp2+Z9rSRP8Rq8Nwmxh9roI0s3iB9d6Eii1A5WYgCK7HZeWPokw2rhSw==}
     dependencies:
       esbuild: 0.14.54
       resolve: 1.22.1
-      sass: 1.54.3
+      sass: 1.54.4
     dev: true
 
   /esbuild-sunos-64/0.14.54:
@@ -1716,7 +1729,7 @@ packages:
       split.js: 1.6.5
     dev: false
 
-  /react-vega/7.6.0_vfltlkkygopziclbgvvoonqtam:
+  /react-vega/7.6.0_owrgf5per7xuu6js62r2357ghm:
     resolution: {integrity: sha512-2oMML4wH9qWLnZPRxJm06ozwrVN/K+nkjqdI5/ofWWsrBnnH4iB9rRKrsV8px0nlWgZrwfdCH4g5RUiyyJHWSA==}
     peerDependencies:
       react: ^16 || ^17 || ^18
@@ -1728,8 +1741,8 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       vega: 5.22.1
-      vega-embed: 6.21.0_id6cynuo6vpkswrm7dntpokaqy
-      vega-lite: 5.4.0_vega@5.22.1
+      vega-embed: 6.21.0_jvjsdlbcvhacgsoum67fqdazqu
+      vega-lite: 5.5.0_vega@5.22.1
     dev: false
 
   /react/18.2.0:
@@ -1800,8 +1813,8 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: false
 
-  /sass/1.54.3:
-    resolution: {integrity: sha512-fLodey5Qd41Pxp/Tk7Al97sViYwF/TazRc5t6E65O7JOk4XF8pzwIW7CvCxYVOfJFFI/1x5+elDyBIixrp+zrw==}
+  /sass/1.54.4:
+    resolution: {integrity: sha512-3tmF16yvnBwtlPrNBHw/H907j8MlOX8aTBnlNX1yrKx24RKcJGPyLhFUwkoKBKesR3unP93/2z14Ll8NicwQUA==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
@@ -1980,7 +1993,7 @@ packages:
       - encoding
     dev: false
 
-  /vega-embed/6.21.0_id6cynuo6vpkswrm7dntpokaqy:
+  /vega-embed/6.21.0_jvjsdlbcvhacgsoum67fqdazqu:
     resolution: {integrity: sha512-Tzo9VAfgNRb6XpxSFd7uphSeK2w5OxDY2wDtmpsQ+rQlPSEEI9TE6Jsb2nHRLD5J4FrmXKLrTcORqidsNQSXEg==}
     peerDependencies:
       vega: ^5.21.0
@@ -1992,9 +2005,9 @@ packages:
       tslib: 2.4.0
       vega: 5.22.1
       vega-interpreter: 1.0.4
-      vega-lite: 5.4.0_vega@5.22.1
+      vega-lite: 5.5.0_vega@5.22.1
       vega-schema-url-parser: 2.2.0
-      vega-themes: 2.10.0_id6cynuo6vpkswrm7dntpokaqy
+      vega-themes: 2.12.0_jvjsdlbcvhacgsoum67fqdazqu
       vega-tooltip: 0.28.0
     dev: false
     bundledDependencies:
@@ -2101,8 +2114,8 @@ packages:
       - encoding
     dev: false
 
-  /vega-lite/5.4.0_vega@5.22.1:
-    resolution: {integrity: sha512-e/P5iOtBE62WEWZhKP7sLcBd92YS9prfUQafelxoOeloooSSrkUwM/ZDmN5Q5ffByEZTiKfODtnwD6/xKDYUmw==}
+  /vega-lite/5.5.0_vega@5.22.1:
+    resolution: {integrity: sha512-MQBJt/iaUegvhRTS/hZVWfMOSF5ai4awlR2qtwTgHd84bErf9v7GtaZ9ArhJqXCb+FizvZ2jatmoYCzovgAhkg==}
     engines: {node: '>=12'}
     hasBin: true
     peerDependencies:
@@ -2214,14 +2227,14 @@ packages:
       d3-array: 3.2.0
     dev: false
 
-  /vega-themes/2.10.0_id6cynuo6vpkswrm7dntpokaqy:
-    resolution: {integrity: sha512-prePRUKFUFGWniuZsJOfkdb+27Gwrrm82yAlVuU+912kcknsx1DVmMSg2yF79f4jdtqnAFIGycZgxoj13SEIuQ==}
+  /vega-themes/2.12.0_jvjsdlbcvhacgsoum67fqdazqu:
+    resolution: {integrity: sha512-gHNYCzDgexSQDmGzQsxH57OYgFVbAOmvhIYN3MPOvVucyI+zhbUawBVIVNzG9ftucRp0MaaMVXi6ctC5HLnBsg==}
     peerDependencies:
       vega: '*'
       vega-lite: '*'
     dependencies:
       vega: 5.22.1
-      vega-lite: 5.4.0_vega@5.22.1
+      vega-lite: 5.5.0_vega@5.22.1
     dev: false
 
   /vega-time/2.1.0:

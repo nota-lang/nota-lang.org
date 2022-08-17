@@ -15,3 +15,8 @@ import "@nota-lang/nota-components/dist/index.css";
     @h2: PL Research Paper
 
     ![A mathematical definition with a tooltip showing above one letter](/static/examples/infoflow-paper.jpg)
+
+  @a[href: "./examples/blog-post/index.html"]:
+    @h2: Blog Post
+
+    ![A mathematical definition with a tooltip showing above one letter](/static/examples/blog-post.jpg)

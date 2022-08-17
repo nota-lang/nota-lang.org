@@ -95,7 +95,7 @@ The interested reader can find them in the appendix.
 
 @Section[name: "sec_analysis"]: Analysis
 
-Inspired by the dependency calculus of Abadi et al. &abadi1999core, our analysis represents information flow as a set of dependencies for each variable in a given function. The analysis is flow-sensitive, computing a different dependency set at each program location, and field-sensitive, distinguishing between dependencies for fields of a data structure.
+Inspired by the dependency calculus of &abadi1999core[full: true], our analysis represents information flow as a set of dependencies for each variable in a given function. The analysis is flow-sensitive, computing a different dependency set at each program location, and field-sensitive, distinguishing between dependencies for fields of a data structure.
 
 While the analysis is implemented in and for Rust, our goal here is to provide a description of it that is both concise (for clarity of communication) and precise (for amenability to proof). We therefore base our description on Oxide &weiss2019oxide, a formal model of Rust. At a high level, Oxide provides three ingredients:
 
@@ -370,7 +370,7 @@ After checking "$t.1 := 3$", then $#loc _3$ is added to $#depctx(t)$ and $#depct
       {#tys _2 #hlt{#withslice{#deps _2}}}
       {#tyctx _2}{#hlt{#depctx _2}}$
 
-Again, this rule (and many others) contain aspects of Oxide that are not essential for understanding information flow such as the subtyping judgment $#tys _1 \lesssim #tys _a$ or the metafunction $\mathsf{gc}\text{-}\mathsf{loans}$. For brevity we will not cover these aspects here, and instead refer the interested reader to @Ref[full: true]{weiss2019oxide}.
+Again, this rule (and many others) contain aspects of Oxide that are not essential for understanding information flow such as the subtyping judgment $#tys _1 \lesssim #tys _a$ or the metafunction $\mathsf{gc}\text{-}\mathsf{loans}$. For brevity we will not cover these aspects here, and instead refer the interested reader to &weiss2019oxide[full: true].
 We have deemphasized (in grey) the judgments which are not important to understanding our information flow additions.
 
 The key concept is the formula $#ctxsubst{#depctx _1}{\forall #plchole{#plc}{#vr} ~ . ~ #plc \mapsto #deps _1}$. This introduces two shorthands: first, 
@@ -503,7 +503,7 @@ $$
 #loanset = \{\, {^{#uniq}(#deref{z})}, {^{#uniq} (#deref{y}).1}, {^{#uniq} x.1}\}
 $$
 
-Note that $x.1$ is in the loan set of $#deref{z}$. That suggests the loan set can be used as a pointer analysis. The complete details of computing the loan set can be found in @Ref[full: true, extra: "p. 12"]{weiss2019oxide}, but the summary for this example is:
+Note that $x.1$ is in the loan set of $#deref{z}$. That suggests the loan set can be used as a pointer analysis. The complete details of computing the loan set can be found in &weiss2019oxide[full: true, extra: "p. 12"], but the summary for this example is:
 
 % let outlives = macro{#texRef{outlives}{#1 :> #2}};
 
@@ -743,7 +743,7 @@ To implement the modular information flow analysis for MIR, we reused standard s
     $$
 * We iterate this analysis to a fixpoint, which we are guaranteed to reach because $\langle#depctx, \vee\rangle$ forms a join-semilattice.
 
-To handle indirect information flows via control flow, such as the dependence of `h` on `contains_key` in &fig_mir_example, we compute the control-dependence between instructions.  We define control-dependence following @Ref[full: true]{ferrante1987program}:  an instruction $Y$ is control-dependent on $X$ if there exists a directed path $P$ from $X$ to $Y$ such that any $Z$ in $P$ is post-dominated by $Y$, and $X$ is not post-dominated by $Y$. An instruction $X$ is post-dominated by $Y$ if $Y$ is on every path from $X$ to a `return` node. We compute control-dependencies by generating the post-dominator tree and frontier of the CFG using the algorithms of @Ref[full: true]{cooper2001simple} and @Ref[full: true]{cytron1989efficient}, respectively.
+To handle indirect information flows via control flow, such as the dependence of `h` on `contains_key` in &fig_mir_example, we compute the control-dependence between instructions.  We define control-dependence following &ferrante1987program[full: true]:  an instruction $Y$ is control-dependent on $X$ if there exists a directed path $P$ from $X$ to $Y$ such that any $Z$ in $P$ is post-dominated by $Y$, and $X$ is not post-dominated by $Y$. An instruction $X$ is post-dominated by $Y$ if $Y$ is on every path from $X$ to a `return` node. We compute control-dependencies by generating the post-dominator tree and frontier of the CFG using the algorithms of &cooper2001simple[full: true] and &cytron1989efficient[full: true], respectively.
 
 Besides a return, the only other control-flow path out of a function in Rust is a panic. For example, each function call in &fig_mir_example actually has an implicit edge to a panic node (not depicted). Unlike exceptions in other languages, panics are designed to indicate unrecoverable failure. Therefore we exclude panics from our control-dependence analysis.
 
@@ -1032,7 +1032,7 @@ Finally, we address the issue: how meaningful are the results above? How likely 
 
 3.  **Is ownership actually important for precision?**
 
-    The finding that &pointerblind only makes a difference in 17% of cases may seem surprisingly small. For instance, @Ref[full: true]{shapiro1997effects} found in a empirical study of slices on C programs that "using a pointer analysis with an average points-to set size twice as large as a more precise pointer analysis led to an increase of about 70% in the size of \[slices\]."
+    The finding that &pointerblind only makes a difference in 17% of cases may seem surprisingly small. For instance, &shapiro1997effects[full: true] found in a empirical study of slices on C programs that "using a pointer analysis with an average points-to set size twice as large as a more precise pointer analysis led to an increase of about 70% in the size of \[slices\]."
 
     A limitation of our ablation is that the analyzed programs were written to satisfy Rust's ownership safety rules. Disabling lifetimes does not change the structure of the programs to become more C-like &mdash; Rust generally encourages a code style with fewer aliases to avoid dealing with lifetimes. A fairer comparison would be to implement an application idiomatically in both Rust and Rust-but-without-feature-X, but such an evaluation is not practical. It is therefore likely that our results understate the true impact of ownership types on precision given this limitation.
 
@@ -1067,29 +1067,27 @@ The IFC checker in &fig_apps_ifc is a Rust library and compiler plugin. It provi
 
 Our work draws on three core concepts: information flow, modular static analysis, and ownership types.
 
-% let Citet = props => @Ref[...props, full: true];
-
 @Subsection: Information Flow
 
 Information flow has been historically studied in the context of security, such as ensuring low-security users of a program cannot infer anything about its high-security internals. Security-focused information flow analyses have been developed for Java &myers1999jflow, Javascript &austin2009efficient, OCaml &pottier2003information, Haskell &stefan2011flexible, and many other languages.
 
-Each analysis satisfies some, but not all, of our requirements from &sec_intro. For instance, the JFlow &myers1999jflow and Flow-Caml &pottier2003information languages required adding features to the base language, violating our second requirement. Some methods like that of @Citet{austin2009efficient} for Javascript rely on dynamic analysis, violating our third requirement. And Haskell only supports effects like mutation through monads, violating our first requirement.
+Each analysis satisfies some, but not all, of our requirements from &sec_intro. For instance, the JFlow &myers1999jflow and Flow-Caml &pottier2003information languages required adding features to the base language, violating our second requirement. Some methods like that of &austin2009efficient[full: true] for Javascript rely on dynamic analysis, violating our third requirement. And Haskell only supports effects like mutation through monads, violating our first requirement.
 
-Nonetheless, we draw significant inspiration from mechanisms in prior work. Our analysis resembles the slicing calculus of @Citet{abadi1999core}. The use of lifetimes for modular analysis of functions is comparable to security annotations in Flow-Caml &pottier2003information. The CFG analysis draws on techniques used in program slicers, such as the LLVM dg slicer &llvmslicer.
+Nonetheless, we draw significant inspiration from mechanisms in prior work. Our analysis resembles the slicing calculus of &abadi1999core[full: true]. The use of lifetimes for modular analysis of functions is comparable to security annotations in Flow-Caml &pottier2003information. The CFG analysis draws on techniques used in program slicers, such as the LLVM dg slicer &llvmslicer.
 
 @Subsection: Modular Static Analysis
 
-The key technique to making static analysis modular (or "compositional" or "separate") is symbolically summarizing a function's behavior, so that the summary can be used without the function's implementation. Starting from @Citet{rountev1999data} and @Citet{cousot2002modular}, one approach has been to design a system of "procedure summaries" understood by the static analyzer and distinct from the language being analyzed. This approach has been widely applied for static analysis of null pointer dereferences &yorsh2008generating, pointer aliases &dillig2011precise, data dependencies &tang2015summary, and other properties.
+The key technique to making static analysis modular (or "compositional" or "separate") is symbolically summarizing a function's behavior, so that the summary can be used without the function's implementation. Starting from &rountev1999data[full: true] and &cousot2002modular[full: true], one approach has been to design a system of "procedure summaries" understood by the static analyzer and distinct from the language being analyzed. This approach has been widely applied for static analysis of null pointer dereferences &yorsh2008generating, pointer aliases &dillig2011precise, data dependencies &tang2015summary, and other properties.
 
-Another approach, like ours, is to leverage the language's type system to summarize behavior. @Citet{tang1994separate} showed that an effect system could be used for a modular control-flow analysis. Later work in Haskell used its powerful type system and monadic effects to embed many forms of information flow control into the language &li2006encoding&russo2008library&stefan2011flexible&buiras2015hlio.
+Another approach, like ours, is to leverage the language's type system to summarize behavior. &tang1994separate[full: true] showed that an effect system could be used for a modular control-flow analysis. Later work in Haskell used its powerful type system and monadic effects to embed many forms of information flow control into the language &li2006encoding&russo2008library&stefan2011flexible&buiras2015hlio.
 
 @Subsection: Ownership Types
 
-Rust and Oxide's conceptions of ownership derive from @Citet{clarke1998ownership} and @Citet{grossman2002region}. For instance, the Cyclone language of Grossman et al. uses regions to restrict where a pointer can point-to, and uses region variables to express relationships between regions in a function's input and output types. A lifetime is similar in that it annotates the types of pointers, but differs in how it is analyzed.
+Rust and Oxide's conceptions of ownership derive from &clarke1998ownership[full: true] and &grossman2002region[full: true]. For instance, the Cyclone language of Grossman et al. uses regions to restrict where a pointer can point-to, and uses region variables to express relationships between regions in a function's input and output types. A lifetime is similar in that it annotates the types of pointers, but differs in how it is analyzed.
 
-Recent works have demonstrated innovative applications of Rust's type system for modular program analysis. @Citet{astrauskas2019leveraging} embed Rust programs into a separation logic to verify pre/post conditions about functions. @Citet{jung2020stacked} use Rust's ownership-based guarantees to implement more aggressive program optimizations.
+Recent works have demonstrated innovative applications of Rust's type system for modular program analysis. &astrauskas2019leveraging[full: true] embed Rust programs into a separation logic to verify pre/post conditions about functions. &jung2020stacked[full: true] use Rust's ownership-based guarantees to implement more aggressive program optimizations.
 
-Closer to our domain, @Citet{balasubramanian2017system} implemented a prototype IFC system for Rust by lowering programs to LLVM and verifying them with SMACK &rakamaric2014smack, although their system is hard to contrast with ours given the high-level description in their paper. @Citet{njor2021static} implemented a static taint analysis for Rust, although it is not field-sensitive, alias-sensitive, or modular.
+Closer to our domain, &balasubramanian2017system[full: true] implemented a prototype IFC system for Rust by lowering programs to LLVM and verifying them with SMACK &rakamaric2014smack, although their system is hard to contrast with ours given the high-level description in their paper. &njor2021static[full: true] implemented a static taint analysis for Rust, although it is not field-sensitive, alias-sensitive, or modular.
 
 @Section[name: "sec_discussion"]: Discussion
 

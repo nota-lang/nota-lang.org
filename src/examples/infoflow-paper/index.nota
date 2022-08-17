@@ -1,6 +1,6 @@
 %%%
 export let metadata = {
-  title: "Nota Examples: PL Research Paper",
+  title: "Nota Examples: Research Paper",
   className: "examples",
   css: "index.css"
 };
@@ -10,7 +10,7 @@ import {imports as exampleImports, source as exampleSource} from "../../../examp
 %%%
 
 @div[className: "base-style-block"]:
-  @Title: PL Research Paper
+  @Title: Research Paper
 
   @div[className: "example-links"]:
     [_Standalone web page_](standalone/) /
@@ -19,6 +19,7 @@ import {imports as exampleImports, source as exampleSource} from "../../../examp
 
   This document is a Nota-fied version of a programming languages research paper, "Modular Information Flow through Ownership" published at PLDI 2022. This example includes:
   * Academic paper structure (sections, subsections, figures, abstracts)
+  * Academic paper style (`@nota-lang/nota-theme-acm`)
   * Math (inline TeX, block TeX, theorems, definitions)
   * Charts (Vega-Lite)
 

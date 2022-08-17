@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@codemirror/lang-rust": "^6.0.0"
+  }
+}

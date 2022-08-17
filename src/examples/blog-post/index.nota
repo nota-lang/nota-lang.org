@@ -1,0 +1,24 @@
+%%%
+export let metadata = {
+  title: "Nota Examples: Blog Post",
+  className: "examples",
+  css: "index.css"
+};
+
+import {PageEditor} from "../../components/page-editor";
+import {imports as exampleImports, source as exampleSource} from "../../../examples/blog-post/index.nota";
+%%%
+
+@div[className: "base-style-block"]:
+  @Title: Blog Post
+
+  @div[className: "example-links"]:
+    [_Standalone web page_](standalone/) /
+    [_Markdown comparison_](https://willcrichton.net/notes/type-level-programming/) /
+    [_Full source_](https://github.com/nota-lang/nota-lang.org/tree/main/examples/blog-post)
+
+  This document is a Nota-fied version of a blog post about programming. This example includes:
+  * Code blocks and code references
+  * Default styling (no theme)
+
+@PageEditor[imports: exampleImports, contents: exampleSource]

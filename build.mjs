@@ -27,11 +27,13 @@ async function main() {
       await exec("nota build --config ../../nota.config.mjs index.nota", {
         cwd: baseDir,
       });
-      await fs.copy(
-        path.join(baseDir, "static"),
-        path.join("dist", "examples", s, "static"),
-        { recursive: true }
-      );
+      if (fs.existsSync(path.join(baseDir, "static"))) {
+        await fs.copy(
+          path.join(baseDir, "static"),
+          path.join("dist", "examples", s, "static"),
+          { recursive: true }
+        );
+      }
       await fs.copy(
         path.join(baseDir, "dist"),
         path.join("dist", "examples", s, "standalone")
@@ -51,7 +53,10 @@ async function main() {
     splitting: true,
     external: [],
     plugins: [
-      ssrPlugin({ template: "./src/template.tsx", externalRenderTimeout: 30000 }),
+      ssrPlugin({
+        template: "./src/template.tsx",
+        externalRenderTimeout: 30000,
+      }),
       notaPlugin({ debugExports: true }),
       peerfixPlugin({ modules: peerDependencies, meta: import.meta }),
       ...config.plugins,

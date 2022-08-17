@@ -1,4 +1,4 @@
-import{a as g,b as f}from"./chunk-24PGH7KA.mjs";import{E as b,a as u,b as a,c as m,d as k,e as x,m as h,n as p}from"./chunk-C6BXXZAP.mjs";var o=a(m()),c=a(k());var i={};u(i,{default:()=>r,imports:()=>R,metadata:()=>A,source:()=>L});var e=a(m()),w=a(x());var s={};u(s,{default:()=>D});var D={};var{Document:P,Section:y}=p,{ListingConfigure:S,Listing:l}=h,A={title:"Nota: A Document Language for the Browser"},R={"./components/inline-editor":{...f,__esModule:!0},"../css/app.scss":{...s,__esModule:!0}},L=`%%%
+import{a as g,b as f}from"./chunk-5BWGUZH4.mjs";import{E as b,a as u,b as a,c as m,d as k,e as x,m as h,n as p}from"./chunk-BZYFOZQA.mjs";var o=a(m()),c=a(k());var i={};u(i,{default:()=>r,imports:()=>R,metadata:()=>A,source:()=>L});var e=a(m()),w=a(x());var s={};u(s,{default:()=>D});var D={};var{Document:P,Section:y}=p,{ListingConfigure:S,Listing:l}=h,A={title:"Nota: A Document Language for the Browser"},R={"./components/inline-editor":{...f,__esModule:!0},"../css/app.scss":{...s,__esModule:!0}},L=`%%%
 export let metadata = {
   title: "Nota: A Document Language for the Browser"
 };

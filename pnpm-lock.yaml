@@ -5,7 +5,7 @@ importers:
   .:
     specifiers:
       '@codemirror/autocomplete': ^6.1.0
-      '@codemirror/commands': ^6.0.1
+      '@codemirror/commands': ^6.1.0
       '@codemirror/lang-javascript': ^6.0.2
       '@codemirror/lang-rust': ^6.0.0
       '@codemirror/language': ^6.2.1
@@ -16,11 +16,11 @@ importers:
       '@lezer/common': ^1.0.0
       '@lezer/highlight': ^1.0.0
       '@lezer/lr': ^1.2.3
-      '@nota-lang/esbuild-utils': ^0.4.9
-      '@nota-lang/nota-common': ^0.4.9
-      '@nota-lang/nota-components': ^0.4.10
-      '@nota-lang/nota-editor': ^0.4.10
-      '@nota-lang/nota-syntax': ^0.4.10
+      '@nota-lang/esbuild-utils': ^0.4.12
+      '@nota-lang/nota-common': ^0.4.12
+      '@nota-lang/nota-components': ^0.4.12
+      '@nota-lang/nota-editor': ^0.4.12
+      '@nota-lang/nota-syntax': ^0.4.12
       '@types/lodash': ^4.14.183
       '@types/react': ^18.0.17
       classnames: ^2.3.1
@@ -36,16 +36,16 @@ importers:
       react-dom: ^18.2.0
       react-split: ^2.0.14
     dependencies:
-      '@nota-lang/esbuild-utils': 0.4.9_esbuild@0.14.54
-      '@nota-lang/nota-common': 0.4.9
-      '@nota-lang/nota-components': 0.4.10_k2b5tggen4hrkzcgqevjbtyf2a
-      '@nota-lang/nota-editor': 0.4.10_chaf2zaucexpkkc2au24mdd364
-      '@nota-lang/nota-syntax': 0.4.10_amu5hmomffcyu32kuughzc3jue
+      '@nota-lang/esbuild-utils': 0.4.12_esbuild@0.14.54
+      '@nota-lang/nota-common': 0.4.12
+      '@nota-lang/nota-components': 0.4.12_r3pkb7kq7oitdxccu4uto6eypi
+      '@nota-lang/nota-editor': 0.4.12_chaf2zaucexpkkc2au24mdd364
+      '@nota-lang/nota-syntax': 0.4.12_gcvxw2234xtly35oqhlelvo4wa
       lodash: 4.17.21
       react-split: 2.0.14_react@18.2.0
     devDependencies:
       '@codemirror/autocomplete': 6.1.0
-      '@codemirror/commands': 6.0.1
+      '@codemirror/commands': 6.1.0
       '@codemirror/lang-javascript': 6.0.2
       '@codemirror/lang-rust': 6.0.0
       '@codemirror/language': 6.2.1
@@ -78,7 +78,7 @@ importers:
   examples/infoflow-paper:
     specifiers:
       '@codemirror/autocomplete': ^6.1.0
-      '@codemirror/commands': ^6.0.1
+      '@codemirror/commands': ^6.1.0
       '@codemirror/lang-cpp': ^6.0.1
       '@codemirror/lang-rust': ^6.0.0
       '@codemirror/lint': ^6.0.0
@@ -88,11 +88,11 @@ importers:
       '@lezer/common': ^1.0.0
       '@lezer/highlight': ^1.0.0
       '@lezer/lr': ^1.2.3
-      '@nota-lang/nota-theme-acm': ^0.4.9
+      '@nota-lang/nota-theme-acm': ^0.4.12
       lodash: ^4.17.21
     dependencies:
       '@codemirror/autocomplete': 6.1.0
-      '@codemirror/commands': 6.0.1
+      '@codemirror/commands': 6.1.0
       '@codemirror/lint': 6.0.0
       '@codemirror/search': 6.1.0
       '@codemirror/state': 6.1.1
@@ -103,7 +103,7 @@ importers:
     devDependencies:
       '@codemirror/lang-cpp': 6.0.1
       '@codemirror/lang-rust': 6.0.0
-      '@nota-lang/nota-theme-acm': 0.4.9
+      '@nota-lang/nota-theme-acm': 0.4.12
       lodash: 4.17.21
 
 packages:
@@ -128,8 +128,8 @@ packages:
       '@codemirror/view': 6.2.0
       '@lezer/common': 1.0.0
 
-  /@codemirror/commands/6.0.1:
-    resolution: {integrity: sha512-iNHDByicYqQjs0Wo1MKGfqNbMYMyhS9WV6EwMVwsHXImlFemgEUC+c5X22bXKBStN3qnwg4fArNZM+gkv22baQ==}
+  /@codemirror/commands/6.1.0:
+    resolution: {integrity: sha512-qCj2YqmbBjj0P1iumnlL5lBqZvJPzT+t2UvgjcaXErp5ZvMqFRVgQyrEfdXX6SX5UcvcHKBjXqno+MkUp0aYvQ==}
     dependencies:
       '@codemirror/language': 6.2.1
       '@codemirror/state': 6.1.1
@@ -318,8 +318,8 @@ packages:
       '@lezer/highlight': 1.0.0
       '@lezer/lr': 1.2.3
 
-  /@nota-lang/esbuild-utils/0.4.9_esbuild@0.14.54:
-    resolution: {integrity: sha512-8OcdrCmOxIsKg63QxQkxWzJ1LZg/HVaXHt/Ky8nXgqi/7eGUWOpR0mG17aj5/q9eoyHcID6pJUCcyb3ycx3CsA==}
+  /@nota-lang/esbuild-utils/0.4.12_esbuild@0.14.54:
+    resolution: {integrity: sha512-slpju+ftkRZOpVzGSa5Cxf4Dx0cyPRqsLcvPMUNLphIIFrQZXtebp9G183bRtgkEnz6sOLdeYPH7D14CGvM5+A==}
     peerDependencies:
       esbuild: ^0.14.49
     dependencies:
@@ -343,15 +343,15 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@nota-lang/nota-common/0.4.9:
-    resolution: {integrity: sha512-SIUjm2IG87uckhHJDBLOz1rm9mCRN3nIxwOeArUw904gB0lA1poOFOmfMg+uRYuKqId1i4pD5gCLlaCVt/fZUQ==}
+  /@nota-lang/nota-common/0.4.12:
+    resolution: {integrity: sha512-bWyRjeodPWFUZJE+eos0svbX2b+fwfG90qaOZSsOUyMuqYDTZ4LQDYO06wJfZDvDfau8VjgLFA71AVB+lgENJQ==}
     dependencies:
       '@types/lodash': 4.14.183
       lodash: 4.17.21
     dev: false
 
-  /@nota-lang/nota-components/0.4.10_k2b5tggen4hrkzcgqevjbtyf2a:
-    resolution: {integrity: sha512-wUU2F9Vl9kvhqU5KEPCJrfbXpmrogvPfjV42h9irvhwx6VkbIYhS/rtnU0RAQpUG6WuTyxyXYzyEv6ECFXTgig==}
+  /@nota-lang/nota-components/0.4.12_r3pkb7kq7oitdxccu4uto6eypi:
+    resolution: {integrity: sha512-VKB/Ub/WO5ljbP12wtd5obzNaogQ8I/771TwXyloJRC93SMrlO9mccnEExeK8wYl750BH5edWvTGUfsnqmAfoQ==}
     peerDependencies:
       '@codemirror/autocomplete': ^6.1.0
       '@codemirror/commands': ^6.0.1
@@ -369,7 +369,7 @@ packages:
       react-dom: ^18.2.0
     dependencies:
       '@codemirror/autocomplete': 6.1.0
-      '@codemirror/commands': 6.0.1
+      '@codemirror/commands': 6.1.0
       '@codemirror/language': 6.2.1
       '@codemirror/lint': 6.0.0
       '@codemirror/search': 6.1.0
@@ -378,7 +378,7 @@ packages:
       '@lezer/common': 1.0.0
       '@lezer/highlight': 1.0.0
       '@lezer/lr': 1.2.3
-      '@nota-lang/nota-common': 0.4.9
+      '@nota-lang/nota-common': 0.4.12
       '@orcid/bibtex-parse-js': 0.0.25
       '@popperjs/core': 2.11.6
       classnames: 2.3.1
@@ -396,15 +396,15 @@ packages:
       - encoding
     dev: false
 
-  /@nota-lang/nota-editor/0.4.10_chaf2zaucexpkkc2au24mdd364:
-    resolution: {integrity: sha512-GI4DCSRribavLm/ODZx0dB4pcdx4GawVp2PB0UUOI6YhdrU4w5SB9Jxy80F2L+tuyWl5GvQIyZmRnHPfMHiBRg==}
+  /@nota-lang/nota-editor/0.4.12_chaf2zaucexpkkc2au24mdd364:
+    resolution: {integrity: sha512-xpMWBDejUmY6FP14vUV8RJX2jFBY1//BL+knz4xclHOErht9N4sMQYuD6yN4fq/0khoZDtxuUaxhT6R9TtehDQ==}
     peerDependencies:
       mobx: ^6.6.1
       mobx-react: ^7.5.2
       react: ^18.2.0
     dependencies:
       '@babel/standalone': 7.18.12
-      '@codemirror/commands': 6.0.1
+      '@codemirror/commands': 6.1.0
       '@codemirror/lang-javascript': 6.0.2
       '@codemirror/language': 6.2.1
       '@codemirror/state': 6.1.1
@@ -412,8 +412,8 @@ packages:
       '@fortawesome/fontawesome-svg-core': 6.1.2
       '@fortawesome/free-solid-svg-icons': 6.1.2
       '@fortawesome/react-fontawesome': 0.2.0_tebjjym7ugcdduvdrfbg7ugwxq
-      '@nota-lang/nota-components': 0.4.10_k2b5tggen4hrkzcgqevjbtyf2a
-      '@nota-lang/nota-syntax': 0.4.10_amu5hmomffcyu32kuughzc3jue
+      '@nota-lang/nota-components': 0.4.12_r3pkb7kq7oitdxccu4uto6eypi
+      '@nota-lang/nota-syntax': 0.4.12_gcvxw2234xtly35oqhlelvo4wa
       classnames: 2.3.1
       codemirror: 6.0.1
       lodash: 4.17.21
@@ -434,8 +434,8 @@ packages:
       - react-dom
     dev: false
 
-  /@nota-lang/nota-syntax/0.4.10_amu5hmomffcyu32kuughzc3jue:
-    resolution: {integrity: sha512-W1zN8vO0Pk4PYshTieip0y7CMtpdIWdelmz8KGnsyCrevA5AMRLDpYSA8qj1s+hzfT9/mQJodaMZsLwMGOQ0Gw==}
+  /@nota-lang/nota-syntax/0.4.12_gcvxw2234xtly35oqhlelvo4wa:
+    resolution: {integrity: sha512-yLR5MSwQqxjYIsMeZOYAl+014uCFuo1QPh6UNp+yyb1/9ZU7kZsUEOi2i2/no014o9NFZMTtyrSkGcQ90K7APQ==}
     dependencies:
       '@babel/standalone': 7.18.12
       '@codemirror/autocomplete': 6.1.0
@@ -447,7 +447,7 @@ packages:
       '@lezer/highlight': 1.0.0
       '@lezer/lr': 1.2.3
       '@lezer/markdown': 1.0.1
-      '@nota-lang/nota-components': 0.4.10_k2b5tggen4hrkzcgqevjbtyf2a
+      '@nota-lang/nota-components': 0.4.12_r3pkb7kq7oitdxccu4uto6eypi
       he: 1.2.0
       indent-string: 5.0.0
       lodash: 4.17.21
@@ -463,8 +463,8 @@ packages:
       - react-dom
     dev: false
 
-  /@nota-lang/nota-theme-acm/0.4.9:
-    resolution: {integrity: sha512-O4nIbmzqeazDFPn0KuIj+5CslMxapacu7Gmt9K1wMHEtzbdfx48Tx6NVzJKRWUTDLZSL03WA5JcO133kgkSJVw==}
+  /@nota-lang/nota-theme-acm/0.4.12:
+    resolution: {integrity: sha512-A+0lM8m1O5AU010pOWrdmeRTHj0b5wdAT1IPsNorBpcf2h/bivIrxg9f8DOcmKoriIhB9PJctEkgo2QdmRRU6w==}
     dev: true
 
   /@orcid/bibtex-parse-js/0.0.25:
@@ -650,7 +650,7 @@ packages:
     resolution: {integrity: sha512-J8j+nZ+CdWmIeFIGXEFbFPtpiYacFMDR8GlHK3IyHQJMCaVRfGx9NT+Hxivv1ckLWPvNdZqndbr/7lVhrf/Svg==}
     dependencies:
       '@codemirror/autocomplete': 6.1.0
-      '@codemirror/commands': 6.0.1
+      '@codemirror/commands': 6.1.0
       '@codemirror/language': 6.2.1
       '@codemirror/lint': 6.0.0
       '@codemirror/search': 6.1.0

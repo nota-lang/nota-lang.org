@@ -13,10 +13,9 @@ import "../css/app.scss";
 @InlineEditor[fancy: true]|{
 // This code is editable!
 % let nota = @Smallcaps{**Nota**}
-@Definition[name: "nota", label: nota]:
+.@Definition[name: "nota", label: nota]:
   #nota is a language for writing documents, like academic papers and blog posts.
-  The goal of #nota is to 
-  **bring documents into the #(20 + 1)st century.**
+The goal of &nota is to **bring documents into the #(20 + 1)st century.**
 
 Documents contain a lot of structure --- for example, "&nota" is a reference to a term defined in the preceding paragraph. &nota enables authors to *represent* that structure, which allows the reading medium (the browser) to *understand* that structure, which in turn empowers readers to *use* that structure. Try clicking on any "&nota" reference to see this idea in action. (Then try double-clicking!)
 
@@ -67,10 +66,9 @@ For more on this design philosophy, you can read my original paper ["A New Mediu
 `,r=(0,w.observer)(function(t){return(0,e.createElement)(P,t,null,(0,e.createElement)(S,{block:!0,wrap:!0}),(0,e.createElement)(g,{block:!0,fancy:!0},`
 // This code is editable!
 % let nota = @Smallcaps{**Nota**}
-@Definition[name: "nota", label: nota]:
+.@Definition[name: "nota", label: nota]:
   #nota is a language for writing documents, like academic papers and blog posts.
-  The goal of #nota is to 
-  **bring documents into the #(20 + 1)st century.**
+The goal of &nota is to **bring documents into the #(20 + 1)st century.**
 
 Documents contain a lot of structure --- for example, "&nota" is a reference to a term defined in the preceding paragraph. &nota enables authors to *represent* that structure, which allows the reading medium (the browser) to *understand* that structure, which in turn empowers readers to *use* that structure. Try clicking on any "&nota" reference to see this idea in action. (Then try double-clicking!)
 

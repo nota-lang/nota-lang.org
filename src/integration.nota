@@ -54,7 +54,7 @@ These functions parse and translate, respectively, a Nota document into a React 
 First, import `notaPlugin` and add it to your list of plugins:
 
 ```js
-import { notaPlugin } from "\@nota-lang/nota-syntax/dist/esbuild-plugin.js";
+import { notaPlugin } from "@nota-lang/nota-syntax/dist/esbuild-plugin.js";
 import esbuild from "esbuild";
 
 esbuild.build({

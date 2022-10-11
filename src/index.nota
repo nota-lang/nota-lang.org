@@ -13,8 +13,9 @@ import "../css/app.scss";
 @InlineEditor[fancy: true]|{
 // This code is editable!
 % let nota = @Smallcaps{**Nota**}
-.@Definition[name: "nota", label: nota]:
+.@Definition[name: "nota", label: nota]{
   #nota is a language for writing documents, like academic papers and blog posts.
+}
 The goal of &nota is to **bring documents into the #(20 + 1)st century.**
 
 Documents contain a lot of structure --- for example, "&nota" is a reference to a term defined in the preceding paragraph. &nota enables authors to *represent* that structure, which allows the reading medium (the browser) to *understand* that structure, which in turn empowers readers to *use* that structure. Try clicking on any "&nota" reference to see this idea in action. (Then try double-clicking!)
@@ -58,7 +59,7 @@ To learn more about how to write Nota documents, you can read through  the [Refe
 
 There are two main mediums for digital documents: PDFs and web pages. PDFs were designed to mirror physical documents, so they impose the real-world constraints of paper: page breaks, fixed width, and immutable styling. Web pages, by contrast, provides an essential dynamism. Web pages can be dynamically formatted: resized for phones, translated into other languages, colors changed for color-blindness. Web pages can be dynamically interactive: text prompted for more context, diagrams shifted for a new perspective, annotations added for posterity. Web pages are undeniably the future of digital documents.
 
-But currently, that dynamism is only accessible to professional web developers. Existing document tools like [LaTeX](https://www.latex-project.org/), [Pandoc](https://pandoc.org/), [Markdown](https://daringfireball.net/projects/markdown/), and [Scribble](https://docs.racket-lang.org/scribble/) can (for the most part) only generate static web pages. Nota's goal is to bridge that gap by providing authors with a document language that has a low floor, a high ceiling, and a smooth ramp up. 
+But currently, that dynamism is only accessible to professional web developers. Existing document tools like [LaTeX](https://www.latex-project.org/), [Pandoc](https://pandoc.org/), [Markdown](https://daringfireball.net/projects/markdown/), and [Scribble](https://docs.racket-lang.org/scribble/) can (for the most part) only generate static web pages. Nota's goal is to bridge that gap by providing authors with a document language that has a low floor, a high ceiling, and a smooth ramp up.
 
 Part of this design is identifying components that are easy to use for authors and have high impact for the reader. For instance, the `@Definition` and `@Ref` components in the example above require a small amount of document annotation on the author's part. Then the Nota runtime can provide features like presenting a reference's definition in context via tooltip. Future Nota versions could include more advanced features like @q{find all references to this definition}.
 
